@@ -40,6 +40,11 @@ nav {
     height: 95px;
 }
 
+nav .left{
+    display: flex;
+    flex-direction: row;
+}
+
 a{
     color: white;
     text-decoration: none;
@@ -80,7 +85,8 @@ main hr {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 50px 0;
+    /* margin: 50px 0; */
+    margin: 4rem 5rem;
     height: 65vh;
 }
 
@@ -104,7 +110,8 @@ main hr {
 /* Second sec */
 .second-section {
     /* max-width: 80vw; */
-    margin: 20px 100px;
+    /* margin: 20px 100px; */
+    margin: 2rem 6.2rem;
     height: 84vh;
 }
 
@@ -171,8 +178,10 @@ main hr {
 
 /* Third sec */
 .third-section{
-    margin: 20px 100px;
+    /* margin: 20px 100px; */
+    margin: 2rem 6.2rem;
 }
+
 
 .card-div{
     display: flex;
@@ -192,6 +201,8 @@ main hr {
     color: black;
     font-weight: 480;
     overflow: hidden;
+    box-shadow: 4px 4px 5px gray;
+
 }
 .card .img-box{
     width: 300px;
@@ -222,7 +233,9 @@ main hr {
 
 /* Fourth sec */
 .fourth-section{
-    margin: 20px 100px;
+    /* margin: 20px 100px; */
+    margin: 2rem 6.2rem;
+    /* display: flex; */
 }
 
 .fourth-sub{
@@ -231,7 +244,7 @@ main hr {
 }
 
 .fourth-sub .left-section img{
-    margin: 40px 30px 45px 60px;
+    margin: 45px 30px 45px 60px;
     height: 300px;
     width: 200px;
     border-radius: 7px;
@@ -244,10 +257,14 @@ main hr {
     font-weight: 500;
     font-size: medium;
 }
+.right-section p a{
+    color: #814BF6;
+}
 
 /* Fifth sec */
 .fifth-section{
-    margin: 20px 100px;
+    /* margin: 20px 100px; */
+    margin: 2rem 6.3rem;
 }
 
 .fifth-sub2 h3{
@@ -256,7 +273,7 @@ main hr {
 
 .fifth-sub2 img{
     margin: 18px 15px;
-    height: 4.4rem;
+    height: 4rem;
     justify-content: space-around;
 
 }
@@ -292,9 +309,17 @@ footer .footer-importent {
     text-align: center;
     color: #FF665E;
     padding: 12px 0;
+    font-size: medium;
 }
 footer .footer-rights {
     text-align: center;
     color: rgb(143, 136, 136);
     padding: 12px 0;
+    font-size: small;
 }
+/* New changes */
+/* 1 sec */
+/* 2 sec */
+/* 3 sec */
+/* 4 sec */
+/* 5 sec */
