@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
 }
-
+ 
 /* Scrollbar */
 body::-webkit-scrollbar {
 width: 10px;
@@ -225,6 +225,8 @@ main hr {
 }
 .card h3{
     color: #814BF6;
+    padding: 0.2rem;
+    font-size: 1.2rem;
 }
 .card h3:hover{
     color: #FF665E;
