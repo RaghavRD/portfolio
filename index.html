@@ -1,263 +1,732 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head> 
-    <meta charset="UTF-8">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
-    <title>Home - Raghav's Portfolio</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raghav's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Hind&family=IBM+Plex+Sans:ital@1&family=Noto+Sans:wght@300;500&family=Poppins:wght@400;700&display=swap"
         rel="stylesheet">
-        <!-- seo -->
+    <!-- seo -->
     <meta name="description" content="Portfolio website · Raghav's portfolio" />
-    <meta name="keywords" content="Raghav's portfolio website, Raghav desai portfolio website, portfolio website, raghav github, raghavrd github, raghav portfolio, raghav desai portfolio" />
+    <meta name="keywords"
+        content="Raghav's portfolio website, Raghav desai portfolio website, portfolio website, raghav github, raghavrd github, raghav portfolio, raghav desai portfolio" />
     <meta name="copyright" content="Copyright © 2023 'Raghav's portfolio' All Rights Reserved." />
     <meta name="author" content="Raghav Desai" />
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        .body{
+            font-family: 'Roboto', sans-serif;
+        } */
+        .text-custom-color {
+            color: white;
+        }
+
+        .text-custom-color:hover {
+            color: #814BF6;
+        }
+
+        .remark {
+            color: #FF665E;
+            font-weight: 550;
+            font-size: medium;
+        }
+
+        .edu-custom {
+            background-color: #f5f5f5;
+        }
+
+        .edu-custom:hover {
+            transition: all ease-in-out .3s;
+            background-color: #a887f1;
+            color: white;
+
+            .card-text {
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            }
+
+            .remark {
+                color: white;
+                font-weight: 600;
+            }
+        }
+
+        hr {
+            border: 0;
+            height: 1.5px;
+            margin: 30px 80px;
+            background: #814BF6;
+            font-size: 16px;
+        }
+
+        .fifth-section {
+            margin: 2rem 0;
+        }
+
+        .fifth-sub2 h3 {
+            margin: 20px 0;
+        }
+
+        .fifth-sub2 img {
+            margin: 8px;
+            height: 4em;
+        }
+
+
+        .card-img-top {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        .card-title {
+            color: #551ecb;
+        }
+
+
+        /* Scrollbar */
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: gray;
+        }
+
+        body::-webkit-scrollbar {
+            background-color: transparent;
+
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: white;
+            border-radius: 15px;
+        }
+    </style>
 </head>
-<body>
-    <!-- Header Navbar -->
-    <header>
-        <nav>
-            <div class="left">
-                <a href=""><b>Raghav's Portfolio</b></a>
-            </div>
-            <div class="right">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="#secondsec">Education</a></li>
-                    <li><a href="#fifthsec">Skills</a></li>
-                    <li><a href="#thirdsec">Projects</a></li>
-                    <li><a href="#fourthsec">About</a></li>
-                    <li><a href="#footersec">Connect Me</a></li>
+
+<body style="background-color: #1E1842;">
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #2f285b;">
+        <div class="container-fluid container">
+            <a class="navbar-brand text-light" href="#"><strong>Raghav's Portfolio</strong></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" aria-current="page" href="#firstsec">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#secondsec">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#thirdsec">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#fourthsec">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#fifthsec">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#finalsec">Connect Me</a>
+                    </li>
                 </ul>
             </div>
-        </nav>
-    </header>
-    <!-- Main Section -->
-    <main>
-        <!-- First Section - Home -->
-        <section class="first-section">
-            <a name="zerosec"></a>
-            <div class="leftSection">
-                Hi, My name is <span class="dev-name">Raghav</span>
-                <div>and I am a passionate<br><span id="element"></span>
-                </div>
-            </div>
-            <div class="rightSection">
-                <img src="bg.gif" alt="loading...">
-            </div>
-        </section>
-
-        <a name="secondsec"><hr></a>
-        <!-- Second Section - Education -->
-        <section class="second-section">
-            <h1>Education</h1>
-            <div class="second-sub1">
-                <div class="horizontal-line">
-                    <div class="vertical-line">
-                        <div class="vertical-title">
-                            X (SSC)
-                        </div>
-                        <div class="vertical-duration">
-                            (2014 - 2015)
-                            <div class="remark">83.00%</div>
-                        </div>
-                    </div>
-                    <div class="vertical-line">
-                        <div class="vertical-title">
-                            Diploma (E&TC)
-                        </div>
-                        <div class="vertical-duration">
-                            (2015 - 2018)
-                            <div class="remark">67.41%</div>
-                        </div>
-                    </div>
-                    <div class="vertical-line">
-                        <div class="vertical-title">
-                            BE (E&TC Hons- AI for Big Data Analysis)
-                        </div>
-                        <div class="vertical-duration">
-                            (2018 - 2022)
-                            <div class="remark">71.90%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h2>Courses</h2>
-            <div class="second-sub2">
-                <div class="horizontal-line">
-                    <div class="vertical-line">
-                        <div class="vertical-title">
-                            Full Stack Diploma in Python
-                        </div>
-                        <div class="vertical-duration">
-                            (Feb 2022 - Jul 2022)
-                        </div>
-                    </div>
-                    <div class="vertical-line">
-                        <div class="vertical-title">
-                            Diploma in Data Science
-                        </div>
-                        <div class="vertical-duration">
-                            (Feb 2022 - Jul 2022)
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <a name="fifthsec"><hr></a>
-        <!-- Fourth Section - Skills -->
-        <section class="fifth-section">
-            <div class="fifth-sub1">
-                <h1>Skills</h1>
-            </div>
-            <div class="fifth-sub2">
-                <h3>Learned so far</h3>
-                <span>
-                    <img src="python.png" title="Python" alt="Loading...">
-                    <img src="mysql-logo.png" title="MySQL" alt="Loading...">
-                    <img src="pandas-logo.png" title="Pandas python library" alt="Loading...">
-                    <img src="numpy-logo.png" title="Numpy python library" alt="Loading...">
-                    <img src="flask-logo.png" title="Flask" alt="Loading...">
-                    <img src="tkinter-logo.png" title="Tkinter" alt="Loading...">
-                    <img src="django.png" title="Django" alt="Loading...">
-                    <img src="html.png" title="HTML 5" alt="Loading...">
-                    <img src="css-3.png" title="CSS 3" alt="Loading...">
-                    <img src="js.png" title="JavaScript" alt="Loading...">
-                    <img src="ts.png" title="TypeScript" alt="Loading...">
-                    <img src="Bootstrap_logo.png" title="Bootstrap 5" alt="Loading...">
-                    <img src="angular-logo.png" title="Angular" alt="Loading...">
-                    <img src="github.jpg" title="GitHub" alt="Loading...">
-                    <img src="Git-logo.png" title="Git" alt="Loading...">
-                    <img src="Excel-Logo.png" title="Excel" alt="Loading...">
-                </span>
-                <h3>Learning</h3>
-                <span>
-                    <img src="Power-BI-Logo.png" title="Power BI" alt="Loading...">
-                    <img src="AWS.png" title="AWS" alt="Loading...">
-                    <!-- <img src="Pytorch-logo.png" title="PyTorch" alt="Loading..."> -->
-                </span>
-            </div>
-        </section>
-
-        <a name="thirdsec"><hr></a>
-        <!-- Third Section - Projects -->
-        <section class="third-section">
-            <div class="third-sub">
-                <h1>Projects</h1>
-                <div class="card-div">
-                    
-                    <div class="card">
-                        <a href="https://github.com/RaghavRD/PAYEND" target="_blank"><div class="img-box"><img src="payend.png" alt=""></div></a>
-                        <a href="https://github.com/RaghavRD/PAYEND" target="_blank"><h3>PAYEND App - Stock Index Border Predictor</h3></a>
-                        <p>This project provides a maximum limit of India's all popular stock indices like Nifty, Nifty Bank with an accuracy rate of 98%. This comprehensive view of indices is very helpful for people who are interested in trading.</p>
-                    </div>
-                    <div class="card">
-                        <a href="https://github.com/RaghavRD/Books-eCommerce-website" target="_blank"><div class="img-box"><img src="eCommerce Website.jpg" alt=""></div></a>
-                        <a href="https://github.com/RaghavRD/Books-eCommerce-website" target="_blank"><h3>Mybooks - eCommerce Website</h3></a>
-                        <p>This project is an eCommerce website for buying books online. It provides users with a convenient and reliable resource to browse, search, and purchase their favorite books.</p>
-                    </div>
-                    <div class="card">
-                        <a href="https://github.com/RaghavRD/Real-Time-NEWS-App" target="_blank"><div class="img-box"><img src="Angular_NEWS_App.png" alt=""></div></a>
-                        <a href="https://github.com/RaghavRD/Real-Time-NEWS-App" target="_blank"><h3>Real Time NEWS App</h3></a>
-                        <p>This Angular application provides users with real-time news updates. The app utilizes the News API to fetch news from various sources. Users can browse news from predefined sections such as Sports, Entertainment, Science, Health, and Tech.</p>
-                    </div>
-                    <div class="card">
-                        <a href="https://github.com/RaghavRD/Movie-Recommendation-System" target="_blank"><div class="img-box"><img src="MRS1.jpg" alt=""></div></a>
-                        <a href="https://github.com/RaghavRD/Movie-Recommendation-System" target="_blank"><h3>Movie Recommendation System</h3></a>
-                        <p>This project is designed to provide personalized movie recommenda -tions based on user input and calculates similarity scores to generate relevant 5 movie recommendations.</p>
-                    </div>
-                    <div class="card">
-                        <a href="https://github.com/RaghavRD/Geographic-Plotting-Using-Python" target="_blank"><div class="img-box"><img src="Popuation density of India.jpg" alt=""></div></a>
-                        <a href="https://github.com/RaghavRD/Geographic-Plotting-Using-Python" target="_blank"><h3>Popuation density using Python</h3></a>
-                        <p>Explore India's demographics interactively! This project visualizes population density across states using an interactive map, offering insights at a glance. Discover patterns and trends effortlessly.</p>
-                    </div>
-                    <div class="card">
-                        <a href="https://github.com/RaghavRD/QR-Code-Generator" target="_blank"><div class="img-box"><img src="CH E.png" alt=""></div></a>
-                        <a href="https://github.com/RaghavRD/QR-Code-Generator" target="_blank"><h3>Chrome Extention</h3></a>
-                        <p>This extension simplifies the process of generating QR codes of web pages on desktop, allowing users to quickly share URLs or access pages on mobile devices.</p>
-                    </div>
-                    <!-- <div class="card">
-                        <a href="https://github.com/RaghavRD/NEWS-App" target="_blank"><div class="img-box"><img src="news_app.png" alt=""></div></a>
-                        <a href="https://github.com/RaghavRD/NEWS-App" target="_blank"><h3>NEWS App</h3></a>
-                        <p>A news application built using the Tkinter GUI library in Python. This application fetches the latest news articles from the News API and provides a user-friendly interface for browsing and reading news.</p>
-                    </div> -->
-                </div>
-                <p style="text-align: end;"><a href="https://github.com/RaghavRD?tab=repositories" target="_blank"> To see More..</a></p>
-            </div>
-        </section>
-
-        <a name="fourthsec"><hr></a>
-        <!-- Fourth Section - About -->
-        <section class="fourth-section">
-            <h1>About Me</h1>
-            <div class="fourth-sub">
-                <div class="left-section">
-                    <img src="Devloper-image.jpg" alt="loading...">
-                </div>
-                <div class="right-section">
-                    <p>
-                        Hello, I am Raghav Ramchandra Desai, a highly motivated and detail-oriented Software 
-                        Developer with a passion for creating practical solutions to real-world problems. I hold 
-                        a BE in Electronics and Telecommunication Engineering with Honors in AI for Big Data 
-                        Analysis from Marathwada Mitra Mandal's College of Engineering, Pune. My technical journey 
-                        has equipped me with a strong foundation in languages such as Python, SQL, Django, Angular, 
-                        and JavaScript, among others.
-                    </p><br>
-                    <p>
-                        Currently, I am working as an Angular Developer Intern at GeniaTeq, where I develop and 
-                        maintain Angular applications, implement new features, and ensure a positive user experience 
-                        through seamless operation and robust design. My project portfolio includes innovative 
-                        applications like PAYEND, a stock market range identifier with a 98% accuracy rate, and 
-                        QuickVista, a real-time news application.
-                    </p><br>
-                    <p>
-                        Beyond my professional endeavors, I have a <a href="https://www.youtube.com/@rulescom">YouTube channel</a> 
-                        with over 8.5k subscribers, where I create educational content on engineering topics, 
-                        demonstrating my commitment to knowledge sharing. I have also secured 2nd place in a poster 
-                        presentation competition and actively contribute as a volunteer with Lions Clubs International.
-                    </p><br>
-                    <p>
-                        My personal interests are as diverse as my skill set. I enjoy listening to audio books, 
-                        Trading in stock market and am proficient in Marathi, Hindi, English, and Japanese 
-                        languages. </p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer - Contact -->
-    <footer>
-        <a name="footersec"></a>
-        
-        <div class="footer-content">
-            <ul>
-                <li><a href="tel:+9657889081">📞 Contact Me</a></li>
-                <li><a href="https://www.linkedin.com/in/raghav-desai-772r547" target="_blank"><img src="linkedin.png" style="width: 20px;"> LinkedIn</a></li>
-                <li><a href="mailto:raghavdesai774@gmail.com" target="_blank">📧 Send EMail</a></li>
-                <li><a href="/Raghav Desai.pdf" Download>⬇️ Download Resume</a></li>
-            </ul>
         </div>
-        <div class="footer-importent">
-            <b>importent*</b> For the best experience, please view this webpage on a desktop screen as it is not currently optimized for mobile devices.
+    </nav>
+    <!-- First section -->
+    <a name="firstsec"></a>
+    <section class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-start h2 text-light">
+                <h1>Hi, My name is <span class="dev-name" style="color: #814BF6;">Raghav</span></h1>
+                <div>
+                    and I am a passionate<br>
+                    <span id="roles" style="color: #814BF6;"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="bg.gif" alt="Background" class="img-fluid">
+            </div>
         </div>
-        <div class="footer-rights">
-            copyright &#169; | All rights reserved
+    </section>
+    <!-- Second section -->
+    <a name="secondsec">
+        <hr>
+    </a>
+    <!-- <section class="container my-5">
+        <h2 class="text-light text-start mb-4">Education</h2>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card text-dark edu-custom">
+                    <div class="card-body">
+                        <h5 class="card-title">X (SSC)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">(2014 - 2015)</h6>
+                        <p class="card-text remark">83.00%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-dark edu-custom">
+                    <div class="card-body">
+                        <h5 class="card-title">Diploma (E&TC)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">(2015 - 2018)</h6>
+                        <p class="card-text remark">67.41%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-dark edu-custom">
+                    <div class="card-body">
+                        <h5 class="card-title">BE (E&TC Hons - AI for Big Data Analysis)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">(2018 - 2022)</h6>
+                        <p class="card-text remark">71.90%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-light text-start mb-2 mt-5">Courses</h3>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card text-dark edu-custom">
+                    <div class="card-body">
+                        <h5 class="card-title">Full Stack Diploma in Python</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">(Feb 2022 - Jul 2022)</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card text-dark edu-custom">
+                    <div class="card-body">
+                        <h5 class="card-title">Diploma in Data Science</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">(Feb 2022 - Jul 2022)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="container my-5">
+        <h2 class="text-light text-start mb-4">Education</h2>
+    
+        <div class="row">
+            <!-- SSC Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-dark edu-custom" data-bs-toggle="modal" data-bs-target="#modalSSC">
+                    <div class="card-body">
+                        <h5 class="card-title">X (SSC)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">(2014 - 2015)</h6>
+                        <p class="card-text remark">83.00%</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Diploma Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-dark edu-custom" data-bs-toggle="modal" data-bs-target="#modalDiploma">
+                    <div class="card-body">
+                        <h5 class="card-title">Diploma (E&TC)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">(2015 - 2018)</h6>
+                        <p class="card-text remark">67.41%</p>
+                    </div>
+                </div>
+            </div>
+            <!-- BE Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-dark edu-custom" data-bs-toggle="modal" data-bs-target="#modalBE">
+                    <div class="card-body">
+                        <h5 class="card-title">BE (E&TC Hons - AI for Big Data Analysis)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">(2018 - 2022)</h6>
+                        <p class="card-text remark">71.90%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <h3 class="text-light text-start mb-2 mt-5">Courses</h3>
+        <div class="row">
+            <!-- Full Stack Python Card -->
+            <div class="col-md-6 mb-4">
+                <div class="card text-dark edu-custom" data-bs-toggle="modal" data-bs-target="#modalPython">
+                    <div class="card-body">
+                        <h5 class="card-title">Full Stack Diploma in Python</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">(Feb 2022 - Jul 2022)</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- Data Science Card -->
+            <div class="col-md-6 mb-4">
+                <div class="card text-dark edu-custom" data-bs-toggle="modal" data-bs-target="#modalDataScience">
+                    <div class="card-body">
+                        <h5 class="card-title">Diploma in Data Science</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">(Feb 2022 - Jul 2022)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modals for each card -->
+    
+    <!-- Modal SSC -->
+    <div class="modal fade" id="modalSSC" tabindex="-1" aria-labelledby="modalSSCLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSSCLabel">X (SSC) Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="SSC Completion Certificate.jpg" class="img-fluid" alt="SSC Certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Diploma -->
+    <div class="modal fade" id="modalDiploma" tabindex="-1" aria-labelledby="modalDiplomaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDiplomaLabel">Diploma (E&TC) Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Diploma Completion Certificate.jpg" class="img-fluid" alt="Diploma Certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal BE -->
+    <div class="modal fade" id="modalBE" tabindex="-1" aria-labelledby="modalBELabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalBELabel">BE (E&TC) Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="BE Completion Certificate.jpg" class="img-fluid" alt="BE Certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Full Stack Python -->
+    <div class="modal fade" id="modalPython" tabindex="-1" aria-labelledby="modalPythonLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPythonLabel">Full Stack Diploma in Python Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Full Stack Python Completion Certificate.jpg" class="img-fluid" alt="Full Stack Diploma in Python Certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Data Science -->
+    <div class="modal fade" id="modalDataScience" tabindex="-1" aria-labelledby="modalDataScienceLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDataScienceLabel">Diploma in Data Science Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Data Science Completion Certificate.jpg" class="img-fluid" alt="Diploma in Data Science Certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Third section -->
+    <a name="thirdsec">
+        <hr>
+    </a>
+    <section class="container my-5">
+        <h2 class="text-light text-start mb-4">Skills</h2>
+
+        <div class="fifth-sub2 text-center">
+            <h3 class="text-light text-start">Learned So Far-</h3>
+            <div class="row justify-content-start">
+                <!-- <div class="col-6 col-md-3 mb-4">
+                    <img src="python.png" title="Python" alt="Python" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="mysql-logo.png" title="MySQL" alt="MySQL" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="pandas-logo.png" title="Pandas" alt="Pandas" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="numpy-logo.png" title="NumPy" alt="NumPy" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="flask-logo.png" title="Flask" alt="Flask" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="tkinter-logo.png" title="Tkinter" alt="Tkinter" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="django.png" title="Django" alt="Django" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="html.png" title="HTML 5" alt="HTML" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="css-3.png" title="CSS 3" alt="CSS" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="js.png" title="JavaScript" alt="JavaScript" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="ts.png" title="TypeScript" alt="TypeScript" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="Bootstrap_logo.png" title="Bootstrap 5" alt="Bootstrap" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="angular-logo.png" title="Angular" alt="Angular" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="github.jpg" title="GitHub" alt="GitHub" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="Git-logo.png" title="Git" alt="Git" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="Excel-Logo.png" title="Excel" alt="Excel" class="img-fluid">
+                </div> -->
+                <div class="row justify-content-start">
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="python.png" title="Python" alt="Python" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="Python - A powerful programming language for data science and web development.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="mysql-logo.png" title="MySQL" alt="MySQL" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="MySQL - A widely used open-source relational database management system.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="pandas-logo.png" title="Pandas" alt="Pandas" class="img-fluid"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="Pandas - A powerful data manipulation and analysis library for Python.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="numpy-logo.png" title="NumPy" alt="NumPy" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="NumPy - A library for the Python programming language that supports large, multi-dimensional arrays and matrices.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="flask-logo.png" title="Flask" alt="Flask" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="Flask - A lightweight WSGI web application framework in Python.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="tkinter-logo.png" title="Tkinter" alt="Tkinter" class="img-fluid"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="Tkinter - A standard GUI (Graphical User Interface) toolkit for Python.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="django.png" title="Django" alt="Django" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="Django - A high-level Python web framework that encourages rapid development.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="html.png" title="HTML 5" alt="HTML" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="HTML5 - The standard markup language for creating web pages.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="css-3.png" title="CSS 3" alt="CSS" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="CSS3 - The latest version of the Cascading Style Sheets language for styling web pages.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="js.png" title="JavaScript" alt="JavaScript" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="JavaScript - A programming language that enables interactive web pages.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="ts.png" title="TypeScript" alt="TypeScript" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="TypeScript - A superset of JavaScript that adds static typing.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="Bootstrap_logo.png" title="Bootstrap 5" alt="Bootstrap" class="img-fluid"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="Bootstrap - A popular front-end framework for developing responsive websites.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="angular-logo.png" title="Angular" alt="Angular" class="img-fluid"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="Angular - A platform for building mobile and desktop web applications.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="github.jpg" title="GitHub" alt="GitHub" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="GitHub - A web-based platform for version control and collaboration.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="Git-logo.png" title="Git" alt="Git" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="Git - A distributed version control system for tracking changes in source code.">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <img src="Excel-Logo.png" title="Excel" alt="Excel" class="img-fluid" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="Excel - A spreadsheet program included in the Microsoft Office suite.">
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="text-light text-start mt-5">Learning-</h3>
+            <div class="row justify-content-start">
+                <!-- <div class="col-6 col-md-3 mb-4">
+                    <img src="Power-BI-Logo.png" title="Power BI" alt="Power BI" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="AWS.png" title="AWS" alt="AWS" class="img-fluid">
+                </div> -->
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="Power-BI-Logo.png" title="Power BI" alt="Power BI" class="img-fluid"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="Power BI - A business analytics service by Microsoft for interactive visualizations.">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="AWS.png" title="AWS" alt="AWS" class="img-fluid" data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        data-bs-title="AWS - Amazon Web Services, a comprehensive cloud computing platform offered by Amazon.">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="docker.png" title="Docker" alt="Docker" class="img-fluid" data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        data-bs-title="Docker - A platform for developing, shipping, and running applications in containers.">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Fourth section -->
+    <a name="fourthsec">
+        <hr>
+    </a>
+    <section class="container my-5">
+        <h2 class="text-light text-start mb-4">Projects</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card edu-custom h-100">
+                    <a class=" stretched-link" href="https://github.com/RaghavRD/PAYEND" target="_blank">
+                        <img src="payend.png" alt="" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <h3 class="card-title">PAYEND App - Stock Index Border Predictor</h3>
+                        <p class="card-text">This project provides a maximum limit of India's all popular stock
+                            indices
+                            like Nifty, Nifty Bank with an accuracy rate of 98%. This comprehensive view of indices
+                            is
+                            very helpful for people who are interested in trading.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card edu-custom h-100">
+                    <a class=" stretched-link" href="https://github.com/RaghavRD/Books-eCommerce-website"
+                        target="_blank">
+                        <img src="eCommerce Website.jpg" alt="" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <h3 class="card-title">Mybooks - eCommerce Website</h3>
+
+                        <p class="card-text">This project is an eCommerce website for buying books online. It
+                            provides
+                            users with a convenient and reliable resource to browse, search, and purchase their
+                            favorite
+                            books.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card edu-custom h-100">
+                    <a class=" stretched-link" href="https://github.com/RaghavRD/Real-Time-NEWS-App" target="_blank">
+                        <img src="Angular_NEWS_App.png" alt="" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <h3 class="card-title">Real Time NEWS App</h3>
+                        <p class="card-text">This Angular application provides users with real-time news updates.
+                            The
+                            app utilizes the News API to fetch news from various sources. Users can browse news from
+                            predefined sections such as Sports, Entertainment, Science, Health, and Tech.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card edu-custom h-100">
+                    <a class=" stretched-link" href="https://github.com/RaghavRD/Movie-Recommendation-System"
+                        target="_blank">
+                        <img src="MRS1.jpg" alt="" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <h3 class="card-title">Movie Recommendation System</h3>
+                        <p class="card-text">This project is designed to provide personalized movie recommendations
+                            based on user input and calculates similarity scores to generate relevant 5 movie
+                            recommendations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card edu-custom h-100">
+                    <a class=" stretched-link" href="https://github.com/RaghavRD/Geographic-Plotting-Using-Python"
+                        target="_blank">
+                        <img src="Popuation density of India.jpg" alt="" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <h3 class="card-title">Population Density Using Python</h3>
+                        <p class="card-text">Explore India's demographics interactively! This project visualizes
+                            population density across states using an interactive map, offering insights at a
+                            glance.
+                            Discover patterns and trends effortlessly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card edu-custom h-100">
+                    <a class=" stretched-link" href="https://github.com/RaghavRD/QR-Code-Generator" target="_blank">
+                        <img src="CH E.png" alt="" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <h3 class="card-title">Chrome Extension</h3>
+                        <p class="card-text">This extension simplifies the process of generating QR codes of web
+                            pages
+                            on desktop, allowing users to quickly share URLs or access pages on mobile devices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-end">
+            <a href="https://github.com/RaghavRD?tab=repositories" target="_blank" class="text-custom-color">To
+                see More projects..</a>
+        </p>
+    </section>
+    <!-- Fifth section -->
+    <a name="fifthsec">
+        <hr>
+    </a>
+    <section class="container my-5">
+        <h2 class="text-light text-start mb-4">About Me</h2>
+
+        <div class="row align-items-center">
+            <div class="col-lg-4 mb-4">
+                <img src="Devloper-image.jpg" alt="Raghav Desai Image" class=" img-fluid rounded">
+            </div>
+
+            <div class="col-lg-8 text-light">
+                <div class="h6">
+                    Hello, I am Raghav Ramchandra Desai, a highly motivated and detail-oriented Software
+                    Developer with a passion for creating practical solutions to real-world problems. I hold
+                    a BE in Electronics and Telecommunication Engineering with Honors in AI for Big Data
+                    Analysis from Marathwada Mitra Mandal's College of Engineering, Pune. My technical journey
+                    has equipped me with a strong foundation in languages such as Python, SQL, Django, Angular,
+                    and TypeScript, among others.
+                </div>
+                <p>
+                    Currently, I am working as an Angular Developer Intern at GeniaTEQ, where I develop and
+                    maintain Angular applications, implement new features, and ensure a positive user experience
+                    through seamless operation and robust design. My project portfolio includes innovative
+                    applications like PAYEND, a stock market range identifier with a 98% accuracy rate, and
+                    QuickVista, a real-time news application.
+                </p>
+                <p>
+                    Beyond my professional endeavors, I have a <a href="https://www.youtube.com/@rulescom"
+                        style="color: #a887f1;"><strong>YouTube channel</strong></a>
+                    with over 8.5k+ subscribers, where I create educational content on engineering topics,
+                    demonstrating my commitment to knowledge sharing. I have also secured 2nd place in a poster
+                    presentation competition and actively contribute as a volunteer with Lions Clubs International.
+                </p>
+                <p>
+                    My personal interests are as diverse as my skill set. I enjoy listening to audiobooks,
+                    trading in the stock market, and am proficient in Marathi, Hindi, English, and Japanese(L3).
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer 6 -->
+    <a name="finalsec"></a>
+    <footer class="footer">
+        <div class="py-3 py-md-5 py-xl-8" style="background-color: #2f285b;">
+            <div class="container overflow-hidden">
+                <div class="row gy-3 gy-md-5 gy-xl-0 align-items-sm-center">
+
+                    <div class="col-xl-12 order-2 order-xl-1">
+                        <ul class="nav justify-content-center">
+                            <li class="mx-3"><a class="nav-link text-custom-color" href="tel:+9657889081">📞 Contact
+                                    Me</a></li>
+                            <li class="mx-3"><a class="nav-link text-custom-color"
+                                    href="https://www.linkedin.com/in/raghav-desai-772r547" target="_blank"><img
+                                        src="linkedin.png" style="width: 20px;"> LinkedIn</a></li>
+                            <li class="mx-3"><a class="nav-link text-custom-color"
+                                    href="mailto:raghavdesai774@gmail.com" target="_blank">📧 Send EMail</a></li>
+                            <li class="mx-3"><a class="nav-link text-custom-color" href="/Raghav Desai.pdf" Download>⬇️
+                                    Download Resume</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright - Bootstrap Brain Component -->
+            <div class="py-2 py-md-5" style="background-color: #2f285b;">
+                <div class="container overflow-hidden">
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer-copyright-wrapper text-light text-center">
+                                copyright &#169; | All rights reserved
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-        var typed = new Typed('#element', {
-            strings: ['Python Developer', 'Angular Developer', 'Django Developer', 'SQL Developer', 'Data Analyst', 'YouTuber'],
+        var typed = new Typed('#roles', {
+            strings: ['Python Developer', 'Angular Developer', 'Django Developer', 'Data Analyst', 'YouTuber'],
             typeSpeed: 100, loop: true
         });
-        alert("For the best experience, please view this webpage on a desktop screen as it is not currently optimized for mobile devices.");
+        //alert("For the best experience, please view this webpage on a desktop screen as it is not currently optimized for mobile devices.");
+
+        // Initialize Bootstrap tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
     </script>
 </body>
 
