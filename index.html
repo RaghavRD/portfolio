@@ -14,6 +14,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Hind&family=IBM+Plex+Sans:ital@1&family=Noto+Sans:wght@300;500&family=Poppins:wght@400;700&display=swap"
         rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
     <!-- seo -->
     <meta name="description" content="Portfolio website · Raghav's portfolio" />
     <meta name="keywords"
@@ -21,6 +26,10 @@
     <meta name="copyright" content="Copyright © 2023 'Raghav's portfolio' All Rights Reserved." />
     <meta name="author" content="Raghav Desai" />
     <style>
+        *{
+            font-family: "Roboto", serif;
+        }
+        
         .text-custom-color {
             color: white;
         }
@@ -118,15 +127,57 @@
 
         .title-second-text{
             font-size: 1em;
+            /* font-family: "Roboto", serif;
+            font-weight: 400; */
         }
         .line{
             color: #814BF6;
         }
+        /* .navbar-toggler-icon {
+        background-color: white;
+        } */
     </style>
 </head>
 
 <body style="background-color: #1E1842;">
     <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #2f285b;">
+        <div class="container-fluid container">
+            <a class="navbar-brand text-light" href="#"><strong>Raghav's Portfolio</strong></a>
+            <!-- Button for smaller screens (hamburger menu) -->
+            <button class="btn btn-sm navbar-toggler focus-ring focus-ring-light" style="background-color:#814BF6;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> <!-- Hamburger icon -->
+            </button>
+            
+            <!-- Navbar items (collapse on smaller screens) -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" aria-current="page" href="#firstsec">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#sixthsec">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#secondsec">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#thirdsec">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#fourthsec">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#fifthsec">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#finalsec">Connect with Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #2f285b;">
         <div class="container-fluid container">
             <a class="navbar-brand text-light" href="#"><strong>Raghav's Portfolio</strong></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -155,12 +206,12 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <!-- First section -->
     <a name="firstsec"></a>
     <section class="container my-5">
         <div class="row align-items-center h-100">
-            <div class="col-md-6 text-start h2 text-light">
+            <div class="col-md-6 text-start px-3 h2 text-light">
                 <h1 class="title-hero-text">Hi, My name is <span class="dev-name" style="color: #814BF6;">Raghav</span></h1>
                 <div class="title-second-text">
                     and I am a passionate<br>
@@ -179,15 +230,15 @@
     </a>
     <section class="container my-5">
         <h2 class="text-light text-start mb-4">Work Experience</h2>
-        <div class="row text-light">
-            <h5>Associate Softwear Developer | <span class="fst-italic h6" style="color: #a887f1;"> Tekhnologia Innovation India </span> <span class="float-end fst-italic opacity-75">Aug 24 - Present</span></h5>
+        <div class="row text-light px-3 text-justify">
+            <h5>Associate Softwear Developer | <span class="fst-italic h6" style="color: #a887f1;"> Tekhnologia Innovation India </span><span class="float-end fst-italic opacity-75">Aug 24 - Present</span></h5>
             <li class="m-1"> Working as a Frontend Developer, focusing on building and enhancing the visual and interactive aspects of websites using HTML, CSS, JavaScript, and React.</li>
             <li class="m-1"> Collaborating with design and backend teams to implement responsive, high-performance user interfaces while optimizing components for fast load times and smooth user experiences.</li>
             <li class="m-1"> Involved in optimizing website components to ensure fast load times and smooth user experience.</li>
             <li class="m-1"> Contributed to a previous project using Django, ensuring seamless integration between frontend and backend components, focusing on backend logic.</li>
             <li class="m-1"> Currently leading efforts on a React-based project, implementing dynamic UI elements while maintaining code efficiency and scalability.</li>
             
-            <h5 class="mt-4">Angular Developer | <span class="fst-italic h6" style="color: #a887f1;">GeniaTEQ</span>  <span class="float-end fst-italic opacity-75">Apr 24 - Jul 24</span></h5>
+            <h5 class="mt-4">Angular Developer | <span class="fst-italic h6" style="color: #a887f1;">GeniaTEQ</span><span class="float-end fst-italic opacity-75">Apr 24 - Jul 24</span></h5>
             <li class="m-1"> Developed and maintained Angular applications, implementing new features and functionalities.</li>
             <li class="m-1"> Collaborated with team members to troubleshoot and resolve issues, ensuring seamless operation of applications.</li>
             <li class="m-1"> Assisted in the design and implementation of user interfaces, ensuring a positive user experience.</li>
