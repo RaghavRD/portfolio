@@ -21,10 +21,6 @@
     <meta name="copyright" content="Copyright © 2023 'Raghav's portfolio' All Rights Reserved." />
     <meta name="author" content="Raghav Desai" />
     <style>
-        /* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-        .body{
-            font-family: 'Roboto', sans-serif;
-        } */
         .text-custom-color {
             color: white;
         }
@@ -64,6 +60,11 @@
             margin: 30px 80px;
             background: #814BF6;
             font-size: 16px;
+        }
+
+        .img-hover:hover{
+            background-color: #22195e;
+            border-radius: 9px;
         }
 
         .fifth-section {
@@ -111,6 +112,16 @@
             background: white;
             border-radius: 15px;
         }
+        .title-hero-text{
+            font-size: 1.6em;
+        }
+
+        .title-second-text{
+            font-size: 1em;
+        }
+        .line{
+            color: #814BF6;
+        }
     </style>
 </head>
 
@@ -122,6 +133,9 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link text-custom-color" aria-current="page" href="#firstsec">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-custom-color" href="#sixthsec">Experience</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-custom-color" href="#secondsec">Education</a>
@@ -145,10 +159,10 @@
     <!-- First section -->
     <a name="firstsec"></a>
     <section class="container my-5">
-        <div class="row align-items-center">
+        <div class="row align-items-center h-100">
             <div class="col-md-6 text-start h2 text-light">
-                <h1>Hi, My name is <span class="dev-name" style="color: #814BF6;">Raghav</span></h1>
-                <div>
+                <h1 class="title-hero-text">Hi, My name is <span class="dev-name" style="color: #814BF6;">Raghav</span></h1>
+                <div class="title-second-text">
                     and I am a passionate<br>
                     <span id="roles" style="color: #814BF6;"></span>
                 </div>
@@ -158,63 +172,33 @@
             </div>
         </div>
     </section>
+
+    <!-- Section sixth -->
+    <a name="sixthsec">
+        <hr class="line border border-2">
+    </a>
+    <section class="container my-5">
+        <h2 class="text-light text-start mb-4">Work Experience</h2>
+        <div class="row text-light">
+            <h5>Associate Softwear Developer | <span class="fst-italic h6" style="color: #a887f1;"> Tekhnologia Innovation India </span> <span class="float-end fst-italic opacity-75">Aug 24 - Present</span></h5>
+            <li class="m-1"> Developed and maintained Angular applications, implementing new features and functionalities.</li>
+            <li class="m-1"> Collaborated with team members to troubleshoot and resolve issues, ensuring seamless operation of applications.</li>
+            <li class="m-1"> Assisted in the design and implementation of user interfaces, ensuring a positive user experience.</li>
+            <li class="m-1"> Conducted testing and debugging of applications to ensure they meet quality standards.</li>
+            
+            <h5 class="mt-4">Angular Developer | <span class="fst-italic h6" style="color: #a887f1;">GeniaTEQ</span>  <span class="float-end fst-italic opacity-75">Apr 24 - Jul 24</span></h5>
+            <li class="m-1"> Working as a Frontend Developer, focusing on building and enhancing the visual and interactive aspects of websites using HTML, CSS, JavaScript, and React.</li>
+            <li class="m-1"> Collaborating with design and backend teams to implement responsive, high-performance user interfaces while optimizing components for fast load times and smooth user experiences.</li>
+            <li class="m-1"> Involved in optimizing website components to ensure fast load times and smooth user experience.</li>
+            <li class="m-1"> Contributed to a previous project using Django, ensuring seamless integration between frontend and backend components, focusing on backend logic.</li>
+            <li class="m-1"> Currently leading efforts on a React-based project, implementing dynamic UI elements while maintaining code efficiency and scalability.</li>
+        </div>
+    </section>
+
     <!-- Second section -->
     <a name="secondsec">
-        <hr>
+        <hr class="line border border-2">
     </a>
-    <!-- <section class="container my-5">
-        <h2 class="text-light text-start mb-4">Education</h2>
-
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card text-dark edu-custom">
-                    <div class="card-body">
-                        <h5 class="card-title">X (SSC)</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">(2014 - 2015)</h6>
-                        <p class="card-text remark">83.00%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card text-dark edu-custom">
-                    <div class="card-body">
-                        <h5 class="card-title">Diploma (E&TC)</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">(2015 - 2018)</h6>
-                        <p class="card-text remark">67.41%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card text-dark edu-custom">
-                    <div class="card-body">
-                        <h5 class="card-title">BE (E&TC Hons - AI for Big Data Analysis)</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">(2018 - 2022)</h6>
-                        <p class="card-text remark">71.90%</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h3 class="text-light text-start mb-2 mt-5">Courses</h3>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card text-dark edu-custom">
-                    <div class="card-body">
-                        <h5 class="card-title">Full Stack Diploma in Python</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">(Feb 2022 - Jul 2022)</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card text-dark edu-custom">
-                    <div class="card-body">
-                        <h5 class="card-title">Diploma in Data Science</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">(Feb 2022 - Jul 2022)</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
     <section class="container my-5">
         <h2 class="text-light text-start mb-4">Education</h2>
     
@@ -277,7 +261,7 @@
     <!-- Modals for each card -->
     
     <!-- Modal SSC -->
-    <div class="modal fade" id="modalSSC" tabindex="-1" aria-labelledby="modalSSCLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="modalSSC" tabindex="-1" aria-labelledby="modalSSCLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -289,10 +273,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <!-- Modal Diploma -->
-    <div class="modal fade" id="modalDiploma" tabindex="-1" aria-labelledby="modalDiplomaLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="modalDiploma" tabindex="-1" aria-labelledby="modalDiplomaLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -304,10 +288,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <!-- Modal BE -->
-    <div class="modal fade" id="modalBE" tabindex="-1" aria-labelledby="modalBELabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="modalBE" tabindex="-1" aria-labelledby="modalBELabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -319,10 +303,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <!-- Modal Full Stack Python -->
-    <div class="modal fade" id="modalPython" tabindex="-1" aria-labelledby="modalPythonLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="modalPython" tabindex="-1" aria-labelledby="modalPythonLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -334,10 +318,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <!-- Modal Data Science -->
-    <div class="modal fade" id="modalDataScience" tabindex="-1" aria-labelledby="modalDataScienceLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="modalDataScience" tabindex="-1" aria-labelledby="modalDataScienceLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -349,11 +333,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <!-- Third section -->
     <a name="thirdsec">
-        <hr>
+        <hr class="line border border-2">
     </a>
     <section class="container my-5">
         <h2 class="text-light text-start mb-4">Skills</h2>
@@ -361,57 +345,9 @@
         <div class="fifth-sub2 text-center">
             <h3 class="text-light text-start">Learned So Far-</h3>
             <div class="row justify-content-start">
-                <!-- <div class="col-6 col-md-3 mb-4">
-                    <img src="python.png" title="Python" alt="Python" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="mysql-logo.png" title="MySQL" alt="MySQL" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="pandas-logo.png" title="Pandas" alt="Pandas" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="numpy-logo.png" title="NumPy" alt="NumPy" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="flask-logo.png" title="Flask" alt="Flask" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="tkinter-logo.png" title="Tkinter" alt="Tkinter" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="django.png" title="Django" alt="Django" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="html.png" title="HTML 5" alt="HTML" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="css-3.png" title="CSS 3" alt="CSS" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="js.png" title="JavaScript" alt="JavaScript" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="ts.png" title="TypeScript" alt="TypeScript" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="Bootstrap_logo.png" title="Bootstrap 5" alt="Bootstrap" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="angular-logo.png" title="Angular" alt="Angular" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="github.jpg" title="GitHub" alt="GitHub" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="Git-logo.png" title="Git" alt="Git" class="img-fluid">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="Excel-Logo.png" title="Excel" alt="Excel" class="img-fluid">
-                </div> -->
                 <div class="row justify-content-start">
                     <div class="col-6 col-md-3 mb-4">
-                        <img src="python.png" title="Python" alt="Python" class="img-fluid" data-bs-toggle="tooltip"
+                        <img src="python.png" title="Python" alt="Python" class="img-fluid p-2 img-hover" data-bs-toggle="tooltip"
                             data-bs-placement="top"
                             data-bs-title="Python - A powerful programming language for data science and web development.">
                     </div>
@@ -496,12 +432,16 @@
 
             <h3 class="text-light text-start mt-5">Learning-</h3>
             <div class="row justify-content-start">
-                <!-- <div class="col-6 col-md-3 mb-4">
-                    <img src="Power-BI-Logo.png" title="Power BI" alt="Power BI" class="img-fluid">
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="react.png" title="React" alt="React" class="img-fluid" data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        data-bs-title="React - A platform for developing, shipping, and running applications in containers.">
                 </div>
                 <div class="col-6 col-md-3 mb-4">
-                    <img src="AWS.png" title="AWS" alt="AWS" class="img-fluid">
-                </div> -->
+                    <img src="docker.png" title="Docker" alt="Docker" class="img-fluid" data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        data-bs-title="Docker - A platform for developing, shipping, and running applications in containers.">
+                </div>
                 <div class="col-6 col-md-3 mb-4">
                     <img src="Power-BI-Logo.png" title="Power BI" alt="Power BI" class="img-fluid"
                         data-bs-toggle="tooltip" data-bs-placement="top"
@@ -512,18 +452,13 @@
                         data-bs-placement="top"
                         data-bs-title="AWS - Amazon Web Services, a comprehensive cloud computing platform offered by Amazon.">
                 </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="docker.png" title="Docker" alt="Docker" class="img-fluid" data-bs-toggle="tooltip"
-                        data-bs-placement="top"
-                        data-bs-title="Docker - A platform for developing, shipping, and running applications in containers.">
-                </div>
 
             </div>
         </div>
     </section>
     <!-- Fourth section -->
     <a name="fourthsec">
-        <hr>
+        <hr class="line border border-2">
     </a>
     <section class="container my-5">
         <h2 class="text-light text-start mb-4">Projects</h2>
@@ -631,7 +566,7 @@
     </section>
     <!-- Fifth section -->
     <a name="fifthsec">
-        <hr>
+        <hr class="line border border-2">
     </a>
     <section class="container my-5">
         <h2 class="text-light text-start mb-4">About Me</h2>
