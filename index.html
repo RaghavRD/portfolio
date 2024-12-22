@@ -625,6 +625,19 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
+        // Close navbar after clicking on a link
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        const navbarCollapse = document.getElementById('navbarSupportedContent');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const collapseInstance = new bootstrap.Collapse(navbarCollapse, {
+                    hide: true
+                });
+            });
+        });
+        
+        // Roles
         var typed = new Typed('#roles', {
             strings: ['Python Developer', 'Angular Developer', 'Django Developer', 'Data Analyst', 'YouTuber'],
             typeSpeed: 100, loop: true
