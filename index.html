@@ -64,6 +64,7 @@
 
         .text-custom-color:hover {
             color: #814BF6;
+            scale: 1.1;
         }
 
         .remark {
@@ -105,16 +106,26 @@
             transition: all ease-in-out 0.3s;
             cursor: none;
         }
+
+        .img-hover:hover {
+            /* scale: 1.2; */
+            transform: scale(1.2);
+        }
+
+        /* Apply blur to other images */
+        .img-hover.blur {
+            filter: blur(2px);
+            opacity: 0.5;
+            transition: all ease-in-out 0.3s;
+        }
+
         .text-hover:hover {
             transition: all ease-in-out 0.3s;
             cursor: none;
-            /* font-size: large; */
+            font-weight: 600;
             color: #FF665E !important;
         }
 
-        .img-hover:hover {
-            scale: 1.2;
-        }
 
         .img-container .img-hover:not(:hover) {
             filter: blur(4px);
@@ -157,6 +168,22 @@
             color: #551ecb;
         }
 
+        /* Default styling for paragraphs */
+        .hover-blur {
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Blur effect on non-hovered paragraphs */
+        .hover-blur.blurred {
+            filter: blur(3px); /* Adjust blur intensity */
+            opacity: 0.5; /* Optional: reduce opacity for better effect */
+        }
+
+        /* Focused paragraph remains clear */
+        .hover-blur:hover {
+            filter: none;
+            opacity: 1;
+        }
 
         /* Scrollbar */
         body::-webkit-scrollbar {
@@ -257,8 +284,9 @@
     </a>
     <section class="container my-5">
         <h2 class="text-light text-start mb-4">Work Experience</h2>
-        <div class="row text-light px-3 text-justify" style="text-align: justify;">
-            <h5 class="text-hover">Associate Softwear Developer | <span class="fst-italic h6" style="color: #a887f1;"> Tekhnologia
+        <div class="row text-light px-3" style="text-align: justify;">
+            <h5 class="text-hover">Associate Softwear Developer | <span class="fst-italic h6" style="color: #a887f1;">
+                    Tekhnologia
                     Innovation India </span><span class="float-end fst-italic opacity-75">Aug 24 - Present</span></h5>
             <li class="m-1"> Working as a Frontend Developer, focusing on building and enhancing the visual and
                 interactive aspects of websites using HTML, CSS, JavaScript, and React.</li>
@@ -351,7 +379,7 @@
     <a name="thirdsec">
         <hr class="line border border-2">
     </a>
-    <section class="container my-5">
+    <section class="container my-5" id="webpage-wrapper">
         <h2 class="text-light text-start mb-4">Skills</h2>
 
         <div class="fifth-sub2 text-center">
@@ -373,9 +401,7 @@
                     <div class="col-6 col-md-3 mb-4">
                         <img src="flask-logo.png" alt="Flask" class="img-fluid img-hover" loading="lazy">
                     </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="tkinter-logo.png" alt="Tkinter" class="img-fluid img-hover" loading="lazy">
-                    </div>
+                    
                     <div class="col-6 col-md-3 mb-4">
                         <img src="django.png" alt="Django" class="img-fluid img-hover" loading="lazy">
                     </div>
@@ -398,6 +424,9 @@
                         <img src="angular-logo.png" alt="Angular" class="img-fluid img-hover" loading="lazy">
                     </div>
                     <div class="col-6 col-md-3 mb-4">
+                        <img src="tkinter-logo.png" alt="Tkinter" class="img-fluid img-hover" loading="lazy">
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
                         <img src="github.jpg" alt="GitHub" class="img-fluid img-hover" loading="lazy">
                     </div>
                     <div class="col-6 col-md-3 mb-4">
@@ -413,21 +442,21 @@
             <h3 class="text-light text-start mt-5">Learning-</h3>
             <div class="row justify-content-start">
                 <div class="col-6 col-md-3 mb-4">
+                    <img src="Power-BI-Logo.png" alt="Power BI" class="img-fluid img-hover" loading="lazy">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
                     <img src="React-logo.png" alt="React" class="img-fluid img-hover" loading="lazy">
                 </div>
                 <div class="col-6 col-md-3 mb-4">
                     <img src="docker.png" alt="Docker" class="img-fluid img-hover" loading="lazy">
                 </div>
                 <div class="col-6 col-md-3 mb-4">
-                    <img src="Power-BI-Logo.png" alt="Power BI" class="img-fluid img-hover" loading="lazy">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
                     <img src="AWS.png" alt="AWS" class="img-fluid img-hover" loading="lazy">
                 </div>
-
             </div>
         </div>
     </section>
+
     <!-- Fourth section -->
     <a name="fourthsec">
         <hr class="line border border-2">
@@ -439,7 +468,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
                 <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/PAYEND" target="_blank">
-                <div class="card edu-custom h-100">
+                    <div class="card edu-custom h-100">
                         <img src="payend.png" alt="" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title">PAYEND App - Stock Index Border Predictor</h3>
@@ -448,32 +477,33 @@
                                 like Nifty, Nifty Bank with an accuracy rate of 98%. This comprehensive view of indices
                                 is
                                 very helpful for people who are interested in trading.</p>
-                            </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
             </div>
 
             <div class="col-lg-4 col-md-6 mb-4">
                 <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/Books-eCommerce-website"
-                target="_blank">
-                <div class="card edu-custom h-100">
+                    target="_blank">
+                    <div class="card edu-custom h-100">
                         <img src="eCommerce Website.jpg" alt="" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title">Mybooks - eCommerce Website</h3>
-                            
+
                             <p class="card-text">This project is an eCommerce website for buying books online. It
                                 provides
                                 users with a convenient and reliable resource to browse, search, and purchase their
                                 favorite
                                 books.</p>
-                            </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
             </div>
 
             <div class="col-lg-4 col-md-6 mb-4">
-                <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/Real-Time-NEWS-App" target="_blank">
-                <div class="card edu-custom h-100">
+                <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/Real-Time-NEWS-App"
+                    target="_blank">
+                    <div class="card edu-custom h-100">
                         <img src="Angular_NEWS_App.png" alt="" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title">Real Time NEWS App</h3>
@@ -481,30 +511,30 @@
                                 The
                                 app utilizes the News API to fetch news from various sources. Users can browse news from
                                 predefined sections such as Sports, Entertainment, Science, Health, and Tech.</p>
-                            </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
             </div>
 
             <div class="col-lg-4 col-md-6 mb-4">
-                <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/Movie-Recommendation-System"
-                    target="_blank">
-                <div class="card edu-custom h-100">
+                <a class="" style="text-decoration: none;"
+                    href="https://github.com/RaghavRD/Movie-Recommendation-System" target="_blank">
+                    <div class="card edu-custom h-100">
                         <img src="MRS1.jpg" alt="" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title">Movie Recommendation System</h3>
                             <p class="card-text">This project is designed to provide personalized movie recommendations
                                 based on user input and calculates similarity scores to generate relevant 5 movie
                                 recommendations.</p>
-                            </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
             </div>
 
             <div class="col-lg-4 col-md-6 mb-4">
-                <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/Geographic-Plotting-Using-Python"
-                target="_blank">
-                <div class="card edu-custom h-100">
+                <a class="" style="text-decoration: none;"
+                    href="https://github.com/RaghavRD/Geographic-Plotting-Using-Python" target="_blank">
+                    <div class="card edu-custom h-100">
                         <img src="Popuation density of India.jpg" alt="" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title">Population Density Using Python</h3>
@@ -512,23 +542,24 @@
                                 population density across states using an interactive map, offering insights at a
                                 glance.
                                 Discover patterns and trends effortlessly.</p>
-                            </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
             </div>
 
             <div class="col-lg-4 col-md-6 mb-4">
-                <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/QR-Code-Generator" target="_blank">
-                <div class="card edu-custom h-100">
+                <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/QR-Code-Generator"
+                    target="_blank">
+                    <div class="card edu-custom h-100">
                         <img src="CH E.png" alt="" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title">Chrome Extension</h3>
                             <p class="card-text">This extension simplifies the process of generating QR codes of web
                                 pages
                                 on desktop, allowing users to quickly share URLs or access pages on mobile devices.</p>
-                            </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -537,6 +568,7 @@
                 see More projects..</a>
         </p>
     </section>
+
     <!-- Fifth section -->
     <a name="fifthsec">
         <hr class="line border border-2">
@@ -548,9 +580,8 @@
             <div class="col-lg-4 mb-4 text-center">
                 <img src="Devloper-image.jpg" alt="Raghav Desai Image" class=" img-fluid rounded">
             </div>
-
             <div class="col-lg-8 text-light">
-                <p style="text-align: justify;">
+                <p class="hover-blur" style="text-align: justify;">
                     Hello, I am Raghav Ramchandra Desai, a highly motivated and detail-oriented Software
                     Developer with a passion for creating practical solutions to real-world problems. I hold
                     a BE in Electronics and Telecommunication Engineering with Honors in AI for Big Data
@@ -558,28 +589,28 @@
                     has equipped me with a strong foundation in languages such as Python, SQL, Django, Angular,
                     and TypeScript, among others.
                 </p>
-                <p style="text-align: justify;">
+                <p class="hover-blur" style="text-align: justify;">
                     Currently, I am working as an Angular Developer Intern at GeniaTEQ, where I develop and
                     maintain Angular applications, implement new features, and ensure a positive user experience
                     through seamless operation and robust design. My project portfolio includes innovative
                     applications like PAYEND, a stock market range identifier with a 98% accuracy rate, and
                     QuickVista, a real-time news application.
                 </p>
-                <p style="text-align: justify;">
+                <p class="hover-blur" style="text-align: justify;">
                     Beyond my professional endeavors, I have a <a href="https://www.youtube.com/@rulescom"
-                        style="color: #a887f1;"><strong class="text-hover">YouTube channel</strong></a>
+                        style="color: #a887f1;"><span class="text-hover">YouTube channel</span></a>
                     with over 8.5k+ subscribers, where I create educational content on engineering topics,
                     demonstrating my commitment to knowledge sharing. I have also secured 2nd place in a poster
                     presentation competition and actively contribute as a volunteer with Lions Clubs International.
                 </p>
-                <p style="text-align: justify;">
+                <p class="hover-blur" style="text-align: justify;">
                     My personal interests are as diverse as my skill set. I enjoy listening to audiobooks,
                     trading in the stock market, and am proficient in Marathi, Hindi, English, and Japanese.
                 </p>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer 6 -->
     <a name="finalsec"></a>
     <footer class="footer">
@@ -589,15 +620,16 @@
 
                     <div class="col-xl-12 order-2 order-xl-1">
                         <ul class="nav justify-content-center">
-                            <li class="mx-3"><a class="nav-link text-custom-color" href="tel:+9657889081">📞 Contact
+                            <li class="mx-3"><a class="nav-link text-hover text-custom-color" href="tel:+9657889081">📞
+                                    Contact
                                     Me</a></li>
-                            <li class="mx-3"><a class="nav-link text-custom-color"
+                            <li class="mx-3"><a class="nav-link text-hover text-custom-color"
                                     href="https://www.linkedin.com/in/raghav-desai-772r547" target="_blank"><img
                                         src="linkedin.png" style="width: 20px;"> LinkedIn</a></li>
-                            <li class="mx-3"><a class="nav-link text-custom-color"
+                            <li class="mx-3"><a class="nav-link text-hover text-custom-color"
                                     href="mailto:raghavdesai774@gmail.com" target="_blank">📧 Send EMail</a></li>
                             <li class="mx-3">
-                                <a class="nav-link text-custom-color" href="Raghav_Desai.pdf"
+                                <a class="nav-link text-hover text-custom-color" href="Raghav_Desai.pdf"
                                     download="Raghav Desai.pdf">⬇️Download Resume</a>
                             </li>
                         </ul>
@@ -636,7 +668,7 @@
                 });
             });
         });
-        
+
         // Roles
         var typed = new Typed('#roles', {
             strings: ['Python Developer', 'Angular Developer', 'Django Developer', 'Data Analyst', 'YouTuber'],
@@ -705,8 +737,8 @@
                 cursorOutline.style.visibility = "visible";
             });
         });
-        const imgHoverElements = document.querySelectorAll(".img-hover");
 
+        const imgHoverElements = document.querySelectorAll(".img-hover");
         imgHoverElements.forEach((img) => {
             img.addEventListener("mouseenter", () => {
                 imgHoverElements.forEach((otherImg) => {
@@ -719,6 +751,25 @@
             img.addEventListener("mouseleave", () => {
                 imgHoverElements.forEach((otherImg) => {
                     otherImg.classList.remove("blur");
+                });
+            });
+        });
+
+        // Select all paragraphs with the 'hover-blur' class
+        const paragraphs = document.querySelectorAll(".hover-blur");
+        // Add hover effects
+        paragraphs.forEach((paragraph) => {
+            paragraph.addEventListener("mouseenter", () => {
+                paragraphs.forEach((p) => {
+                    if (p !== paragraph) {
+                        p.classList.add("blurred"); // Blur other paragraphs
+                    }
+                });
+            });
+
+            paragraph.addEventListener("mouseleave", () => {
+                paragraphs.forEach((p) => {
+                    p.classList.remove("blurred"); // Remove blur from all paragraphs
                 });
             });
         });
