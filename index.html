@@ -1,780 +1,473 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Raghav's Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="description" content="Raghav Desai — Portfolio, Projects, Skills, Experience and Contact." />
+    <meta name="color-scheme" content="dark light" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Hind&family=IBM+Plex+Sans:ital@1&family=Noto+Sans:wght@300;500&family=Poppins:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
         rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap"
-        rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style_css.css">
 
-    <!-- seo -->
-    <meta name="description" content="Portfolio website · Raghav's portfolio" />
-    <meta name="keywords"
-        content="Raghav's portfolio website, Raghav desai portfolio website, portfolio website, raghav github, raghavrd github, raghav portfolio, raghav desai portfolio" />
-    <meta name="copyright" content="Copyright © 2023 'Raghav's portfolio' All Rights Reserved." />
-    <meta name="author" content="Raghav Desai" />
-    <style>
-        * {
-            font-family: "Roboto", serif;
-            cursor: none;
-        }
-
-        .cursor-dot {
-            width: 5px;
-            height: 5px;
-            background-color: rgb(211, 211, 211);
-            z-index: 500;
-        }
-
-        .cursor-outline {
-            width: 30px;
-            height: 30px;
-            border: 2px solid rgb(173, 173, 173);
-            z-index: 500;
-        }
-
-        .cursor-dot,
-        .cursor-outline {
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            border-radius: 50%;
-            z-index: 500;
-        }
-
-        .text-custom-color {
-            color: white;
-        }
-
-        .text-custom-color:hover {
-            color: #814BF6;
-            scale: 1.1;
-        }
-
-        .remark {
-            color: #FF665E;
-            font-weight: 550;
-            font-size: medium;
-        }
-
-        /* General styles */
-        .edu-custom {
-            background-color: #f5f5f5;
-        }
-
-        .edu-custom:hover {
-            transition: all ease-in-out 0.2s;
-            background-color: #a887f1;
-            color: white;
-            cursor: none;
-
-            .card-text {
-                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-            }
-
-            .remark {
-                color: white;
-                font-weight: 600;
-            }
-        }
-
-        /* Hide the custom cursor on hover */
-        .edu-custom:hover~.cursor-dot,
-        .edu-custom:hover~.cursor-outline,
-        .img-hover:hover~.cursor-dot,
-        .img-hover:hover~.cursor-outline {
-            visibility: hidden;
-        }
-
-        .img-hover {
-            transition: all ease-in-out 0.3s;
-            cursor: none;
-        }
-
-        .img-hover:hover {
-            /* scale: 1.2; */
-            transform: scale(1.2);
-        }
-
-        /* Apply blur to other images */
-        .img-hover.blur {
-            filter: blur(2px);
-            opacity: 0.5;
-            transition: all ease-in-out 0.3s;
-        }
-
-        .text-hover:hover {
-            transition: all ease-in-out 0.3s;
-            cursor: none;
-            font-weight: 600;
-            color: #FF665E !important;
-        }
-
-
-        .img-container .img-hover:not(:hover) {
-            filter: blur(4px);
-            opacity: 0.6;
-            transform: scale(1);
-        }
-
-        hr {
-            border: 0;
-            height: 1.5px;
-            margin: 30px 80px;
-            background: #814BF6;
-            font-size: 16px;
-        }
-
-        .fifth-section {
-            margin: 2rem 0;
-        }
-
-        .fifth-sub2 h3 {
-            margin: 20px 0;
-        }
-
-        .fifth-sub2 img {
-            margin: 8px;
-            height: 4em;
-        }
-
-
-        .card-img-top {
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover .card-img-top {
-            transform: scale(1.1);
-            cursor: none;
-        }
-
-        .card-title {
-            color: #551ecb;
-        }
-
-        /* Default styling for paragraphs */
-        .hover-blur {
-            transition: filter 0.3s ease, opacity 0.3s ease;
-        }
-
-        /* Blur effect on non-hovered paragraphs */
-        .hover-blur.blurred {
-            filter: blur(3px); /* Adjust blur intensity */
-            opacity: 0.5; /* Optional: reduce opacity for better effect */
-        }
-
-        /* Focused paragraph remains clear */
-        .hover-blur:hover {
-            filter: none;
-            opacity: 1;
-        }
-
-        /* Scrollbar */
-        body::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-            background: gray;
-        }
-
-        body::-webkit-scrollbar {
-            background-color: transparent;
-
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background: white;
-            border-radius: 15px;
-        }
-
-        .title-hero-text {
-            font-size: 1.6em;
-        }
-
-        .title-second-text {
-            font-size: 1em;
-        }
-
-        .line {
-            color: #814BF6;
-        }
-    </style>
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
 </head>
 
-<body style="background-color: #1E1842;">
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
-    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #2f285b;">
-        <div class="container-fluid container">
-            <a class="navbar-brand text-light" href="#"><strong>Raghav's Portfolio</strong></a>
-            <!-- Button for smaller screens (hamburger menu) -->
-            <button class="btn btn-sm navbar-toggler focus-ring focus-ring-light" style="background-color:#814BF6;"
-                type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span> <!-- Hamburger icon -->
-            </button>
+<body>
+    <canvas id="star-canvas" aria-hidden="true"></canvas>
+    <div class="progress-bar" id="progress"></div>
 
-            <!-- Navbar items (collapse on smaller screens) -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-custom-color" aria-current="page" href="#firstsec">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-custom-color" href="#sixthsec">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-custom-color" href="#secondsec">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-custom-color" href="#thirdsec">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-custom-color" href="#fourthsec">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-custom-color" href="#fifthsec">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-custom-color" href="#finalsec">Connect with Me</a>
-                    </li>
+    <!-- Sticky Nav (appears after hero) -->
+    <header class="nav" id="site-nav" role="navigation" aria-label="Primary">
+        <div class="nav-wrap">
+            <div class="brand">Raghav's Portfolio</div>
+            <div class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="menu">
+                <span></span>
+            </div>
+            <nav id="menu" class="menu" role="menubar">
+                <ul>
+                    <li><a href="#about" data-spy>About</a></li>
+                    <li><a href="#skills" data-spy>Skills</a></li>
+                    <li><a href="#projects" data-spy>Projects</a></li>
+                    <li><a href="#experience" data-spy>Experience</a></li>
+                    <!-- <li><a href="#testimonials" data-spy>Testimonials</a></li> -->
+                    <li><a href="#contact" data-spy>Contact</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- First section -->
-    <a name="firstsec"></a>
-    <section class="container my-5">
-        <div class="row align-items-center h-100">
-            <div class="col-md-6 text-start px-3 h2 text-light">
-                <h1 class="title-hero-text">Hi, My name is <span class="dev-name" style="color: #814BF6;">Raghav</span>
-                </h1>
-                <div class="title-second-text">
-                    and I am a passionate<br>
-                    <span id="roles" style="color: #814BF6;"></span>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <img src="bg.gif" alt="Background" class="img-fluid">
-            </div>
-        </div>
-    </section>
-
-    <!-- Section sixth -->
-    <a name="sixthsec">
-        <hr class="line border border-2">
-    </a>
-    <section class="container my-5">
-        <h2 class="text-light text-start mb-4">Work Experience</h2>
-        <div class="row text-light px-3" style="text-align: justify;">
-            <h5 class="text-hover">Associate Software Developer | <span class="fst-italic h6" style="color: #a887f1;">
-                    Tekhnologia
-                    Innovations India </span><span class="float-end fst-italic opacity-75">Aug 24 - Present</span></h5>
-            <li class="m-1"> Working as a Frontend Developer, focusing on building and enhancing the visual and
-                interactive aspects of websites using Django, HTML, CSS and JavaScript.</li>
-            <li class="m-1"> Collaborating with design and backend teams to implement responsive, high-performance user
-                interfaces while optimizing components for fast load times and smooth user experiences.</li>
-            <li class="m-1"> Involved in optimizing website components to ensure fast load times and smooth user
-                experience.</li>
-            <li class="m-1"> Contributed a seamless integration between
-                frontend and backend components, focusing on backend logic.</li>
-            <li class="m-1"> Currently leading efforts on a React-based project, implementing dynamic UI elements while
-                maintaining code efficiency and scalability.</li>
-
-            <h5 class="text-hover mt-4">Angular Developer | <span class="fst-italic h6"
-                    style="color: #a887f1;">GeniaTEQ</span><span class="float-end fst-italic opacity-75">Apr 24 - Jul
-                    24</span></h5>
-            <li class="m-1"> Developed and maintained Angular applications, implementing new features and
-                functionalities.</li>
-            <li class="m-1"> Collaborated with team members to troubleshoot and resolve issues, ensuring seamless
-                operation of applications.</li>
-            <li class="m-1"> Assisted in the design and implementation of user interfaces, ensuring a positive user
-                experience.</li>
-            <li class="m-1"> Conducted testing and debugging of applications to ensure they meet quality standards.</li>
-        </div>
-    </section>
-
-    <!-- Second section -->
-    <a name="secondsec">
-        <hr class="line border border-2">
-    </a>
-    <section class="container my-5">
-        <h2 class="text-light text-start mb-4">Education</h2>
-
-        <div class="row">
-            <!-- SSC Card -->
-            <div class="col-md-4 mb-4">
-                <div class="card text-dark edu-custom" data-bs-toggle="modal" data-bs-target="#modalSSC">
-                    <div class="card-body">
-                        <h5 class="card-title">X (SSC)</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">(2014 - 2015)</h6>
-                        <p class="card-text remark">83.00%</p>
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="home" aria-label="Welcome">
+            <div class="container">
+                <div class="glass content-card reveal visible" style="text-align:center">
+                    <h1 class="breathing">Hi, I'm <span class="name-gradient">Raghav Desai</span></h1>
+                    <p class="lead" id="typewriter" aria-live="polite">&nbsp;</p>
+                    <div class="cta-row">
+                        <a class="btn" href="#projects">Explore My Work</a>
+                        <a class="btn ghost" href="#contact">Contact Me</a>
                     </div>
                 </div>
             </div>
-            <!-- Diploma Card -->
-            <div class="col-md-4 mb-4">
-                <div class="card text-dark edu-custom" data-bs-toggle="modal" data-bs-target="#modalDiploma">
-                    <div class="card-body">
-                        <h5 class="card-title">Diploma (E&TC)</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">(2015 - 2018)</h6>
-                        <p class="card-text remark">67.41%</p>
-                    </div>
-                </div>
-            </div>
-            <!-- BE Card -->
-            <div class="col-md-4 mb-4">
-                <div class="card text-dark edu-custom" data-bs-toggle="modal" data-bs-target="#modalBE">
-                    <div class="card-body">
-                        <h5 class="card-title">BE (E&TC Hons - AI for Big Data Analysis)</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">(2018 - 2022)</h6>
-                        <p class="card-text remark">71.90%</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div class="scroll-indicator" aria-hidden="true">Scroll Down <span class="arrow"></span></div>
+        </section>
 
-        <h3 class="text-light text-start mb-2 mt-5">Courses</h3>
-        <div class="row">
-            <!-- Full Stack Python Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card text-dark edu-custom" data-bs-toggle="modal" data-bs-target="#modalPython">
-                    <div class="card-body">
-                        <h5 class="card-title">Full Stack Diploma in Python</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">(Feb 2022 - Jul 2022)</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Data Science Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card text-dark edu-custom" data-bs-toggle="modal" data-bs-target="#modalDataScience">
-                    <div class="card-body">
-                        <h5 class="card-title">Diploma in Data Science</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">(Feb 2022 - Jul 2022)</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Third section -->
-    <a name="thirdsec">
-        <hr class="line border border-2">
-    </a>
-    <section class="container my-5" id="webpage-wrapper">
-        <h2 class="text-light text-start mb-4">Skills</h2>
-
-        <div class="fifth-sub2 text-center">
-            <h3 class="text-light text-start">Learned So Far-</h3>
-            <div class="row justify-content-start">
-                <div class="row justify-content-start">
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="python.png" alt="Python" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="mysql-logo.png" alt="MySQL" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="pandas-logo.png" alt="Pandas" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="numpy-logo.png" alt="NumPy" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="flask-logo.png" alt="Flask" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="django.png" alt="Django" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="html.png" alt="HTML" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="css-3.png" alt="CSS" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="js.png" alt="JavaScript" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="ts.png" alt="TypeScript" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="Bootstrap_logo.png" alt="Bootstrap" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="angular-logo.png" alt="Angular" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="tkinter-logo.png" alt="Tkinter" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="github.jpg" alt="GitHub" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="Git-logo.png" alt="Git" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="Excel-Logo.png" alt="Excel" class="img-fluid img-hover" loading="lazy">
-                    </div>
-                </div>
-
-            </div>
-
-            <h3 class="text-light text-start mt-5">Learning-</h3>
-            <div class="row justify-content-start">
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="Power-BI-Logo.png" alt="Power BI" class="img-fluid img-hover" loading="lazy">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="React-logo.png" alt="React" class="img-fluid img-hover" loading="lazy">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="docker.png" alt="Docker" class="img-fluid img-hover" loading="lazy">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="AWS.png" alt="AWS" class="img-fluid img-hover" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fourth section -->
-    <a name="fourthsec">
-        <hr class="line border border-2">
-    </a>
-    <section class="container my-5">
-        <h2 class="text-light text-start mb-4">Projects</h2>
-
-        <div class="row justify-content-center">
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/PAYEND" target="_blank">
-                    <div class="card edu-custom h-100">
-                        <img src="payend.png" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h3 class="card-title">PAYEND App - Stock Index Border Predictor</h3>
-                            <p class="card-text">This project provides a maximum limit of India's all popular stock
-                                indices
-                                like Nifty, Nifty Bank with an accuracy rate of 98%. This comprehensive view of indices
-                                is
-                                very helpful for people who are interested in trading.</p>
+        <!-- ABOUT -->
+        <section id="about" aria-label="About Me">
+            <div class="container reveal slide-up">
+                <div class="about glass content-card">
+                    <img src="./Devloper-image.jpg" alt="Raghav Desai headshot" loading="lazy" />
+                    <div>
+                        <h2>About Me</h2>
+                        <p>I'm <strong>Raghav Desai</strong>, a <em>Full-Stack Software Engineer</em> specializing in
+                            Python, Django, Angular, SQL, and Azure Cloud. I build scalable, real-time web applications
+                            with clean architecture, reliable backend systems, and modern UI experiences.</p>
+                        <p>I enjoy solving complex problems through thoughtful engineering: integrating secure REST
+                            APIs, optimizing databases, and applying cloud-native design to drive performance at scale.
+                            My experience spans enterprise solutions like stock-market monitoring applications,
+                            eCommerce platforms, and real-time news systems.</p>
+                        <p>Currently working as an Trainee Software Engineer at MASTEK, where I’m
+                            continuously enhancing my expertise in cloud deployments, system reliability, and
+                            production-grade application development.</p>
+                        <div class="tags" aria-label="Key skills">
+                            <span class="tag">JavaScript</span><span class="tag">Azure</span><span
+                                class="tag">TypeScript</span><span class="tag">Python</span><span
+                                class="tag">Django</span><span class="tag">Angular</span><span
+                                class="tag">SQL</span><span class="tag">UI/UX</span>
+                        </div>
+                        <div class="cta-row" style="margin-top:14px">
+                            <a class="btn" href="./Raghav_Desai.pdf" download>Download Resume</a>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
+        </section>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/Books-eCommerce-website"
-                    target="_blank">
-                    <div class="card edu-custom h-100">
-                        <img src="eCommerce Website.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h3 class="card-title">Mybooks - eCommerce Website</h3>
-
-                            <p class="card-text">This project is an eCommerce website for buying books online. It
-                                provides
-                                users with a convenient and reliable resource to browse, search, and purchase their
-                                favorite
-                                books.</p>
-                        </div>
+        <!-- SKILLS -->
+        <section id="skills" aria-label="Skills & Technologies">
+            <div class="container reveal slide-up">
+                <h2 class="glass content-card" style="padding:12px 18px">Skills & Technologies</h2>
+                <div class="skills-grid" id="skillsGrid" style="margin-top:14px">
+                    <div class="skill-card" data-skill="90">
+                        <h3>Frontend</h3>
+                        <p>HTML • CSS • JS/TS • Angular • React</p>
+                        <div class="skill-bar"><span></span></div>
                     </div>
-                </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/Real-Time-NEWS-App"
-                    target="_blank">
-                    <div class="card edu-custom h-100">
-                        <img src="Angular_NEWS_App.png" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h3 class="card-title">Real Time NEWS App</h3>
-                            <p class="card-text">This Angular application provides users with real-time news updates.
-                                The
-                                app utilizes the News API to fetch news from various sources. Users can browse news from
-                                predefined sections such as Sports, Entertainment, Science, Health, and Tech.</p>
-                        </div>
+                    <div class="skill-card" data-skill="89">
+                        <h3>Backend</h3>
+                        <p>Python • Django • REST • Auth • Caching</p>
+                        <div class="skill-bar"><span></span></div>
                     </div>
-                </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <a class="" style="text-decoration: none;"
-                    href="https://github.com/RaghavRD/Movie-Recommendation-System" target="_blank">
-                    <div class="card edu-custom h-100">
-                        <img src="MRS1.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h3 class="card-title">Movie Recommendation System</h3>
-                            <p class="card-text">This project is designed to provide personalized movie recommendations
-                                based on user input and calculates similarity scores to generate relevant 5 movie
-                                recommendations.</p>
-                        </div>
+                    <div class="skill-card" data-skill="80">
+                        <h3>Data</h3>
+                        <p>SQL • NumPy • Pandas • Visualization</p>
+                        <div class="skill-bar"><span></span></div>
                     </div>
-                </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <a class="" style="text-decoration: none;"
-                    href="https://github.com/RaghavRD/Geographic-Plotting-Using-Python" target="_blank">
-                    <div class="card edu-custom h-100">
-                        <img src="Popuation density of India.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h3 class="card-title">Population Density Using Python</h3>
-                            <p class="card-text">Explore India's demographics interactively! This project visualizes
-                                population density across states using an interactive map, offering insights at a
-                                glance.
-                                Discover patterns and trends effortlessly.</p>
-                        </div>
+                    <div class="skill-card" data-skill="75">
+                        <h3>Tools</h3>
+                        <p>Git • CI/CD • SonarQube</p>
+                        <div class="skill-bar"><span></span></div>
                     </div>
-                </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <a class="" style="text-decoration: none;" href="https://github.com/RaghavRD/QR-Code-Generator"
-                    target="_blank">
-                    <div class="card edu-custom h-100">
-                        <img src="CH E.png" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h3 class="card-title">Chrome Extension</h3>
-                            <p class="card-text">This extension simplifies the process of generating QR codes of web
-                                pages
-                                on desktop, allowing users to quickly share URLs or access pages on mobile devices.</p>
-                        </div>
+                    <div class="skill-card" data-skill="88">
+                        <h3>UX</h3>
+                        <p>Accessibility • Motion • Prototyping</p>
+                        <div class="skill-bar"><span></span></div>
                     </div>
-                </a>
-            </div>
-        </div>
-
-        <p class="text-end text-hover" style="text-decoration: none;">
-            <a href="https://github.com/RaghavRD?tab=repositories" target="_blank" class="text-custom-color">To
-                see More projects..</a>
-        </p>
-    </section>
-
-    <!-- Fifth section -->
-    <a name="fifthsec">
-        <hr class="line border border-2">
-    </a>
-    <section class="container my-5">
-        <h2 class="text-light text-start mb-4">About Me</h2>
-
-        <div class="row align-items-center">
-            <div class="col-lg-4 mb-4 text-center">
-                <img src="Devloper-image.jpg" alt="Raghav Desai Image" class=" img-fluid rounded">
-            </div>
-            <div class="col-lg-8 text-light">
-                <p class="hover-blur" style="text-align: justify;">
-                    Welcome! I’m Raghav Ramchandra Desai, a Software Developer with a passion for building innovative
-                    solutions that solve real-world problems. With a background in Electronics and Telecommunication
-                    Engineering and Honors in AI for Big Data Analysis, I bring a strong technical foundation and a
-                    creative approach to my work.
-                </p>
-                <p class="hover-blur" style="text-align: justify;">
-                    My skills span a range of technologies, including Python, SQL, Django, Angular and
-                    JavaScript. I have experience developing user-focused applications, such as PAYEND, a stock market
-                    range identifier with 99% accuracy, and QuickVista, a real-time news application built with Angular.
-                </p>
-                <p class="hover-blur" style="text-align: justify;">
-                    Beyond development, I enjoy sharing knowledge through my <a href="https://www.youtube.com/@rulescom"
-                        style="color: #a887f1;" target="_blank"><span class="text-hover">YouTube channel</span></a>, which has 8.5k+
-                    subscribers and features educational content on engineering topics. My dedication to learning and
-                    teamwork is also reflected in my volunteering experience with Lions Clubs International and my
-                    recognition in academic competitions.
-                </p>
-                <p class="hover-blur" style="text-align: justify;">
-                    When I’m not coding, I love listening to audiobooks, trading in the stock market, and exploring new
-                    ideas. I am fluent in Marathi, Hindi, English, and Japanese, which helps me connect with a diverse
-                    audience.
-                </p>
-                <p class="hover-blur" style="text-align: justify;">
-                    Feel free to browse through my work and projects. Let’s create something incredible together!
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer 6 -->
-    <a name="finalsec"></a>
-    <footer class="footer">
-        <div class="py-3 py-md-5 py-xl-8" style="background-color: #2f285b;">
-            <div class="container overflow-hidden">
-                <div class="row gy-3 gy-md-5 gy-xl-0 align-items-sm-center">
-
-                    <div class="col-xl-12 order-2 order-xl-1">
-                        <ul class="nav justify-content-center">
-                            <li class="mx-3"><a class="nav-link text-hover text-custom-color" href="tel:+9657889081">📞
-                                    Contact
-                                    Me</a></li>
-                            <li class="mx-3"><a class="nav-link text-hover text-custom-color"
-                                    href="https://www.linkedin.com/in/raghav-desai-772r547" target="_blank"><img
-                                        src="linkedin.png" style="width: 20px;"> LinkedIn</a></li>
-                            <li class="mx-3"><a class="nav-link text-hover text-custom-color"
-                                    href="mailto:raghavdesai774@gmail.com" target="_blank">📧 Send EMail</a></li>
-                            <li class="mx-3">
-                                <a class="nav-link text-hover text-custom-color" href="Raghav_Desai.pdf"
-                                    download="Raghav Desai.pdf">⬇️Download Resume</a>
-                            </li>
-                        </ul>
+                    <div class="skill-card" data-skill="70">
+                        <h3>Testing</h3>
+                        <p>Jest • Pytest • E2E</p>
+                        <div class="skill-bar"><span></span></div>
+                    </div>
+                    <div class="skill-card" data-skill="72">
+                        <h3>Cloud</h3>
+                        <p>Azure • AWS basics • Function App • Service Bus • Key Vault</p>
+                        <div class="skill-bar"><span></span></div>
+                    </div>
+                    <div class="skill-card" data-skill="65">
+                        <h3>Design</h3>
+                        <p>Figma • Systems • Tokens</p>
+                        <div class="skill-bar"><span></span></div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Copyright - Bootstrap Brain Component -->
-            <div class="py-2 py-md-5" style="background-color: #2f285b;">
-                <div class="container overflow-hidden">
-                    <div class="row">
-                        <div class="col">
-                            <div class="footer-copyright-wrapper text-light text-center">
-                                copyright &#169; | All rights reserved
+        <!-- PROJECTS -->
+        <section id="projects" aria-label="Projects">
+            <div class="container reveal slide-up">
+                <h2 class="glass content-card" style="padding:12px 18px">Projects</h2>
+                <div class="filters" role="tablist">
+                    <button class="filter-btn active" data-filter="all" role="tab">All</button>
+                    <button class="filter-btn" data-filter="tki">Tkinter Apps</button>
+                    <button class="filter-btn" data-filter="web">Web Apps</button>
+                    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                    <button class="filter-btn" data-filter="ext">Extensions</button>
+                </div>
+                <div class="projects-grid" id="projectsGrid">
+                    <article class="project" data-tags="tki">
+                        <img src="payend.png" alt="PAYEND App screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn" href="https://github.com/RaghavRD/PAYEND" target="_blank"
+                                    rel="noopener">GitHub</a>
                             </div>
                         </div>
+                        <div class="meta">
+                            <h3>PAYEND App - Stock Index Border Predictor</h3>
+                            <p class="muted">Predicts maximum limits for major Indian stock indices (e.g., Nifty, Bank
+                                Nifty) with ~98% accuracy to aid traders.</p>
+                            <div class="tech"><span class="tag">Python</span><span class="tag">Tkinter</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project" data-tags="web">
+                        <img src="eCommerce Website.jpg" alt="Mybooks ecommerce screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn" href="https://github.com/RaghavRD/Books-eCommerce-website"
+                                    target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Mybooks - eCommerce Website</h3>
+                            <p class="muted">Online bookstore with browsing, search, and checkout built for speed and
+                                reliability.</p>
+                            <div class="tech"><span class="tag">Python</span><span class="tag">Django</span><span
+                                    class="tag">SQLite</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project" data-tags="web">
+                        <img src="Angular_NEWS_App.png" alt="Real Time News app screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn" href="https://github.com/RaghavRD/Real-Time-NEWS-App" target="_blank"
+                                    rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Real Time NEWS App</h3>
+                            <p class="muted">Angular app fetching live news via News API with category filters for
+                                Sports, Entertainment, Science, Health, and Tech.</p>
+                            <div class="tech"><span class="tag">Angular</span><span class="tag">MySQL</span><span
+                                    class="tag">TypeScript</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project" data-tags="ml">
+                        <img src="MRS1.jpg" alt="Movie recommendation screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn" href="https://github.com/RaghavRD/Movie-Recommendation-System"
+                                    target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Movie Recommendation System</h3>
+                            <p class="muted">Computes similarity scores to recommend top 5 relevant movies based on user
+                                input.</p>
+                            <div class="tech"><span class="tag">Python</span><span class="tag">ML</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project" data-tags="ml">
+                        <img src="Popuation density of India.jpg" alt="Population density visualization"
+                            loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn" href="https://github.com/RaghavRD/Geographic-Plotting-Using-Python"
+                                    target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Population Density Using Python</h3>
+                            <p class="muted">Interactive map visualizing India’s population density by state to uncover
+                                patterns quickly.</p>
+                            <div class="tech"><span class="tag">Python</span><span class="tag">ML</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project" data-tags="ext">
+                        <img src="CH E.png" alt="Chrome extension QR demo" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn" href="https://github.com/RaghavRD/Movie-Recommendation-System"
+                                    target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Chrome Extension</h3>
+                            <p class="muted">Generate QR codes for current webpages to share or open on mobile
+                                instantly.</p>
+                            <div class="tech"><span class="tag">JavaScript</span></div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" aria-label="Experience">
+            <div class="container reveal slide-up">
+                <h2 class="glass content-card" style="padding:12px 18px">Experience</h2>
+                <div class="glass content-card">
+                    <div class="timeline">
+                        <div class="tl-item">
+                            <h3>Software Engineer Trainee — <span class="muted"><i>Mastek</i></span></h3>
+                            <p class="muted">Jun 2025 – Present • Pune, Maharashtra (Hybrid)</p>
+                            <ul>
+                                <li>Designed and developed scalable web applications using Python, Django, and Azure
+                                    Cloud Services.</li>
+                                <li>Built and integrated REST APIs improving backend processing time by 20%.</li>
+                                <li>Worked with Azure Function Apps, Service Bus, Storage, App Services & Container
+                                    Apps.</li>
+                                <li>Collaborated with cross-functional teams to debug, optimize, and deliver
+                                    production-ready solutions.</li>
+                                <li>Ensured code quality through unit testing, documentation, and best practices.</li>
+                            </ul>
+                        </div>
+                        <div class="tl-item">
+                            <h3>Associate Software Developer — <span class="muted"><i>Tekhnologia Innovations
+                                        India</i></span></h3>
+                            <p class="muted">Feb 2025 – May 2025 • Pune, Maharashtra (On-site)</p>
+                            <ul>
+                                <li>Developed & optimized Django services; reduced API response times by up to 25% via
+                                    SQL tuning.</li>
+                                <li>Improved client-facing UI with HTML, CSS, and JavaScript components.</li>
+                                <li>Integrated third-party APIs with proper validations and security.</li>
+                                <li>Contributed to Agile sprints and daily stand-ups.</li>
+                            </ul>
+                        </div>
+                        <div class="tl-item">
+                            <h3>Junior Python Developer — <span class="muted"><i>Tekhnologia Innovations
+                                        India</i></span></h3>
+                            <p class="muted">Aug 2024 – Jan 2025 • Pune, Maharashtra (On-site)</p>
+                            <ul>
+                                <li>Implemented backend automation features using Python.</li>
+                                <li>Built responsive UI components with HTML, CSS, jQuery, and JavaScript.</li>
+                                <li>Managed SQL databases; testing & debugging for stability.</li>
+                            </ul>
+                        </div>
+                        <div class="tl-item">
+                            <h3>Angular Developer Intern — <span class="muted"><i>GeniaTEQ</i></span></h3>
+                            <p class="muted">Apr 2024 – Jul 2024 • Pune, Maharashtra (On-site)</p>
+                            <ul>
+                                <li>Developed and optimized Angular components for dynamic, responsive apps.</li>
+                                <li>Integrated REST APIs ensuring smooth data flow and reduced load times.</li>
+                                <li>Implemented reusable UI components and better state management.</li>
+                                <li>Debugged and tuned performance to enhance UX; delivered features in Agile sprints.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tl-item">
+                            <h3>Data Analyst — <span class="muted"><i>Indika AI</i></span></h3>
+                            <p class="muted">Sep 2021 – Sep 2021 • Pune, Maharashtra (Remote)</p>
+                            <ul>
+                                <li>Performed data analysis and visualization using Excel and analytics tools to derive
+                                    insights.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials" aria-label="Testimonials">
+            <div class="container reveal slide-up">
+                <h2 class="glass content-card" style="padding:12px 18px">Testimonials</h2>
+                <div class="testi-grid" style="margin-top:14px">
+                    <div class="testi">
+                        <div class="who" style="margin-bottom: 10px;"><img class="avatar" src="./RK.jpeg" alt="Avatar" />
+                            <!-- <div><strong>Rupesh Khillare</strong>
+                                <div class="muted">Product Manager</div>
+                            </div> -->
+                            <div class="muted"><strong>Product Manager</strong>
+                            </div>
+                        </div>
+                        <p>“Fantastic collaborator — communicates clearly and ships quality on time.”</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CONTACT -->
+        <!-- <section id="contact" aria-label="Contact">
+            <div class="container reveal slide-up">
+                <div class="glass content-card">
+                    <h2>Contact</h2>
+                    <p class="muted">Have a project in mind? Let's build it.</p>
+                    <form id="contactForm" novalidate>
+                        <div class="field"><label for="name">Name</label><input class="input" id="name" name="name"
+                                type="text" placeholder="Your Name" required aria-required="true" />
+                            <div class="error" id="err-name"></div>
+                        </div>
+                        <div class="field"><label for="email">Email</label><input class="input" id="email" name="email"
+                                type="email" placeholder="you@example.com" required aria-required="true" />
+                            <div class="error" id="err-email"></div>
+                        </div>
+                        <div class="field"><label for="subject">Subject</label><input class="input" id="subject"
+                                name="subject" type="text" placeholder="Let's work together" required
+                                aria-required="true" />
+                            <div class="error" id="err-subject"></div>
+                        </div>
+                        <div class="field"><label for="message">Message</label><textarea class="input" id="message"
+                                name="message" rows="5" placeholder="Tell me about your idea…" required
+                                aria-required="true"></textarea>
+                            <div class="error" id="err-message"></div>
+                        </div>
+                        <div class="cta-row">
+                            <button class="btn" id="sendBtn" type="submit">Send Message</button>
+                            <a class="btn ghost" href="mailto:[YOUR EMAIL]">Email</a>
+                            <a class="btn ghost"
+                                href="https://wa.me/919657889081?text=Hello%20Raghav!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
+                                target="_blank" rel="noopener">WhatsApp</a>
+                        </div>
+                        <div id="formStatus" class="muted" role="status" aria-live="polite" style="margin-top:8px">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="socials" id="contact" aria-label="Social links">
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/raghav-desai-772r547/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn">
+                    <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+                        <path d="M100.28 448H7.4V148.9h92.88zm-46.44-338a53.67 53.67 0 
+                1 1 53.67-53.67 53.67 53.67 0 0 
+                1-53.67 53.67zM447.9 448h-92.7V302.4c0-34.7-.7-79.3-48.4-79.3
+                -48.5 0-55.9 37.9-55.9 76.9V448H158V148.9h89v40.8h1.3c12.4-23.5
+                42.7-48.4 87.9-48.4 94 0 111.3 61.9 111.3 142.3z" />
+                    </svg>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:raghavdesai774@gmail.com" aria-label="Email">
+                    <svg viewBox="0 0 512 512" fill="currentColor">
+                        <path d="M464 64H48C21.5 64 0 85.5 0 112v288c0 
+                26.5 21.5 48 48 48h416c26.5 0 48-21.5 
+                48-48V112c0-26.5-21.5-48-48-48zm0 
+                80l-208 150L48 144V112l208 
+                150 208-150v32z" />
+                    </svg>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/RaghavRD" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58 0-.28-.01-1.02-.02-2-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.9 0-1.3.47-2.36 1.24-3.19-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.22a11.4 11.4 0 0 1 6.01 0c2.29-1.54 3.3-1.22 3.3-1.22.66 1.65.24 2.87.12 3.17.77.83 1.24 1.89 1.24 3.19 0 4.58-2.81 5.6-5.49 5.9.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+                    </svg>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@rulescom" target="_blank" rel="noopener" aria-label="YouTube">
+                    <svg viewBox="0 0 576 512" fill="currentColor">
+                        <path d="M549.7 124.1c-6.3-23.7-24.8-42.2-48.4-48.5
+                C458.8 64 288 64 288 64s-170.8 0-213.3 
+                11.6c-23.6 6.2-42.1 24.8-48.4 
+                48.4C16 166.6 16 256 16 256s0 
+                89.4 10.3 131.9c6.3 23.7 24.8 
+                42.2 48.4 48.5C117.2 448 288 
+                448 288 448s170.8 0 213.3-11.6c23.6-6.2 
+                42.1-24.8 48.4-48.4C560 345.4 560 
+                256 560 256s0-89.4-10.3-131.9zM232 
+                336V176l142.7 80L232 336z" />
+                    </svg>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/919657889081?text=Hello%20Raghav!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
+                    target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.672.15-.198.297-.768.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.074-.149-.672-1.611-.922-2.206-.242-.58-.487-.501-.672-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.003a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.261c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884M20.52 3.484A11.815 11.815 0 0 0 12.05 0C5.495 0 .356 5.139.353 11.693c0 2.06.54 4.072 1.566 5.845L0 24l6.633-1.732a11.66 11.66 0 0 0 5.391 1.371h.005c6.554 0 11.693-5.139 11.696-11.69A11.613 11.613 0 0 0 20.52 3.484z" />
+                    </svg>
+
+                </a>
+
+            </div><br>
+            <div>© <span id="year"></span> Raghav Desai. All rights reserved.</div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script>
-        // Close navbar after clicking on a link
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        const navbarCollapse = document.getElementById('navbarSupportedContent');
+    <!-- Floating Action Buttons -->
+    <div class="fab">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" aria-label="Toggle theme">
+            <!-- default: dark theme => moon -->
+            <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true">
+                <!-- MOON (outline) -->
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21.752 15.002A9.718 9.718 0 0 1 12 21.75 9.75 9.75 0 1 1 12 2.25c.684 0 1.353.069 2 .2a7.5 7.5 0 0 0 7.752 12.552z" />
+            </svg>
+        </button>
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                const collapseInstance = new bootstrap.Collapse(navbarCollapse, {
-                    hide: true
-                });
-            });
-        });
+        <!-- Scroll to Top -->
+        <button id="toTop" aria-label="Back to top" title="Back to top" style="display:none">
+            <svg id="upIcon" viewBox="0 0 24 24" aria-hidden="true">
+                <!-- CHEVRON UP (outline) -->
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+            </svg>
+        </button>
+    </div>
 
-        // Roles
-        var typed = new Typed('#roles', {
-            strings: ['Python Developer', 'Angular Developer', 'Django Developer', 'Data Analyst', 'YouTuber'],
-            typeSpeed: 100, loop: true
-        });
-
-        // Initialize Bootstrap tooltips
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
-
-        // Get references to the cursor elements
-        const cursorDot = document.querySelector("[data-cursor-dot]");
-        const cursorOutline = document.querySelector("[data-cursor-outline]");
-
-        window.addEventListener("mousemove", function (e) {
-            const posX = e.clientX;
-            const posY = e.clientY;
-
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
-
-        });
-
-        // Hide cursor on hover
-        const eduCards = document.querySelectorAll(".edu-custom");
-        const imgHover = document.querySelectorAll(".img-hover");
-        const textHover = document.querySelectorAll(".text-hover");
-
-        textHover.forEach((card) => {
-            card.addEventListener("mouseenter", () => {
-                cursorDot.style.visibility = "hidden";
-                cursorOutline.style.visibility = "hidden";
-            });
-
-            card.addEventListener("mouseleave", () => {
-                cursorDot.style.visibility = "visible";
-                cursorOutline.style.visibility = "visible";
-            });
-        });
-        imgHover.forEach((card) => {
-            card.addEventListener("mouseenter", () => {
-                cursorDot.style.visibility = "hidden";
-                cursorOutline.style.visibility = "hidden";
-            });
-
-            card.addEventListener("mouseleave", () => {
-                cursorDot.style.visibility = "visible";
-                cursorOutline.style.visibility = "visible";
-            });
-        });
-        eduCards.forEach((card) => {
-            card.addEventListener("mouseenter", () => {
-                cursorDot.style.visibility = "hidden";
-                cursorOutline.style.visibility = "hidden";
-            });
-
-            card.addEventListener("mouseleave", () => {
-                cursorDot.style.visibility = "visible";
-                cursorOutline.style.visibility = "visible";
-            });
-        });
-
-        const imgHoverElements = document.querySelectorAll(".img-hover");
-        imgHoverElements.forEach((img) => {
-            img.addEventListener("mouseenter", () => {
-                imgHoverElements.forEach((otherImg) => {
-                    if (otherImg !== img) {
-                        otherImg.classList.add("blur");
-                    }
-                });
-            });
-
-            img.addEventListener("mouseleave", () => {
-                imgHoverElements.forEach((otherImg) => {
-                    otherImg.classList.remove("blur");
-                });
-            });
-        });
-
-        // Select all paragraphs with the 'hover-blur' class
-        const paragraphs = document.querySelectorAll(".hover-blur");
-        // Add hover effects
-        paragraphs.forEach((paragraph) => {
-            paragraph.addEventListener("mouseenter", () => {
-                paragraphs.forEach((p) => {
-                    if (p !== paragraph) {
-                        p.classList.add("blurred"); // Blur other paragraphs
-                    }
-                });
-            });
-
-            paragraph.addEventListener("mouseleave", () => {
-                paragraphs.forEach((p) => {
-                    p.classList.remove("blurred"); // Remove blur from all paragraphs
-                });
-            });
-        });
-
-    </script>
 </body>
 
 </html>
