@@ -4,11 +4,17 @@ STARFIELD (Canvas Parallax)
 const canvas = document.getElementById('star-canvas');
 const ctx = canvas.getContext('2d');
 let w, h, dpr; let stars = [];
+// const LAYERS = [
+//     { depth: 0.25, count: 120, speed: 0.02 },
+//     { depth: 0.6, count: 180, speed: 0.06 },
+//     { depth: 1.0, count: 220, speed: 0.12 }
+// ];
 const LAYERS = [
-    { depth: 0.25, count: 120, speed: 0.02 },
-    { depth: 0.6, count: 180, speed: 0.06 },
-    { depth: 1.0, count: 220, speed: 0.12 }
+  { depth: 0.25, count: 120, speed: 0.01 },  // was 0.02
+  { depth: 0.6,  count: 180, speed: 0.03 },  // was 0.06
+  { depth: 1.0,  count: 220, speed: 0.06 }   // was 0.12
 ];
+
 function resize() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     w = canvas.width = Math.floor(innerWidth * dpr);
