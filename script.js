@@ -13,7 +13,7 @@ let w, h, dpr; let stars = [];
 
 // slower
 const LAYERS = [
-  { depth: 0.25, count: 120, speed: 0.01 },  // was 0.02
+    { depth: 0.25, count: 120, speed: 0.01 },  // was 0.02
   { depth: 0.6,  count: 180, speed: 0.03 },  // was 0.06
   { depth: 1.0,  count: 220, speed: 0.06 }   // was 0.12
 ];
@@ -222,19 +222,14 @@ function updateIcon(theme) {
     if (!icon) return;
 
     if (theme === 'light') {
-        // ✅ Heroicons 24 Solid — Sun (exact, with 8 rays)
+        // Heroicons 24 Solid — Moon (clean crescent)
         icon.innerHTML = `
       <path fill="currentColor"
         d="M21.752 15.002A9.718 9.718 0 0 1 12 21.75 9.75 9.75 0 1 1 12 2.25c.684 0 1.353.069 2 .2a7.5 7.5 0 0 0 7.752 12.552z" />`;
     } else {
-        // Heroicons 24 Solid — Moon (clean crescent)
+        // Heroicons 24 Solid — Sun (exact, with 8 rays)
         icon.innerHTML = `
       <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
         d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75Zm0 15a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM4.469 4.47a.75.75 0 0 1 1.06 0l1.59 1.59a.75.75 0 0 1-1.06 1.06l-1.59-1.59a.75.75 0 0 1 0-1.06Zm13.412 13.412a.75.75 0 0 1 0 1.06l-1.59 1.59a.75.75 0 1 1-1.06-1.06l1.59-1.59a.75.75 0 0 1 1.06 0ZM2.25 12a.75.75 0 0 1 .75-.75h2.25a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75Zm15.75-.75H20.25a.75.75 0 0 1 0 1.5h-2.25a.75.75 0 0 1 0-1.5ZM6.06 17.88a.75.75 0 0 1 1.06 0l1.59 1.59a.75.75 0 0 1-1.06 1.06l-1.59-1.59a.75.75 0 0 1 0-1.06Zm11.31-11.31a.75.75 0 0 1-1.06 1.06l-1.59-1.59a.75.75 0 0 1 1.06-1.06l1.59 1.59Z" />`;
     }
-        // correct but misaligned Sun from center
-    // icon.innerHTML = `
-    //   <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
-    //     d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>`;
-    // }
-  }
+}
