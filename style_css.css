@@ -73,7 +73,7 @@
     }
 
     html {
-        scroll-behavior: smooth
+        /* scroll-behavior: smooth; Handled by Lenis! */
     }
 
     body {
@@ -102,7 +102,9 @@
         top: 0;
         left: 0;
         height: 4px;
-        width: 0;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
         z-index: 9999;
         background: linear-gradient(90deg, var(--primary), var(--secondary));
         box-shadow: 0 0 12px rgba(14, 165, 233, .55);
@@ -430,28 +432,10 @@
         }
     }
 
-    /* Reveal */
+    /* Reveal - GSAP will handle the rest */
     .reveal {
         opacity: 0;
-        transform: translateY(20px) scale(.98);
-        transition: opacity .8s cubic-bezier(.22, .61, .36, 1), transform .8s cubic-bezier(.22, .61, .36, 1)
-    }
-
-    .reveal.visible {
-        opacity: 1;
-        transform: translateY(0) scale(1)
-    }
-
-    .slide-left {
-        transform: translateX(24px)
-    }
-
-    .slide-right {
-        transform: translateX(-24px)
-    }
-
-    .slide-up {
-        transform: translateY(24px)
+        visibility: hidden;
     }
 
     /* ABOUT */

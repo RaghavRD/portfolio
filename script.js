@@ -1,4 +1,29 @@
 /* ==========================
+   LENIS SMOOTH SCROLL
+   ========================== */
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+}
+
+/* ==========================
 STARFIELD (Canvas Parallax)
 ========================== */
 const canvas = document.getElementById('star-canvas');
@@ -95,11 +120,11 @@ const observerHero = new IntersectionObserver(([e]) => {
 observerHero.observe(document.querySelector('.hero'));
 
 const progress = document.getElementById('progress');
-addEventListener('scroll', () => {
-    const p = (scrollY) / (document.body.scrollHeight - innerHeight);
-    progress.style.width = Math.max(0, Math.min(1, p)) * 100 + '%';
+lenis.on('scroll', (e) => {
+    const p = scrollY / (document.body.scrollHeight - innerHeight);
+    progress.style.transform = `scaleX(${Math.max(0, Math.min(1, p))})`;
     document.getElementById('toTop').style.display = (scrollY > innerHeight * .6) ? 'block' : 'none';
-}, { passive: true });
+});
 
 const spyLinks = [...document.querySelectorAll('[data-spy]')];
 const sections = spyLinks.map(a => document.querySelector(a.getAttribute('href')));
@@ -120,25 +145,55 @@ hamburger.addEventListener('click', () => {
 menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
 
 /* ==========================
-   Reveal & Skill bars
+   Reveal & Skill bars (GSAP)
    ========================== */
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const el = entry.target; el.classList.add('visible');
-            if (el.querySelectorAll('.skill-bar > span').length) {
-                el.querySelectorAll('.skill-card').forEach((card, i) => {
-                    const pct = card.getAttribute('data-skill');
-                    const bar = card.querySelector('.skill-bar > span');
-                    setTimeout(() => bar.style.width = pct + '%', i * 120);
-                });
-            }
-            io.unobserve(el);
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(sec => {
+        // Animate elements with .reveal class
+        const reveals = sec.querySelectorAll('.reveal');
+        if (reveals.length > 0) {
+            gsap.fromTo(reveals, 
+                { y: 30, autoAlpha: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: sec,
+                        start: "top 80%",
+                    },
+                    y: 0,
+                    autoAlpha: 1,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power3.out"
+                }
+            );
+        }
+
+        // Animate Skill Bars
+        const cards = sec.querySelectorAll('.skill-card');
+        if (cards.length > 0) {
+            cards.forEach(card => {
+                const pct = card.getAttribute('data-skill');
+                const bar = card.querySelector('.skill-bar > span');
+                if(bar) {
+                    gsap.fromTo(bar, 
+                        { width: '0%' }, 
+                        {
+                            scrollTrigger: {
+                                trigger: sec,
+                                start: "top 85%",
+                            },
+                            width: pct + '%',
+                            duration: 1.5,
+                            ease: "power3.out",
+                            delay: 0.2
+                        }
+                    );
+                }
+            });
         }
     });
-}, { threshold: .25 });
-revealEls.forEach(el => io.observe(el));
+}
 
 /* ==========================
    Project filters
