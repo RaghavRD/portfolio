@@ -44,6 +44,7 @@
                     <li><a href="#about" data-spy>About</a></li>
                     <li><a href="#skills" data-spy>Skills</a></li>
                     <li><a href="#projects" data-spy>Projects</a></li>
+                    <li><a href="#opensource" data-spy>Open Source</a></li>
                     <li><a href="#experience" data-spy>Experience</a></li>
                     <!-- <li><a href="#testimonials" data-spy>Testimonials</a></li> -->
                     <li><a href="#contact" data-spy>Contact</a></li>
@@ -82,9 +83,9 @@
                             APIs, optimizing databases, and applying cloud-native design to drive performance at scale.
                             My experience spans enterprise solutions like stock-market monitoring applications,
                             eCommerce platforms, and real-time news systems.</p>
-                        <p>Currently working as an Trainee Software Engineer at MASTEK, where I’m
-                            continuously enhancing my expertise in AI & ML, cloud deployments, system reliability, and
-                            production-grade application development.</p>
+                        <p>Currently working as an Associate Software Developer at MASTEK, after being promoted from
+                            Software Engineer Trainee. I’m continuously enhancing my expertise in AI & ML, cloud
+                            deployments, system reliability, and production-grade application development.</p>
                         <div class="tags" aria-label="Key skills">
                             <span class="tag">Python</span><span class="tag">JavaScript</span><span
                                 class="tag">TypeScript</span><span class="tag">Django</span><span
@@ -281,6 +282,84 @@
             </div>
         </section>
 
+        <!-- OPEN SOURCE -->
+        <section id="opensource" aria-label="Open Source Contributions">
+            <div class="container reveal slide-up">
+                <h2 class="glass content-card" style="padding:12px 18px">Open Source Contributions</h2>
+                <div class="opensource-grid">
+                    <article class="open-source-card open-source-feature">
+                        <div class="open-source-head">
+                            <div>
+                                <p class="eyebrow mono">Project-wide refactor</p>
+                                <h3>whichllm - Architecture Refactor</h3>
+                            </div>
+                            <span class="status-pill merged">5 Merged + 1 Open</span>
+                        </div>
+                        <p class="muted">Contributed to a project-wide cleanup of whichllm, an open-source Python CLI
+                            that recommends local LLMs based on hardware, benchmarks, memory estimates, and runtime fit.
+                            Worked across Issue #41 to refactor the codebase's oversized core modules into focused,
+                            maintainable components while preserving CLI behavior, ranking logic, public imports, and
+                            test compatibility.</p>
+                        <div class="impact-list">
+                            <span>Refactored constants, output rendering, HuggingFace model fetching, benchmark
+                                processing, ranking, and CLI command flow across a multi-PR series.</span>
+                            <span>Preserved backward compatibility through shim modules so existing imports and tests
+                                continued to work.</span>
+                            <span>Verified the refactor with full and focused test suites, CLI tests, regression tests,
+                                Ruff linting, formatting checks, and compile checks.</span>
+                        </div>
+                        <div class="tech">
+                            <span class="tag">Python</span><span class="tag">Typer CLI</span><span
+                                class="tag">Architecture</span><span class="tag">Refactoring</span><span
+                                class="tag">Testing</span><span class="tag">LLM Tools</span>
+                        </div>
+                        <div class="pr-links">
+                            <a class="btn ghost" href="https://github.com/Andyyyy64/whichllm/issues/41" target="_blank"
+                                rel="noopener">Issue #41</a>
+                            <a class="btn ghost" href="https://github.com/Andyyyy64/whichllm/pull/81" target="_blank"
+                                rel="noopener">Constants PR</a>
+                            <a class="btn ghost" href="https://github.com/Andyyyy64/whichllm/pull/82" target="_blank"
+                                rel="noopener">Display PR</a>
+                            <a class="btn ghost" href="https://github.com/Andyyyy64/whichllm/pull/140" target="_blank"
+                                rel="noopener">Fetcher PR</a>
+                            <a class="btn ghost" href="https://github.com/Andyyyy64/whichllm/pull/143" target="_blank"
+                                rel="noopener">Benchmark PR</a>
+                            <a class="btn ghost" href="https://github.com/Andyyyy64/whichllm/pull/145" target="_blank"
+                                rel="noopener">Ranker PR</a>
+                            <a class="btn ghost" href="https://github.com/Andyyyy64/whichllm/pull/162" target="_blank"
+                                rel="noopener">CLI PR</a>
+                        </div>
+                    </article>
+
+                    <article class="open-source-card">
+                        <div class="open-source-head">
+                            <div>
+                                <p class="eyebrow mono">Accessibility fix</p>
+                                <h3>HeadRoom - Dashboard Contrast Fix</h3>
+                            </div>
+                            <span class="status-pill review">In Review</span>
+                        </div>
+                        <p class="muted">Fixed a light-mode visibility issue in the HeadRoom dashboard where the active
+                            savings-profile badge became difficult to read. Added a scoped color override and regression
+                            coverage to keep the badge readable without changing dark-mode styling.</p>
+                        <div class="impact-list compact">
+                            <span>Improved the badge contrast to approximately 6.64:1, above the WCAG AA 4.5:1
+                                requirement.</span>
+                            <span>Added targeted pytest coverage and verified Ruff linting and formatting.</span>
+                        </div>
+                        <div class="tech">
+                            <span class="tag">Python</span><span class="tag">CSS</span><span
+                                class="tag">Accessibility</span><span class="tag">Pytest</span>
+                        </div>
+                        <div class="pr-links">
+                            <a class="btn ghost" href="https://github.com/headroomlabs-ai/headroom/pull/2544"
+                                target="_blank" rel="noopener">View PR</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- EXPERIENCE -->
         <section id="experience" aria-label="Experience">
             <div class="container reveal slide-up">
@@ -288,7 +367,7 @@
                 <div class="glass content-card">
                     <div class="timeline">
                         <div class="tl-item">
-                            <h3>Software Engineer Trainee — <span class="muted"><i>Mastek</i></span></h3>
+                            <h3>Associate Software Developer — <span class="muted"><i>Mastek</i></span></h3>
                             <p class="muted">Jun 2025 – Present • Pune, Maharashtra (Hybrid)</p>
                             <ul>
                                 <li>Designed and developed scalable web applications using Python, Django, and Azure
@@ -300,6 +379,15 @@
                                     production-ready solutions.</li>
                                 <li>Ensured code quality through unit testing, documentation, and best practices.</li>
                             </ul>
+                            <div class="glass" style="border-left: 2px solid var(--border); padding-left: 14px; margin-left: 2px; opacity: 0.9;">
+                                <h4 class="tl-item" style="margin-bottom: 2px;">Previously:
+                                    Software Engineer Trainee</h4>
+                                <p class="muted" style="margin-bottom: 6px;">Promoted to Associate Software Developer</p>
+                                <ul style="margin-top: 4px;">
+                                    <li>Built a strong foundation in production-grade development, debugging, testing,
+                                        and cloud-based application delivery.</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="tl-item">
                             <h3>Associate Software Developer — <span class="muted"><i>Tekhnologia Innovations

@@ -622,6 +622,119 @@
         gap: 10px
     }
 
+    /* OPEN SOURCE */
+    .opensource-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(320px, .85fr);
+        gap: 18px;
+        margin-top: 14px;
+        align-items: stretch
+    }
+
+    .open-source-card {
+        padding: 18px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card);
+        box-shadow: var(--shadow);
+        color: var(--cardText);
+        transition: transform .25s ease, border-color .25s ease
+    }
+
+    .open-source-card:hover {
+        transform: translateY(-4px);
+        border-color: color-mix(in srgb, var(--primary) 42%, var(--border))
+    }
+
+    .open-source-feature {
+        min-height: 100%
+    }
+
+    .open-source-head {
+        display: flex;
+        gap: 14px;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 8px
+    }
+
+    .eyebrow {
+        margin: 0 0 6px 0;
+        color: var(--primary-2);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0;
+        text-transform: uppercase
+    }
+
+    .status-pill {
+        flex: 0 0 auto;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--heading);
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap
+    }
+
+    .status-pill.merged {
+        background: linear-gradient(90deg, rgba(16, 185, 129, .22), rgba(14, 165, 233, .18))
+    }
+
+    .status-pill.review {
+        background: linear-gradient(90deg, rgba(245, 158, 11, .22), rgba(14, 165, 233, .16))
+    }
+
+    .impact-list {
+        display: grid;
+        gap: 10px;
+        margin: 14px 0
+    }
+
+    .impact-list span {
+        position: relative;
+        display: block;
+        padding-left: 18px;
+        color: var(--text)
+    }
+
+    .impact-list span::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: .72em;
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        box-shadow: 0 0 10px color-mix(in srgb, var(--primary) 60%, transparent)
+    }
+
+    .impact-list.compact {
+        gap: 8px
+    }
+
+    .open-source-card .tech {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: 10px
+    }
+
+    .pr-links {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 16px
+    }
+
+    .pr-links .btn {
+        padding: 9px 13px;
+        border-radius: 12px;
+        font-size: 14px
+    }
+
     /* TIMELINE */
     .timeline {
         position: relative;
@@ -932,6 +1045,10 @@
             grid-template-columns: repeat(2, 1fr)
         }
 
+        .opensource-grid {
+            grid-template-columns: 1fr
+        }
+
         .about {
             grid-template-columns: 1fr
         }
@@ -944,6 +1061,14 @@
 
         .projects-grid {
             grid-template-columns: 1fr
+        }
+
+        .open-source-head {
+            display: grid
+        }
+
+        .status-pill {
+            width: fit-content
         }
     }
 
