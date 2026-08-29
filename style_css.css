@@ -2,7 +2,6 @@
     DESIGN SYSTEM (CSS Vars)
     ======================== */
     :root {
-        /* DARK THEME (when data-theme is not light) */
         --bg: #0a0e27;
         --bg-2: #0f1419;
         --text: #e5e7eb;
@@ -23,50 +22,6 @@
         --radius-lg: 22px;
         --space: 8px;
     }
-
-    /* LIGHT THEME OVERRIDES */
-    :root[data-theme="light"] {
-        --bg: #f8fafc;
-        --bg-2: #ffffff;
-        --text: #0b1220;
-        --heading: #0b1220;
-        --muted: #475569;
-        /* slate-600 */
-        --primary: #0284c7;
-        --primary-2: #06b6d4;
-        --secondary: #6d28d9;
-        --accent: #059669;
-        --warning: #b45309;
-        --glass: rgba(255, 255, 255, .70);
-        --glass-strong: rgba(255, 255, 255, .85);
-        --card: rgba(255, 255, 255, .78);
-        --cardText: #0b1220;
-        --border: rgba(2, 6, 23, .12);
-        --shadow: 0 10px 30px rgba(2, 6, 23, .12);
-    }
-
-    /* Theme Fade Transition */
-    /* html[data-theme="light"],
-    html[data-theme="dark"] {
-        transition: background-color .4s ease, color .4s ease;
-    } */
-    :root[data-theme="light"],
-    :root[data-theme="dark"] {
-        transition: background-color .4s ease, color .4s ease;
-    }
-
-    body,
-    .glass,
-    .card,
-    footer {
-        transition: background .4s ease, color .4s ease, border-color .4s ease;
-    }
-
-    /* Prevent flicker during toggle */
-    * {
-        transition: background-color .3s ease, color .3s ease, border-color .3s ease;
-    }
-
 
     * {
         box-sizing: border-box
@@ -161,13 +116,7 @@
         transition: transform .25s ease, background .25s ease, color .25s ease;
     }
 
-    :root[data-theme="light"] nav a:hover {
-        transform: translateY(-2px) scale(1.03);
-        color: var(--heading);
-        background: rgba(0, 0, 0, 0.110);
-    }
-
-    :root[data-theme="dark"] nav a:hover {
+    nav a:hover {
         transform: translateY(-2px) scale(1.03);
         color: var(--heading);
         background: rgba(255, 255, 255, 0.110);
@@ -338,12 +287,6 @@
         /* text-shadow: 0 2px 10px rgba(0, 0, 0, .8); */
     }
 
-    :root[data-theme="light"] .name-gradient {
-        text-shadow: linear-gradient(90deg, var(--primary-2), var(--secondary));
-        /* text-shadow: 0 2px 10px rgba(0, 0, 0, .8); */
-        /* text-shadow: 0 1px 0 rgba(255, 255, 255, .8), 0 0 18px rgba(99, 102, 241, .35); */
-    }
-
     .breathing {
         animation: breathe 6s ease-in-out infinite
     }
@@ -471,6 +414,43 @@
         border: 1px solid var(--border)
     }
 
+    /* STORY */
+    .story-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(280px, .85fr);
+        gap: 24px;
+        align-items: start
+    }
+
+    .story-copy p:last-child,
+    .help-panel p:last-child,
+    .personal-card p:last-child {
+        margin-bottom: 0
+    }
+
+    .story-notes {
+        display: grid;
+        gap: 12px
+    }
+
+    .story-note {
+        padding: 14px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: color-mix(in srgb, var(--card) 76%, transparent)
+    }
+
+    .story-note strong {
+        display: block;
+        color: var(--heading);
+        margin-bottom: 4px
+    }
+
+    .story-note span {
+        display: block;
+        color: var(--muted)
+    }
+
     /* SKILLS */
     .skills-grid {
         display: grid;
@@ -498,10 +478,6 @@
         border-radius: 999px;
         overflow: hidden;
         margin-top: 8px
-    }
-
-    :root[data-theme="light"] .skill-bar {
-        background: rgba(2, 6, 23, .08)
     }
 
     .skill-bar>span {
@@ -537,23 +513,6 @@
         transform: translateY(-2px);
         background: linear-gradient(90deg, rgba(14, 165, 233, .15), rgba(139, 92, 246, .15));
         color: var(--heading)
-    }
-
-    /* Fix Project Filter Buttons in Light Theme */
-    :root[data-theme="light"] .filter-btn {
-        background: rgba(254, 254, 255, 0.277);
-        /* Light contrasting bg */
-        /* color: var(--heading); */
-        border: 1px solid rgba(212, 213, 214, 0.125);
-    }
-
-    :root[data-theme="light"] .filter-btn.active,
-    :root[data-theme="light"] .filter-btn:hover {
-        background: linear-gradient(90deg,
-                rgba(14, 165, 233, 0.35),
-                rgba(139, 92, 246, 0.35));
-        color: var(--heading);
-        transform: translateY(-2px);
     }
 
     .projects-grid {
@@ -607,10 +566,6 @@
         display: grid;
         place-items: center;
         transition: opacity .3s ease
-    }
-
-    :root[data-theme="light"] .project .overlay {
-        background: rgba(255, 255, 255, .35)
     }
 
     .project:hover .overlay {
@@ -735,6 +690,76 @@
         font-size: 14px
     }
 
+    /* WORK STYLE */
+    .work-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 14px
+    }
+
+    .work-card {
+        min-height: 100%;
+        padding: 18px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card);
+        box-shadow: var(--shadow);
+        color: var(--cardText);
+        transition: transform .25s ease, border-color .25s ease
+    }
+
+    .work-card:hover {
+        transform: translateY(-4px);
+        border-color: color-mix(in srgb, var(--secondary) 42%, var(--border))
+    }
+
+    .work-index {
+        display: inline-block;
+        margin-bottom: 12px;
+        color: var(--primary-2);
+        font-size: 13px;
+        font-weight: 700
+    }
+
+    .work-card h3 {
+        font-size: clamp(18px, 2vw, 22px)
+    }
+
+    /* HELP */
+    .help-panel {
+        display: grid;
+        grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+        gap: 24px;
+        align-items: center
+    }
+
+    .help-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px
+    }
+
+    .help-item {
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: color-mix(in srgb, var(--card) 78%, transparent);
+        color: var(--heading);
+        font-weight: 600
+    }
+
+    /* PERSONAL */
+    .personal-strip {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px
+    }
+
+    .personal-card {
+        min-height: 100%
+    }
+
     /* TIMELINE */
     .timeline {
         position: relative;
@@ -755,7 +780,11 @@
 
     .tl-item {
         position: relative;
-        padding: 16px 0 16px 18px
+        padding: 0 0 28px 18px
+    }
+
+    .tl-item:last-child {
+        padding-bottom: 0
     }
 
     .tl-item::before {
@@ -767,7 +796,150 @@
         height: 12px;
         border-radius: 999px;
         background: var(--warning);
-        box-shadow: 0 0 0 4px color-mix(in srgb, var(--warning) 30%, transparent)
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--warning) 30%, transparent);
+        z-index: 1
+    }
+
+    .tl-current::before {
+        width: 14px;
+        height: 14px;
+        left: -3px;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 35%, transparent);
+        animation: tl-pulse 2.2s ease-in-out infinite
+    }
+
+    @keyframes tl-pulse {
+
+        0%,
+        100% {
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 35%, transparent)
+        }
+
+        50% {
+            box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 18%, transparent)
+        }
+    }
+
+    .tl-card {
+        padding: 18px 20px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: color-mix(in srgb, var(--card) 70%, transparent);
+        transition: transform .25s ease, border-color .25s ease
+    }
+
+    .tl-card:hover {
+        transform: translateY(-2px)
+    }
+
+    .tl-current .tl-card {
+        border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+        box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent), var(--shadow);
+        background: color-mix(in srgb, var(--card) 85%, transparent)
+    }
+
+    .tl-head {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px 18px;
+        margin-bottom: 10px
+    }
+
+    .tl-role-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap
+    }
+
+    .tl-role-row h3 {
+        margin: 0;
+        font-size: clamp(18px, 2.1vw, 22px)
+    }
+
+    .tl-company {
+        margin: 2px 0 0 0;
+        color: var(--muted);
+        font-size: 15px
+    }
+
+    .tl-badge {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .4px;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        border-radius: 999px;
+        color: #fff
+    }
+
+    .tl-badge-current {
+        background: linear-gradient(90deg, var(--accent), var(--primary));
+        box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 45%, transparent)
+    }
+
+    .tl-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        text-align: right;
+        flex-shrink: 0
+    }
+
+    .tl-meta-item {
+        font-size: 13px;
+        color: var(--muted);
+        white-space: nowrap
+    }
+
+    .tl-card ul {
+        margin: 0 0 4px 0
+    }
+
+    .tl-card .tags {
+        margin-top: 14px
+    }
+
+    .tl-growth {
+        position: relative;
+        margin-top: 16px;
+        padding: 14px 16px 14px 18px;
+        border-radius: var(--radius);
+        border: 1px dashed var(--border);
+        background: color-mix(in srgb, var(--bg-2) 40%, transparent)
+    }
+
+    .tl-growth-badge {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .3px;
+        color: var(--accent);
+        background: color-mix(in srgb, var(--accent) 16%, transparent);
+        border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+        padding: 3px 10px;
+        border-radius: 999px;
+        margin-bottom: 10px
+    }
+
+    .tl-growth-item h4 {
+        margin: 0 0 2px 0;
+        font-size: 15px;
+        color: var(--heading);
+        font-weight: 600
+    }
+
+    .tl-growth-item p {
+        margin: 0 0 6px 0;
+        font-size: 13px
+    }
+
+    .tl-growth-item ul {
+        margin: 0
     }
 
     /* TESTIMONIALS */
@@ -822,12 +994,6 @@
         color: var(--text);
         outline: none;
         transition: box-shadow .2s ease, border-color .2s ease
-    }
-
-    :root[data-theme="light"] .input,
-    :root[data-theme="light"] textarea {
-        background: rgba(2, 6, 23, .05);
-        color: var(--text)
     }
 
     .input:focus,
@@ -1023,18 +1189,6 @@
         display: none;
     }
 
-    /* Light theme adaptation */
-    :root[data-theme="light"] .fab button {
-        box-shadow: 0 0 12px rgba(0, 180, 255, 0.35);
-    }
-
-    :root[data-theme="light"] .fab button:hover {
-        box-shadow:
-            0 0 20px rgba(0, 200, 255, 0.85),
-            0 0 34px rgba(0, 200, 255, 0.50);
-    }
-
-
     /* Responsive */
     @media (max-width:1100px) {
         .skills-grid {
@@ -1047,6 +1201,16 @@
 
         .opensource-grid {
             grid-template-columns: 1fr
+        }
+
+        .story-panel,
+        .help-panel,
+        .personal-strip {
+            grid-template-columns: 1fr
+        }
+
+        .work-grid {
+            grid-template-columns: repeat(2, 1fr)
         }
 
         .about {
@@ -1070,6 +1234,16 @@
         .status-pill {
             width: fit-content
         }
+
+        .work-grid,
+        .help-grid {
+            grid-template-columns: 1fr
+        }
+
+        .tl-meta {
+            align-items: flex-start;
+            text-align: left
+        }
     }
 
     /* Reduce Motion */
@@ -1083,17 +1257,13 @@
     }
 
 
-/* ✅ Minimal Clean Scrollbar — Works in Dark & Light Mode */
+/* Minimal Clean Scrollbar */
 body::-webkit-scrollbar {
     width: 10px;
     background: transparent; /* no track background */
 }
 
-:root[data-theme="light"] body::-webkit-scrollbar-track {
-    background: black !important;
-}
-
-:root[data-theme="dark"] body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background: black !important;
 }
 

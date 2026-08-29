@@ -235,56 +235,7 @@ filterBtns.forEach(btn => btn.addEventListener('click', () => {
 // });
 
 /* ==========================
-   Theme Toggle (Dark default)
-   with Icon Swap 🌙/🌞 + Fade Transition
-   ========================== */
-const THEME_KEY = 'pref-theme';
-const root = document.documentElement;
-const themeBtn = document.getElementById('themeToggle');
-
-// Apply saved theme OR default = dark
-const saved = localStorage.getItem(THEME_KEY);
-const initialTheme = saved ? saved : 'dark';
-root.setAttribute('data-theme', initialTheme);
-updateIcon(initialTheme);
-
-// Click Handler (defensive)
-if (themeBtn) {
-    themeBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const current = root.getAttribute('data-theme');
-        const next = current === 'light' ? 'dark' : 'light';
-        root.setAttribute('data-theme', next);
-        localStorage.setItem(THEME_KEY, next);
-        updateIcon(next);
-    });
-}
-
-
-/* ==========================
    Misc
    ========================== */
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('toTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-
-/* ==========================
-   Fab icon
-   ========================== */
-function updateIcon(theme) {
-    const icon = document.getElementById('themeIcon');
-    if (!icon) return;
-
-    if (theme === 'light') {
-        // Heroicons 24 Solid — Moon (clean crescent)
-        icon.innerHTML = `
-      <path fill="currentColor"
-        d="M21.752 15.002A9.718 9.718 0 0 1 12 21.75 9.75 9.75 0 1 1 12 2.25c.684 0 1.353.069 2 .2a7.5 7.5 0 0 0 7.752 12.552z" />`;
-    } else {
-        // Heroicons 24 Solid — Sun (exact, with 8 rays)
-        icon.innerHTML = `
-      <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
-        d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75Zm0 15a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM4.469 4.47a.75.75 0 0 1 1.06 0l1.59 1.59a.75.75 0 0 1-1.06 1.06l-1.59-1.59a.75.75 0 0 1 0-1.06Zm13.412 13.412a.75.75 0 0 1 0 1.06l-1.59 1.59a.75.75 0 1 1-1.06-1.06l1.59-1.59a.75.75 0 0 1 1.06 0ZM2.25 12a.75.75 0 0 1 .75-.75h2.25a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75Zm15.75-.75H20.25a.75.75 0 0 1 0 1.5h-2.25a.75.75 0 0 1 0-1.5ZM6.06 17.88a.75.75 0 0 1 1.06 0l1.59 1.59a.75.75 0 0 1-1.06 1.06l-1.59-1.59a.75.75 0 0 1 0-1.06Zm11.31-11.31a.75.75 0 0 1-1.06 1.06l-1.59-1.59a.75.75 0 0 1 1.06-1.06l1.59 1.59Z" />`;
-    }
-}

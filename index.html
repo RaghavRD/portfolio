@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -7,7 +7,7 @@
     <link rel="icon" href="favicon.ico">
     <title>Raghav's Portfolio</title>
     <meta name="description" content="Raghav Desai — Portfolio, Projects, Skills, Experience and Contact." />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="dark" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -42,9 +42,11 @@
             <nav id="menu" class="menu" role="menubar">
                 <ul>
                     <li><a href="#about" data-spy>About</a></li>
+                    <li><a href="#story" data-spy>Story</a></li>
                     <li><a href="#skills" data-spy>Skills</a></li>
                     <li><a href="#projects" data-spy>Projects</a></li>
                     <li><a href="#opensource" data-spy>Open Source</a></li>
+                    <li><a href="#workstyle" data-spy>Work Style</a></li>
                     <li><a href="#experience" data-spy>Experience</a></li>
                     <!-- <li><a href="#testimonials" data-spy>Testimonials</a></li> -->
                     <li><a href="#contact" data-spy>Contact</a></li>
@@ -86,15 +88,41 @@
                         <p>Currently working as an Associate Software Developer at MASTEK, after being promoted from
                             Software Engineer Trainee. I’m continuously enhancing my expertise in AI & ML, cloud
                             deployments, system reliability, and production-grade application development.</p>
-                        <div class="tags" aria-label="Key skills">
-                            <span class="tag">Python</span><span class="tag">JavaScript</span><span
-                                class="tag">TypeScript</span><span class="tag">Django</span><span
-                                class="tag">Angular</span><span class="tag">AI & ML</span>
-                            <span class="tag">SQL</span><span class="tag">Azure</span>
-                            <span class="tag">System Reliability</span><span class="tag">UI/UX</span>
-                        </div>
                         <div class="cta-row" style="margin-top:14px">
                             <a class="btn" href="./Raghav_Desai.pdf" download>Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORY -->
+        <section id="story" aria-label="My Story">
+            <div class="container reveal slide-up">
+                <div class="story-panel glass content-card">
+                    <div class="story-copy">
+                        <p class="eyebrow mono">My Story</p>
+                        <h2>Building useful software where logic, UX, cloud, and AI meet.</h2>
+                        <p>I enjoy working on software that solves real problems, not just code that looks good in a
+                            repository. My journey started with Python and web development, then grew into full-stack
+                            systems, Django backends, Angular interfaces, cloud services, and AI-assisted tools.</p>
+                        <p>What I like most is taking something complex and making it clearer: a workflow, an API, a
+                            dashboard, a data process, or even a large codebase that needs careful refactoring. I care
+                            about clean architecture, practical user experience, testing, and steady improvement through
+                            feedback.</p>
+                    </div>
+                    <div class="story-notes">
+                        <div class="story-note">
+                            <strong>What I enjoy building</strong>
+                            <span>Full-stack apps, APIs, dashboards, automation tools, and AI-powered workflows.</span>
+                        </div>
+                        <div class="story-note">
+                            <strong>How I think</strong>
+                            <span>Understand the problem first, then break it into small, reliable pieces.</span>
+                        </div>
+                        <div class="story-note">
+                            <strong>What I value</strong>
+                            <span>Readable code, maintainable systems, clear communication, and measurable impact.</span>
                         </div>
                     </div>
                 </div>
@@ -360,77 +388,279 @@
             </div>
         </section>
 
+        <!-- WORK STYLE -->
+        <section id="workstyle" aria-label="How I Work">
+            <div class="container reveal slide-up">
+                <h2 class="glass content-card" style="padding:12px 18px">How I Work</h2>
+                <div class="work-grid">
+                    <article class="work-card">
+                        <span class="work-index mono">01</span>
+                        <h3>Understand Before Building</h3>
+                        <p class="muted">I first clarify the problem, users, constraints, and success criteria so the
+                            implementation solves the right thing.</p>
+                    </article>
+                    <article class="work-card">
+                        <span class="work-index mono">02</span>
+                        <h3>Design Clean Boundaries</h3>
+                        <p class="muted">I prefer small modules, clear APIs, focused responsibilities, and code that can
+                            be changed without breaking unrelated behavior.</p>
+                    </article>
+                    <article class="work-card">
+                        <span class="work-index mono">03</span>
+                        <h3>Verify What Matters</h3>
+                        <p class="muted">I add targeted tests around important workflows and use linting, formatting,
+                            and reviews to keep quality consistent.</p>
+                    </article>
+                    <article class="work-card">
+                        <span class="work-index mono">04</span>
+                        <h3>Improve With Feedback</h3>
+                        <p class="muted">I like collaborative work where feedback from users, teammates, and maintainers
+                            makes the final solution stronger.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- EXPERIENCE -->
         <section id="experience" aria-label="Experience">
             <div class="container reveal slide-up">
                 <h2 class="glass content-card" style="padding:12px 18px">Experience</h2>
                 <div class="glass content-card">
                     <div class="timeline">
-                        <div class="tl-item">
-                            <h3>Associate Software Developer — <span class="muted"><i>Mastek</i></span></h3>
-                            <p class="muted">Jun 2025 – Present • Pune, Maharashtra (Hybrid)</p>
-                            <ul>
-                                <li>Designed and developed scalable web applications using Python, Django, and Azure
-                                    Cloud Services.</li>
-                                <li>Built and integrated REST APIs improving backend processing time by 20%.</li>
-                                <li>Worked with Azure Function Apps, Service Bus, Storage, App Services & Container
-                                    Apps.</li>
-                                <li>Collaborated with cross-functional teams to debug, optimize, and deliver
-                                    production-ready solutions.</li>
-                                <li>Ensured code quality through unit testing, documentation, and best practices.</li>
-                            </ul>
-                            <div class="glass" style="border-left: 2px solid var(--border); padding-left: 14px; margin-left: 2px; opacity: 0.9;">
-                                <h4 class="tl-item" style="margin-bottom: 2px;">Previously:
-                                    Software Engineer Trainee</h4>
-                                <p class="muted" style="margin-bottom: 6px;">Promoted to Associate Software Developer</p>
-                                <ul style="margin-top: 4px;">
-                                    <li>Built a strong foundation in production-grade development, debugging, testing,
-                                        and cloud-based application delivery.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tl-item">
-                            <h3>Associate Software Developer — <span class="muted"><i>Tekhnologia Innovations
-                                        India</i></span></h3>
-                            <p class="muted">Feb 2025 – May 2025 • Pune, Maharashtra (On-site)</p>
-                            <ul>
-                                <li>Developed & optimized Django services; reduced API response times by up to 25% via
-                                    SQL tuning.</li>
-                                <li>Improved client-facing UI with HTML, CSS, and JavaScript components.</li>
-                                <li>Integrated third-party APIs with proper validations and security.</li>
-                                <li>Contributed to Agile sprints and daily stand-ups.</li>
-                            </ul>
 
-                            <div class="glass" style="border-left: 2px solid var(--border); padding-left: 14px; margin-left: 2px; opacity: 0.9;">
-                                <h4 class="tl-item" style="margin-bottom: 2px;">Previously:
-                                    Junior Python Developer</h4>
-                                <p class="muted" style="margin-bottom: 6px;">Aug 2024 – Jan 2025</p>
-                                <ul style="margin-top: 4px;">
-                                    <li>Implemented backend automation features using Python.</li>
-                                    <li>Built responsive UI components with HTML, CSS, jQuery, and JavaScript.</li>
-                                    <li>Managed SQL databases; testing & debugging for stability.</li>
+                        <!-- Mastek -->
+                        <div class="tl-item tl-current">
+                            <div class="tl-card">
+                                <div class="tl-head">
+                                    <div>
+                                        <div class="tl-role-row">
+                                            <h3>Associate Software Engineer</h3>
+                                            <span class="tl-badge tl-badge-current">Current</span>
+                                        </div>
+                                        <p class="tl-company"><i>Mastek</i></p>
+                                    </div>
+                                    <div class="tl-meta">
+                                        <span class="tl-meta-item">Jun 2025 – Present</span>
+                                        <span class="tl-meta-item">Pune, Maharashtra (Hybrid)</span>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li>Develop and maintain enterprise Python services, REST APIs, and serverless
+                                        workflows using FastAPI, Flask, Azure Functions, Service Bus, Key Vault, App
+                                        Service, and Container Apps.</li>
+                                    <li>Build secure API workflows with OAuth2/SSO credentials, Pydantic validation,
+                                        pagination, retry handling, structured logging, and consistent
+                                        error-response patterns.</li>
+                                    <li>Troubleshoot SIT and production incidents using Application Insights and
+                                        application logs, tracing root causes across code, configuration, and
+                                        external dependencies, and support corrective deployments via Azure DevOps
+                                        CI/CD.</li>
+                                    <li>Implement authentication and authorization using Keycloak user attributes and
+                                        role-based access control (RBAC), working closely with frontend, QA, and
+                                        architecture teams.</li>
+                                    <li>Validate backend features with Pytest across business logic, validation,
+                                        authentication, and failure scenarios, and containerized a Python
+                                        proof-of-concept with Docker for portable, reproducible deployment.</li>
                                 </ul>
+                                <div class="tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">FastAPI</span>
+                                    <span class="tag">Flask</span>
+                                    <span class="tag">Azure</span>
+                                    <span class="tag">Azure DevOps</span>
+                                    <span class="tag">Docker</span>
+                                    <span class="tag">Keycloak</span>
+                                    <span class="tag">Pytest</span>
+                                </div>
+
+                                <div class="tl-growth">
+                                    <div class="tl-growth-badge">↑ Promoted within Mastek</div>
+                                    <div class="tl-growth-item">
+                                        <h4>Software Engineer Trainee</h4>
+                                        <p class="muted">Promoted to Associate Software Engineer</p>
+                                        <ul>
+                                            <li>Built a strong foundation in production-grade Python development, API
+                                                debugging, and cloud-based application delivery on Azure.</li>
+                                            <li>Paired with senior engineers to learn the codebase, internal tooling,
+                                                and Azure Function Apps used across the team's services.</li>
+                                            <li>Wrote unit tests and fixed defects in existing modules to build
+                                                confidence in code changes before deployment.</li>
+                                            <li>Practiced Git workflows, code reviews, and Agile ceremonies as part of
+                                                the development team.</li>
+                                            <li>Completed internal training and knowledge-sharing sessions to ramp up
+                                                on Python best practices and Azure fundamentals.</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Tekhnologia -->
                         <div class="tl-item">
-                            <h3>Angular Developer Intern — <span class="muted"><i>GeniaTEQ</i></span></h3>
-                            <p class="muted">Apr 2024 – Jul 2024 • Pune, Maharashtra (On-site)</p>
-                            <ul>
-                                <li>Developed and optimized Angular components for dynamic, responsive apps.</li>
-                                <li>Integrated REST APIs ensuring smooth data flow and reduced load times.</li>
-                                <li>Implemented reusable UI components and better state management.</li>
-                                <li>Debugged and tuned performance to enhance UX; delivered features in Agile sprints.
-                                </li>
-                            </ul>
+                            <div class="tl-card">
+                                <div class="tl-head">
+                                    <div>
+                                        <div class="tl-role-row">
+                                            <h3>Associate Software Developer</h3>
+                                        </div>
+                                        <p class="tl-company"><i>Tekhnologia Innovations India</i></p>
+                                    </div>
+                                    <div class="tl-meta">
+                                        <span class="tl-meta-item">Feb 2025 – May 2025</span>
+                                        <span class="tl-meta-item">Pune, Maharashtra (On-site)</span>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li>Built Django applications and REST APIs for election management and
+                                        inventory systems.</li>
+                                    <li>Contributed to a hospital information management platform using Django and
+                                        REST APIs.</li>
+                                    <li>Developed a real-time face-recognition module and integrated it into an
+                                        existing Django workflow.</li>
+                                    <li>Implemented JWT authentication, role-based authorization, and SQL query
+                                        optimization for secure, maintainable backend access.</li>
+                                    <li>Built responsive interfaces using Django templates, JavaScript, HTML, and
+                                        CSS; contributed via testing, code reviews, and Agile delivery.</li>
+                                </ul>
+                                <div class="tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Django</span>
+                                    <span class="tag">JWT</span>
+                                    <span class="tag">SQL</span>
+                                    <span class="tag">JavaScript</span>
+                                </div>
+
+                                <div class="tl-growth">
+                                    <div class="tl-growth-badge">↑ Promoted within Tekhnologia</div>
+                                    <div class="tl-growth-item">
+                                        <h4>Junior Python Developer</h4>
+                                        <p class="muted">Aug 2024 – Jan 2025</p>
+                                        <ul>
+                                            <li>Implemented backend automation features using Python.</li>
+                                            <li>Built responsive UI components with HTML, CSS, jQuery, and
+                                                JavaScript.</li>
+                                            <li>Managed SQL databases; testing & debugging for stability.</li>
+                                            <li>Collaborated with senior developers to translate requirements into
+                                                working features and fix reported bugs.</li>
+                                            <li>Took part in Agile stand-ups and sprint planning to stay aligned with
+                                                team priorities.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- GeniaTEQ -->
                         <div class="tl-item">
-                            <h3>Data Analyst — <span class="muted"><i>Indika AI</i></span></h3>
-                            <p class="muted">Sep 2021 – Sep 2021 • Pune, Maharashtra (Remote)</p>
-                            <ul>
-                                <li>Performed data analysis and visualization using Excel and analytics tools to derive
-                                    insights.</li>
-                            </ul>
+                            <div class="tl-card">
+                                <div class="tl-head">
+                                    <div>
+                                        <div class="tl-role-row">
+                                            <h3>Angular Developer Intern</h3>
+                                        </div>
+                                        <p class="tl-company"><i>GeniaTEQ</i></p>
+                                    </div>
+                                    <div class="tl-meta">
+                                        <span class="tl-meta-item">Apr 2024 – Jul 2024</span>
+                                        <span class="tl-meta-item">Pune, Maharashtra (On-site)</span>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li>Developed and optimized Angular components for dynamic, responsive apps.</li>
+                                    <li>Integrated REST APIs ensuring smooth data flow and reduced load times.</li>
+                                    <li>Implemented reusable UI components and better state management.</li>
+                                    <li>Debugged and tuned performance to enhance UX; delivered features in Agile
+                                        sprints.</li>
+                                </ul>
+                                <div class="tags">
+                                    <span class="tag">Angular</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">REST APIs</span>
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">JavaScript</span>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Indika AI -->
+                        <div class="tl-item">
+                            <div class="tl-card">
+                                <div class="tl-head">
+                                    <div>
+                                        <div class="tl-role-row">
+                                            <h3>Data Analyst</h3>
+                                        </div>
+                                        <p class="tl-company"><i>Indika AI</i></p>
+                                    </div>
+                                    <div class="tl-meta">
+                                        <span class="tl-meta-item">Sep 2021 - Oct 2021</span>
+                                        <span class="tl-meta-item">Pune, Maharashtra (Remote)</span>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li>Performed data analysis and visualization using Excel and analytics tools to
+                                        derive insights.</li>
+                                    <li>Cleaned and organized raw datasets to ensure accuracy before analysis.</li>
+                                    <li>Built pivot tables and charts to summarize key trends for the team.</li>
+                                    <li>Presented findings in a clear, actionable format to support
+                                        decision-making.</li>
+                                </ul>
+                                <div class="tags">
+                                    <span class="tag">Excel</span>
+                                    <span class="tag">Advanced Excel</span>
+                                    <span class="tag">Data Analysis</span>
+                                    <span class="tag">Data Visualization</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HELP -->
+        <section id="help" aria-label="What I Can Help With">
+            <div class="container reveal slide-up">
+                <div class="help-panel glass content-card">
+                    <div>
+                        <p class="eyebrow mono">What I Can Help With</p>
+                        <h2>From backend systems to AI-assisted product workflows.</h2>
+                        <p class="muted">I can help teams build reliable web applications, backend APIs, dashboards,
+                            AI/ML integrations, cloud-ready services, and maintainable codebases that are easier to
+                            extend over time.</p>
+                    </div>
+                    <div class="help-grid">
+                        <div class="help-item">Full-stack web apps</div>
+                        <div class="help-item">Django REST APIs</div>
+                        <div class="help-item">Angular dashboards</div>
+                        <div class="help-item">AI/ML integrations</div>
+                        <div class="help-item">Cloud deployments</div>
+                        <div class="help-item">Database optimization</div>
+                        <div class="help-item">Automation tools</div>
+                        <div class="help-item">Code refactoring</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERSONAL -->
+        <section id="personal" aria-label="Beyond Work">
+            <div class="container reveal slide-up">
+                <div class="personal-strip">
+                    <div class="personal-card glass content-card">
+                        <p class="eyebrow mono">Beyond Work</p>
+                        <h2>Curious by default.</h2>
+                        <p>In my free time, I like exploring new developer tools, learning about AI systems, improving
+                            side projects, watching tech content, and experimenting with ideas that can become useful
+                            products. That curiosity is what keeps me learning and improving as an engineer.</p>
+                    </div>
+                    <div class="personal-card glass content-card">
+                        <p class="eyebrow mono">AI & ML Mindset</p>
+                        <h2>Practical, not hype-driven.</h2>
+                        <p>I approach AI/ML from an engineering perspective: using Python for data workflows,
+                            integrating LLM APIs, building AI-assisted tools, and designing systems where AI improves
+                            speed, clarity, or decision-making.</p>
                     </div>
                 </div>
             </div>
@@ -563,16 +793,6 @@
 
     <!-- Floating Action Buttons -->
     <div class="fab">
-        <!-- Theme Toggle -->
-        <button id="themeToggle" aria-label="Toggle theme">
-            <!-- default: dark theme => moon -->
-            <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true">
-                <!-- MOON (outline) -->
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M21.752 15.002A9.718 9.718 0 0 1 12 21.75 9.75 9.75 0 1 1 12 2.25c.684 0 1.353.069 2 .2a7.5 7.5 0 0 0 7.752 12.552z" />
-            </svg>
-        </button>
-
         <!-- Scroll to Top -->
         <button id="toTop" aria-label="Back to top" title="Back to top" style="display:none">
             <svg id="upIcon" viewBox="0 0 24 24" aria-hidden="true">
