@@ -27,10 +27,6 @@
         box-sizing: border-box
     }
 
-    html {
-        /* scroll-behavior: smooth; Handled by Lenis! */
-    }
-
     body {
         margin: 0;
         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -67,8 +63,11 @@
 
     /* Nav */
     header.nav {
-        position: sticky;
+        /* Fixed so the hidden nav doesn't push the hero down on load */
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 9998;
         transform: translateY(-110%);
         transition: transform .5s ease;
@@ -104,12 +103,12 @@
         display: flex;
         margin: 0;
         padding: 0;
-        gap: 14px;
+        gap: 2px;
     }
 
     nav a {
         display: inline-block;
-        padding: 10px 14px;
+        padding: 9px 11px;
         border-radius: 12px;
         color: var(--text);
         text-decoration: none;
@@ -170,9 +169,19 @@
         gap: 10px;
     }
 
-    @media (max-width:900px) {
+    .brand,
+    .menu a {
+        white-space: nowrap
+    }
+
+    /* Hamburger kicks in before the 10 nav links start wrapping */
+    @media (max-width:1240px) {
         .menu {
             display: none
+        }
+
+        .menu.open ul {
+            flex-direction: column
         }
 
         .menu.open {
@@ -338,8 +347,7 @@
 
     .scroll-indicator {
         position: absolute;
-        /* bottom: 22px; */
-        bottom: 120px;
+        bottom: clamp(24px, 5vh, 48px);
         left: 50%;
         translate: -50% 0;
         color: var(--text);
@@ -468,26 +476,6 @@
         transition: transform .25s ease
     }
 
-    .skill-card:hover {
-        transform: translateY(-4px)
-    }
-
-    .skill-bar {
-        height: 8px;
-        background: rgba(255, 255, 255, .12);
-        border-radius: 999px;
-        overflow: hidden;
-        margin-top: 8px
-    }
-
-    .skill-bar>span {
-        display: block;
-        height: 100%;
-        width: 0;
-        background: linear-gradient(90deg, var(--primary), var(--secondary));
-        border-radius: 999px;
-        transition: width 1.2s cubic-bezier(.2, .6, .2, 1)
-    }
 
     /* PROJECTS */
     .filters {
@@ -580,7 +568,7 @@
     /* OPEN SOURCE */
     .opensource-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.45fr) minmax(320px, .85fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
         margin-top: 14px;
         align-items: stretch
@@ -596,13 +584,9 @@
         transition: transform .25s ease, border-color .25s ease
     }
 
-    .open-source-card:hover {
-        transform: translateY(-4px);
-        border-color: color-mix(in srgb, var(--primary) 42%, var(--border))
-    }
 
     .open-source-feature {
-        min-height: 100%
+        grid-column: 1 / -1
     }
 
     .open-source-head {
@@ -690,6 +674,654 @@
         font-size: 14px
     }
 
+    /* STATS */
+    .stats-section {
+        padding-block: 0 clamp(40px, 6vh, 60px)
+    }
+
+    .stats-band {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px
+    }
+
+    .stat {
+        display: grid;
+        gap: 4px;
+        padding: 18px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card);
+        box-shadow: var(--shadow);
+        text-align: center
+    }
+
+    .stat-num {
+        font-size: clamp(28px, 4vw, 40px);
+        font-weight: 800;
+        line-height: 1.1;
+        background: linear-gradient(90deg, var(--primary-2), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent
+    }
+
+    .stat-label {
+        color: var(--muted);
+        font-size: 14px
+    }
+
+    /* Project stack rows */
+    .stack-rows {
+        display: grid;
+        gap: 4px;
+        margin: 10px 0 0;
+        font-size: 13px
+    }
+
+    .stack-rows div {
+        display: grid;
+        grid-template-columns: 82px 1fr;
+        gap: 8px
+    }
+
+    .stack-rows dt {
+        color: var(--primary-2);
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 12px
+    }
+
+    .stack-rows dd {
+        margin: 0;
+        color: var(--text)
+    }
+
+    .stack-rows.wide {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px 18px;
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border)
+    }
+
+    /* Project image slider */
+    .project-media {
+        position: relative;
+        height: 200px;
+        overflow: hidden
+    }
+
+    .project-media .slides {
+        display: flex;
+        height: 100%;
+        transition: transform .8s cubic-bezier(.65, 0, .35, 1)
+    }
+
+    .project .project-media .slides img {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top
+    }
+
+    .project:hover .project-media .slides img {
+        transform: none
+    }
+
+    .slider-dots {
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        z-index: 3;
+        display: flex;
+        gap: 6px;
+        padding: 6px 9px;
+        transform: translateX(-50%);
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, .18);
+        background: rgba(10, 14, 30, .45);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px)
+    }
+
+    .slider-dots button {
+        width: 7px;
+        height: 7px;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .45);
+        cursor: pointer;
+        transition: width .3s ease, background .3s ease
+    }
+
+    .slider-dots button.active {
+        width: 20px;
+        background: linear-gradient(90deg, var(--primary-2), var(--secondary))
+    }
+
+    /* Glass buttons: project overlay secondary buttons + contact send */
+    .project .actions .btn.ghost,
+    .btn-glass {
+        border: 0;
+        background: rgba(10, 14, 30, .6);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22);
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        line-height: inherit;
+        cursor: pointer;
+        transition: transform .25s cubic-bezier(.2, .6, .2, 1), background .25s ease, box-shadow .25s ease
+    }
+
+    .project .actions .btn.ghost:hover,
+    .btn-glass:hover {
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        box-shadow: 0 8px 22px rgba(14, 165, 233, .25)
+    }
+
+    /* While another button is hovered, the primary one steps back to glass */
+    .project .actions:has(.btn.ghost:hover) .btn:not(.ghost) {
+        background: rgba(10, 14, 30, .6);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22)
+    }
+
+    .achieve-card .tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px
+    }
+
+    /* CASE STUDIES */
+    .case-study {
+        color: var(--cardText)
+    }
+
+    .case-head {
+        display: flex;
+        gap: 18px;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px
+    }
+
+    .case-links {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        flex: 0 0 auto
+    }
+
+    .case-gallery {
+        margin-bottom: 18px
+    }
+
+    .case-main {
+        width: 100%;
+        aspect-ratio: 1960 / 1008;
+        object-fit: cover;
+        object-position: top;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        display: block
+    }
+
+    .case-thumbs {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px
+    }
+
+    .case-thumbs img {
+        width: 120px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        opacity: .6;
+        transition: opacity .2s ease, border-color .2s ease
+    }
+
+    .case-thumbs img.active,
+    .case-thumbs img:hover {
+        opacity: 1;
+        border-color: var(--primary)
+    }
+
+    .case-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px
+    }
+
+    .case-block {
+        padding: 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, .03)
+    }
+
+    .case-block p:last-child {
+        margin-bottom: 0
+    }
+
+    .case-step {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: var(--primary-2);
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase
+    }
+
+    .flow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 4px;
+        margin-bottom: 10px
+    }
+
+    .flow span {
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(14, 165, 233, .1);
+        font-size: 13px;
+        white-space: nowrap
+    }
+
+    .flow span:not(:last-child)::after {
+        content: " →";
+        color: var(--muted)
+    }
+
+    .case-metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px
+    }
+
+    .case-metrics div {
+        display: grid
+    }
+
+    .case-metrics strong {
+        font-size: 26px;
+        color: var(--heading);
+        line-height: 1.2
+    }
+
+    .case-metrics span {
+        color: var(--muted);
+        font-size: 13px
+    }
+
+    /* OSS summary + GitHub graph */
+    .oss-summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px
+    }
+
+    .oss-summary span {
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--muted);
+        font-size: 14px
+    }
+
+    .oss-summary strong {
+        color: var(--heading)
+    }
+
+    .gh-activity {
+        margin-top: 18px
+    }
+
+    .gh-total {
+        margin: -4px 0 12px
+    }
+
+    .gh-graph {
+        overflow-x: auto;
+        padding: 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(0, 0, 0, .35)
+    }
+
+    .gh-months,
+    .gh-cells {
+        display: grid;
+        grid-template-columns: repeat(var(--weeks, 53), minmax(9px, 1fr));
+        gap: 3px;
+        min-width: 680px
+    }
+
+    .gh-months {
+        margin-bottom: 6px;
+        color: var(--muted);
+        font-size: 12px
+    }
+
+    .gh-months span {
+        grid-row: 1;
+        white-space: nowrap
+    }
+
+    .gh-cells {
+        grid-template-rows: repeat(7, auto);
+        grid-auto-flow: column
+    }
+
+    .gh-cell {
+        display: block;
+        aspect-ratio: 1;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, .06)
+    }
+
+    .gh-cell.empty {
+        background: transparent
+    }
+
+    .gh-cell.l1 { background: rgba(14, 165, 233, .3) }
+    .gh-cell.l2 { background: rgba(14, 165, 233, .55) }
+    .gh-cell.l3 { background: var(--primary) }
+    .gh-cell.l4 { background: var(--primary-2); box-shadow: 0 0 6px rgba(0, 212, 255, .55) }
+
+    .gh-legend {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 4px;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 12px
+    }
+
+    .gh-legend .gh-cell {
+        width: 11px
+    }
+
+    .gh-legend span {
+        margin: 0 4px
+    }
+
+    /* EDUCATION */
+    .edu-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 14px
+    }
+
+    .edu-card {
+        padding: 18px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card);
+        box-shadow: var(--shadow);
+        color: var(--cardText)
+    }
+
+    .edu-card h3 {
+        font-size: clamp(18px, 2vw, 22px)
+    }
+
+    .edu-highlight {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(139, 92, 246, .25), rgba(14, 165, 233, .2));
+        color: var(--heading);
+        font-size: 14px;
+        font-weight: 600
+    }
+
+    /* Skill cards: interactive */
+    .skill-card {
+        cursor: pointer
+    }
+
+    .skill-card:focus-visible {
+        outline: none
+    }
+
+    .skill-more {
+        display: inline-block;
+        margin-top: 4px;
+        color: var(--primary-2);
+        font-size: 12px;
+        opacity: .7;
+        transition: opacity .2s ease
+    }
+
+    .skill-card:hover .skill-more,
+    .skill-card.active .skill-more {
+        opacity: 1
+    }
+
+    .skill-uses {
+        display: grid;
+        gap: 12px;
+        margin-top: 8px
+    }
+
+    .skill-uses div {
+        display: grid;
+        gap: 2px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, .03)
+    }
+
+    .skill-uses strong {
+        color: var(--heading)
+    }
+
+    .skill-uses span {
+        color: var(--muted)
+    }
+
+    /* Case study button on project cards */
+    .case-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid color-mix(in srgb, var(--primary) 45%, var(--border));
+        background: rgba(14, 165, 233, .1);
+        color: var(--heading);
+        font: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        transition: background .2s ease, transform .2s ease
+    }
+
+    .case-btn:hover {
+        background: rgba(14, 165, 233, .22);
+        transform: translateY(-1px)
+    }
+
+    .case-btn svg {
+        width: 18px;
+        height: 18px
+    }
+
+    .project .overlay .btn {
+        font: inherit;
+        cursor: pointer
+    }
+
+    /* Popups */
+    body.modal-open {
+        overflow: hidden
+    }
+
+    .modal {
+        width: min(980px, calc(100vw - 32px));
+        max-height: calc(100vh - 48px);
+        max-height: calc(100dvh - 48px);
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, .16);
+        border-radius: var(--radius-lg);
+        background:
+            radial-gradient(120% 80% at 0% 0%, rgba(14, 165, 233, .16), transparent 55%),
+            radial-gradient(120% 80% at 100% 100%, rgba(139, 92, 246, .18), transparent 55%),
+            linear-gradient(160deg, rgba(22, 28, 52, .78), rgba(10, 13, 30, .86));
+        -webkit-backdrop-filter: blur(22px) saturate(150%);
+        backdrop-filter: blur(22px) saturate(150%);
+        color: var(--cardText);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .1);
+        overflow: hidden
+    }
+
+    .modal[open] {
+        display: flex;
+        flex-direction: column;
+        animation: modalIn .25s ease
+    }
+
+    .modal::backdrop {
+        background: rgba(2, 4, 12, .25)
+    }
+
+    /* While a popup is open, blur only the page content; the starfield keeps moving sharply */
+    main,
+    #site-nav,
+    footer,
+    .fab {
+        transition: filter .3s ease, opacity .3s ease
+    }
+
+    body.modal-open main,
+    body.modal-open #site-nav,
+    body.modal-open footer,
+    body.modal-open .fab {
+        filter: blur(8px);
+        opacity: .45
+    }
+
+    .modal .case-block,
+    .modal .skill-uses div {
+        background: rgba(255, 255, 255, .045);
+        border-color: rgba(255, 255, 255, .1)
+    }
+
+    .skill-modal {
+        width: min(620px, calc(100vw - 32px))
+    }
+
+    .modal-body {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: clamp(18px, 3vw, 30px);
+        padding-top: clamp(22px, 3vw, 32px)
+    }
+
+    .modal-foot {
+        display: flex;
+        justify-content: flex-end;
+        padding: 12px clamp(18px, 3vw, 30px);
+        border-top: 1px solid rgba(255, 255, 255, .1);
+        background: rgba(0, 0, 0, .18)
+    }
+
+    .modal-foot .btn {
+        font: inherit;
+        cursor: pointer
+    }
+
+    .modal-x {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        z-index: 3;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(0, 0, 0, .55);
+        color: var(--heading);
+        font-size: 22px;
+        line-height: 1;
+        cursor: pointer
+    }
+
+    .modal-x:hover {
+        background: rgba(255, 255, 255, .12)
+    }
+
+    .modal .case-head {
+        padding-right: 40px
+    }
+
+    @keyframes modalIn {
+        from { opacity: 0; transform: translateY(12px) scale(.98) }
+        to { opacity: 1; transform: none }
+    }
+
+    /* ACHIEVEMENTS */
+    .achieve-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 14px
+    }
+
+    .achieve-card {
+        padding: 22px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card);
+        box-shadow: var(--shadow);
+        color: var(--cardText);
+        transition: transform .25s ease, border-color .25s ease
+    }
+
+
+    .achieve-card h3 {
+        font-size: clamp(20px, 2.2vw, 24px)
+    }
+
+    .achieve-icon {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 14px;
+        border-radius: 14px;
+        background: rgba(255, 0, 0, .14);
+        color: #ff4d4d
+    }
+
+    .achieve-icon.lions {
+        background: rgba(245, 158, 11, .15);
+        color: var(--warning)
+    }
+
+    .achieve-icon svg {
+        width: 24px;
+        height: 24px
+    }
+
     /* WORK STYLE */
     .work-grid {
         display: grid;
@@ -709,10 +1341,6 @@
         transition: transform .25s ease, border-color .25s ease
     }
 
-    .work-card:hover {
-        transform: translateY(-4px);
-        border-color: color-mix(in srgb, var(--secondary) 42%, var(--border))
-    }
 
     .work-index {
         display: inline-block;
@@ -829,9 +1457,6 @@
         transition: transform .25s ease, border-color .25s ease
     }
 
-    .tl-card:hover {
-        transform: translateY(-2px)
-    }
 
     .tl-current .tl-card {
         border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
@@ -1189,6 +1814,44 @@
         display: none;
     }
 
+    /* ==========================
+       Unified card hover (same as "How I Work")
+       ========================== */
+    .skill-card,
+    .project,
+    .open-source-card,
+    .work-card,
+    .tl-card,
+    .edu-card,
+    .achieve-card,
+    .stat,
+    .story-note,
+    .help-item,
+    .testi,
+    .personal-card,
+    .contact-card {
+        transition: transform .25s ease, border-color .25s ease
+    }
+
+    .skill-card:hover,
+    .skill-card:focus-visible,
+    .skill-card.active,
+    .project:hover,
+    .open-source-card:hover,
+    .work-card:hover,
+    .tl-card:hover,
+    .edu-card:hover,
+    .achieve-card:hover,
+    .stat:hover,
+    .story-note:hover,
+    .help-item:hover,
+    .testi:hover,
+    .personal-card:hover,
+    .contact-card:hover {
+        transform: translateY(-4px);
+        border-color: color-mix(in srgb, var(--secondary) 42%, var(--border))
+    }
+
     /* Responsive */
     @media (max-width:1100px) {
         .skills-grid {
@@ -1199,8 +1862,13 @@
             grid-template-columns: repeat(2, 1fr)
         }
 
-        .opensource-grid {
+        .opensource-grid,
+        .edu-grid {
             grid-template-columns: 1fr
+        }
+
+        .stats-band {
+            grid-template-columns: repeat(2, 1fr)
         }
 
         .story-panel,
@@ -1229,6 +1897,19 @@
 
         .open-source-head {
             display: grid
+        }
+
+        .case-grid,
+        .achieve-grid {
+            grid-template-columns: 1fr
+        }
+
+        .case-head {
+            display: grid
+        }
+
+        .case-thumbs img {
+            width: 31%
         }
 
         .status-pill {

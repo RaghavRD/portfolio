@@ -95,8 +95,9 @@ resize(); requestAnimationFrame(draw);
    ========================== */
 const typeTarget = document.getElementById('typewriter');
 const words = [
-    'Full Stack Developer | Problem Solver | Designer',
-    'I design systems people love to use',
+    'Full-Stack Engineer · AI/LLM Integrations · Azure',
+    'Python · FastAPI · Django · Angular · React',
+    'Building AI-powered tools with the OpenAI API',
     'Clean code. Clear UX. Real impact.'
 ];
 let wi = 0, ci = 0, deleting = false, pause = 0;
@@ -145,7 +146,7 @@ hamburger.addEventListener('click', () => {
 menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
 
 /* ==========================
-   Reveal & Skill bars (GSAP)
+   Reveal animations (GSAP)
    ========================== */
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     const sections = document.querySelectorAll('section');
@@ -168,30 +169,6 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
                 }
             );
         }
-
-        // Animate Skill Bars
-        const cards = sec.querySelectorAll('.skill-card');
-        if (cards.length > 0) {
-            cards.forEach(card => {
-                const pct = card.getAttribute('data-skill');
-                const bar = card.querySelector('.skill-bar > span');
-                if(bar) {
-                    gsap.fromTo(bar, 
-                        { width: '0%' }, 
-                        {
-                            scrollTrigger: {
-                                trigger: sec,
-                                start: "top 85%",
-                            },
-                            width: pct + '%',
-                            duration: 1.5,
-                            ease: "power3.out",
-                            delay: 0.2
-                        }
-                    );
-                }
-            });
-        }
     });
 }
 
@@ -200,39 +177,192 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
    ========================== */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const cards = document.querySelectorAll('.project');
+const applyFilter = (tag) => cards.forEach(c => {
+    const show = tag === 'all' || (c.dataset.tags || '').split(' ').includes(tag);
+    c.style.display = show ? 'block' : 'none';
+});
 filterBtns.forEach(btn => btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const tag = btn.dataset.filter;
-    cards.forEach(c => {
-        const show = tag === 'all' || (c.dataset.tags || '').includes(tag);
-        c.style.display = show ? 'block' : 'none';
-    });
+    applyFilter(btn.dataset.filter);
 }));
+const activeFilter = document.querySelector('.filter-btn.active');
+if (activeFilter) applyFilter(activeFilter.dataset.filter);
+
+/* ==========================
+   Popups (case studies & skills)
+   ========================== */
+const openModal = (dialog) => {
+    if (!dialog || dialog.open) return;
+    dialog.showModal();
+    document.body.classList.add('modal-open');
+    if (typeof lenis !== 'undefined') lenis.stop();
+    const body = dialog.querySelector('.modal-body');
+    if (body) body.scrollTop = 0;
+};
+document.querySelectorAll('dialog.modal').forEach(dialog => {
+    dialog.querySelectorAll('[data-close]').forEach(btn => btn.addEventListener('click', () => dialog.close()));
+    // Click on the dimmed backdrop closes the popup
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => {
+        document.body.classList.remove('modal-open');
+        if (typeof lenis !== 'undefined') lenis.start();
+        document.querySelectorAll('.skill-card.active').forEach(c => c.classList.remove('active'));
+    });
+});
+
+// Case study popups
+document.querySelectorAll('[data-case]').forEach(btn => btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openModal(document.getElementById(btn.dataset.case));
+}));
+
+// Project card image sliders
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.slider').forEach(slider => {
+    const track = slider.querySelector('.slides');
+    const dots = slider.querySelectorAll('.slider-dots button');
+    const total = track.children.length;
+    let index = 0, timer = null;
+    const go = (i) => {
+        index = (i + total) % total;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, n) => d.classList.toggle('active', n === index));
+    };
+    const play = () => {
+        if (reduceMotion || total < 2) return;
+        clearInterval(timer);
+        timer = setInterval(() => go(index + 1), 3500);
+    };
+    dots.forEach((d, n) => d.addEventListener('click', (e) => { e.stopPropagation(); go(n); play(); }));
+    play();
+});
+
+// Case study galleries
+document.querySelectorAll('.case-gallery').forEach(gallery => {
+    const main = gallery.querySelector('.case-main');
+    const thumbs = gallery.querySelectorAll('.case-thumbs img');
+    thumbs.forEach(t => t.addEventListener('click', () => {
+        main.src = t.src;
+        main.alt = t.alt;
+        thumbs.forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+    }));
+});
+
+// Skill popups
+const skillModal = document.getElementById('skillModal');
+document.querySelectorAll('.skill-card').forEach(card => {
+    const open = () => {
+        document.querySelectorAll('.skill-card.active').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        skillModal.querySelector('#skillModalTitle').textContent = card.querySelector('h3').textContent;
+        skillModal.querySelector('#skillModalContent').innerHTML = card.querySelector('.skill-detail').innerHTML;
+        openModal(skillModal);
+    };
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+});
+
+/* ==========================
+   GitHub contribution graph
+   ========================== */
+const ghCells = document.getElementById('ghCells');
+if (ghCells) {
+    const ghCard = ghCells.closest('.gh-activity');
+    fetch('https://github-contributions-api.jogruber.de/v4/RaghavRD?y=last')
+        .then(res => { if (!res.ok) throw new Error('GitHub data unavailable'); return res.json(); })
+        .then(data => {
+            const days = data.contributions || [];
+            if (!days.length) throw new Error('No contribution data');
+            const toDate = (d) => new Date(d + 'T00:00:00');
+            const pad = toDate(days[0].date).getDay(); // weeks start on Sunday
+            const weeks = Math.ceil((pad + days.length) / 7);
+            const frag = document.createDocumentFragment();
+            for (let i = 0; i < pad; i++) {
+                const cell = document.createElement('span');
+                cell.className = 'gh-cell empty';
+                frag.appendChild(cell);
+            }
+            days.forEach(d => {
+                const cell = document.createElement('span');
+                cell.className = 'gh-cell l' + d.level;
+                cell.title = `${d.count} contribution${d.count === 1 ? '' : 's'} on ${toDate(d.date).toDateString()}`;
+                frag.appendChild(cell);
+            });
+            ghCells.appendChild(frag);
+
+            const months = document.getElementById('ghMonths');
+            ghCells.style.setProperty('--weeks', weeks);
+            months.style.setProperty('--weeks', weeks);
+            let prevMonth = -1;
+            for (let w = 0; w < weeks; w++) {
+                const first = toDate(days[Math.max(0, w * 7 - pad)].date);
+                if (first.getMonth() === prevMonth) continue;
+                prevMonth = first.getMonth();
+                if ((w === 0 && first.getDate() > 21) || w > weeks - 3) continue;
+                const label = document.createElement('span');
+                label.textContent = first.toLocaleString('en', { month: 'short' });
+                label.style.gridColumn = `${w + 1}`;
+                months.appendChild(label);
+            }
+            const total = data.total && data.total.lastYear;
+            if (typeof total === 'number') {
+                document.getElementById('ghTotal').textContent = `${total} contributions in the last year`;
+            }
+        })
+        .catch(() => { if (ghCard) ghCard.style.display = 'none'; });
+}
 
 /* ==========================
    Contact form validation
    ========================== */
-// const form = document.getElementById('contactForm');
-// const statusEl = document.getElementById('formStatus');
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     const name = form.name.value.trim();
-//     const email = form.email.value.trim();
-//     const subject = form.subject.value.trim();
-//     const message = form.message.value.trim();
-//     let ok = true;
-//     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-//     const setErr = (id, msg) => { document.getElementById(id).textContent = msg || ''; if (msg) ok = false; };
-//     setErr('err-name', name ? '' : 'Name is required');
-//     setErr('err-email', emailOk ? '' : 'Valid email required');
-//     setErr('err-subject', subject ? '' : 'Subject is required');
-//     setErr('err-message', message.length >= 10 ? '' : 'Message should be at least 10 characters');
-//     if (!ok) { statusEl.textContent = 'Please fix the errors above.'; return; }
-//     const btn = document.getElementById('sendBtn');
-//     const prev = btn.textContent; btn.textContent = 'Sending…'; btn.disabled = true;
-//     setTimeout(() => { btn.textContent = prev; btn.disabled = false; form.reset(); statusEl.textContent = 'Thanks! Your message has been queued (demo).'; }, 900);
-// });
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/raghavdesai774@gmail.com';
+const form = document.getElementById('contactForm');
+const statusEl = document.getElementById('formStatus');
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const subject = form.subject.value.trim();
+    const message = form.message.value.trim();
+    let ok = true;
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const setErr = (id, msg) => { document.getElementById(id).textContent = msg || ''; if (msg) ok = false; };
+    setErr('err-name', name ? '' : 'Name is required');
+    setErr('err-email', emailOk ? '' : 'Valid email required');
+    setErr('err-subject', subject ? '' : 'Subject is required');
+    setErr('err-message', message.length >= 10 ? '' : 'Message should be at least 10 characters');
+    if (!ok) { statusEl.textContent = 'Please fix the errors above.'; return; }
+
+    const btn = document.getElementById('sendBtn');
+    const prev = btn.textContent; btn.textContent = 'Sending…'; btn.disabled = true;
+    statusEl.textContent = '';
+    try {
+        const res = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                name, email, message,
+                _subject: `Portfolio: ${subject}`,
+                _replyto: email,
+                _template: 'table',
+                _captcha: 'false',
+                _honey: form._honey.value
+            })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'Request failed');
+        form.reset();
+        statusEl.textContent = "Thanks! Your message has been sent. I'll get back to you soon.";
+    } catch (err) {
+        statusEl.textContent = 'Sorry, something went wrong. Please email me directly at raghavdesai774@gmail.com.';
+    } finally {
+        btn.textContent = prev; btn.disabled = false;
+    }
+});
 
 /* ==========================
    Misc

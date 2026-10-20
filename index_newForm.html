@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="favicon.ico">
+    <title>Raghav's Portfolio</title>
+    <meta name="description" content="Raghav Desai — Portfolio, Projects, Skills, Experience and Contact." />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style_css.css">
+
+    <!-- Motion Stack (Lenis + GSAP) -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="progress-bar" id="progress"></div>
+
+    <!-- Sticky Nav -->
+    <header class="nav" id="site-nav" role="navigation" aria-label="Primary">
+        <div class="nav-wrap container">
+            <a href="#home" class="brand"><span class="brand-mark">&gt;_</span> Raghav Desai</a>
+            <div class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="menu">
+                <span></span>
+            </div>
+            <nav id="menu" class="menu" role="menubar">
+                <ul>
+                    <li><a href="#about" data-spy>About</a></li>
+                    <li><a href="#skills" data-spy>Skills</a></li>
+                    <li><a href="#projects" data-spy>Projects</a></li>
+                    <li><a href="#opensource" data-spy>Open Source</a></li>
+                    <li><a href="#workstyle" data-spy>Work Style</a></li>
+                    <li><a href="#experience" data-spy>Experience</a></li>
+                    <li><a href="#contact" data-spy>Contact</a></li>
+                </ul>
+            </nav>
+            <a class="btn btn-ghost btn-sm nav-resume" href="./Raghav_Desai.pdf" download>Resume</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="home" aria-label="Welcome">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal slide-up">
+                    <p class="eyebrow"><span aria-hidden="true">🗂️</span> PUNE, INDIA &rarr; SOFTWARE ENGINEER</p>
+                    <h1>Hi,<br>I am <span class="text-accent">Raghav.</span></h1>
+                    <p class="hero-typewriter mono" id="typewriter" aria-live="polite">&nbsp;</p>
+                    <p class="hero-desc">Am specializing in Python, Django/FastAPI,
+                        Angular, SQL, and Azure Cloud. Building scalable, real-time web applications with clean
+                        architecture, reliable backend systems, and modern UI experiences.</p>
+                    <div class="cta-row">
+                        <a class="btn btn-primary" href="#projects">View Projects <span aria-hidden="true">→</span></a>
+                        <a class="btn btn-ghost" href="./Raghav_Desai.pdf" download>Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-visual reveal" aria-hidden="true">
+                    <div class="code-card">
+                        <div class="code-card-head">
+                            <span class="dot live"></span>
+                            <span class="code-card-file">profile.json</span>
+                        </div>
+                        <ul class="code-list">
+                            <li><span class="code-num">00</span><span class="code-label">Name</span><span
+                                    class="code-value">Raghav Desai</span></li>
+                            <li><span class="code-num">01</span><span class="code-label">Role</span><span
+                                    class="code-value">Associate Software Engineer</span></li>
+                            <li><span class="code-num">02</span><span class="code-label">Company</span><span
+                                    class="code-value">Mastek</span></li>
+                            <li><span class="code-num">03</span><span class="code-label">Stack</span><span
+                                    class="code-value">Python · Angular · Azure · AI & ML</span></li>
+                            <!-- <li><span class="code-num">04</span><span class="code-label">Focus</span><span
+                                    class="code-value">Backend &amp; Cloud</span></li> -->
+                            <li><span class="code-num">05</span><span class="code-label">Based in</span><span
+                                    class="code-value">Pune, India</span></li>
+                            <li><span class="code-num">06</span><span class="code-label">Uptime</span><span
+                                    class="code-value mono" id="heroUptime">—</span></li>
+                            <li class="code-final"><span class="code-num">07</span><span
+                                    class="code-label">Status</span><span class="code-value">Open to interesting
+                                    problems</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="scroll-indicator" aria-hidden="true">Scroll Down <span class="arrow"></span></div> -->
+        </section>
+
+        <!-- STATS -->
+        <section class="stats-band" aria-label="Highlights">
+            <div class="container stats-row reveal">
+                <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years of
+                        Experience</span></div>
+                <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Open Source Contributions</span></div>
+                <div class="stat"><span class="stat-num">8.5K+</span><span class="stat-label">YouTube
+                        Subscribers</span></div>
+                <div class="stat"><span class="stat-num">3</span><span class="stat-label">Companies</span></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="band-alt" aria-label="About Me">
+            <div class="container about-grid reveal slide-up">
+                <div class="about-copy">
+                    <p class="eyebrow"><span aria-hidden="true">👋</span> WHO I AM</p>
+                    <h2>Full-stack engineer,<br>backend at heart.</h2>
+                    <p>I'm a <em>Full-Stack Software Engineer</em> specializing in Python, Django, Angular, SQL, and
+                        Azure Cloud. I build scalable, real-time web applications with clean architecture, reliable
+                        backend systems, and modern UI experiences.</p>
+                    <p>I enjoy solving complex problems through thoughtful engineering: integrating secure REST APIs,
+                        optimizing databases, and applying cloud-native design to drive performance at scale. My
+                        experience spans enterprise solutions like stock-market monitoring applications, eCommerce
+                        platforms, and real-time news systems.</p>
+                    <p>Currently working as an Associate Software Engineer at Mastek, after being promoted from
+                        Software Engineer Trainee. I'm continuously enhancing my expertise in AI &amp; ML, cloud
+                        deployments, system reliability, and production-grade application development.</p>
+                    <p>What I like most is taking something complex and making it clearer: a workflow, an API, a
+                        dashboard, a data process, or a large codebase that needs careful refactoring. I care about
+                        clean architecture, practical user experience, testing, and steady improvement through
+                        feedback.</p>
+                </div>
+                <div class="about-side">
+                    <img class="about-photo-lg" src="./Devloper-image.jpg" alt="Raghav Desai headshot"
+                        loading="lazy" />
+                    </div>
+                    <div class="about-notes">
+                        <div class="note-box"><span class="dot-bullet" aria-hidden="true"></span>
+                            <div><strong>What I enjoy building</strong><span>Full-stack apps, APIs, dashboards,
+                                    automation tools, and AI-powered workflows.</span></div>
+                        </div>
+                        <div class="note-box"><span class="dot-bullet" aria-hidden="true"></span>
+                            <div><strong>How I think</strong><span>Understand the problem first, then break it into
+                                    small, reliable pieces.</span></div>
+                        </div>
+                        <div class="note-box"><span class="dot-bullet" aria-hidden="true"></span>
+                            <div><strong>What I value</strong><span>Readable code, maintainable systems, clear
+                                    communication, and measurable impact.</span></div>
+                        </div>
+                        <div class="note-box"><span class="dot-bullet" aria-hidden="true"></span>
+                            <div><strong>AI &amp; ML mindset</strong><span>Practical, not hype-driven — LLM
+                                    integrations, data workflows, AI-assisted tools.</span></div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" aria-label="Skills & Technologies">
+            <div class="container reveal slide-up">
+                <div class="section-head">
+                    <p class="eyebrow"><span aria-hidden="true">🧩</span> TECHNICAL SKILLS</p>
+                    <h2>What I build with.</h2>
+                    <p class="section-desc">A practical toolkit for backend-heavy, full-stack, cloud-ready
+                        applications.</p>
+                </div>
+                <div class="skills-grid" id="skillsGrid">
+                    <div class="skill-card" data-skill="90">
+                        <h3>Frontend</h3>
+                        <p>HTML • CSS • JS/TS • Angular • React</p>
+                        <div class="skill-bar"><span></span></div>
+                    </div>
+                    <div class="skill-card" data-skill="89">
+                        <h3>Backend</h3>
+                        <p>Python • FastAPI • Django • Flask • DRF • Keycloak</p>
+                        <div class="skill-bar"><span></span></div>
+                    </div>
+                    <div class="skill-card" data-skill="80">
+                        <h3>Data</h3>
+                        <p>SQL • NumPy • Pandas • Plotly • Visualization • Matplotlib • Seaborn</p>
+                        <div class="skill-bar"><span></span></div>
+                    </div>
+                    <div class="skill-card" data-skill="75">
+                        <h3>Tools</h3>
+                        <p>Git • GitHub • CI/CD Pipeline • SonarQube • Docker</p>
+                        <div class="skill-bar"><span></span></div>
+                    </div>
+                    <div class="skill-card" data-skill="88">
+                        <h3>AI/ML</h3>
+                        <p>Machine Learning • Deep Learning • NLP • Computer Vision • API utilities</p>
+                        <div class="skill-bar"><span></span></div>
+                    </div>
+                    <div class="skill-card" data-skill="70">
+                        <h3>Testing</h3>
+                        <p>Pytest • Jest • SonarQube • API Testing</p>
+                        <div class="skill-bar"><span></span></div>
+                    </div>
+                    <div class="skill-card" data-skill="72">
+                        <h3>Cloud</h3>
+                        <p>Azure • Function Apps • Service Bus • Key Vault</p>
+                        <div class="skill-bar"><span></span></div>
+                    </div>
+                    <div class="skill-card" data-skill="65">
+                        <h3>Design</h3>
+                        <p>Figma • Systems • Tokens • JWT • OAuth</p>
+                        <div class="skill-bar"><span></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="band-alt" aria-label="Projects">
+            <div class="container reveal slide-up">
+                <div class="section-head">
+                    <p class="eyebrow"><span aria-hidden="true">📦</span> SELECTED WORK</p>
+                    <h2>Projects.</h2>
+                    <p class="section-desc">A mix of web apps, ML experiments, and small tools built end to end.</p>
+                </div>
+                <div class="filters" role="tablist">
+                    <button class="filter-btn active" data-filter="all" role="tab">All</button>
+                    <button class="filter-btn" data-filter="tki">Tkinter Apps</button>
+                    <button class="filter-btn" data-filter="web">Web Apps</button>
+                    <button class="filter-btn" data-filter="ml">AI & ML</button>
+                    <button class="filter-btn" data-filter="ext">Extensions</button>
+                </div>
+                <div class="projects-grid" id="projectsGrid">
+                    <article class="project card" data-tags="web ml">
+                        <img src="libtrack_ai.png" alt="LibTrack AI Dashboard" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn btn-primary btn-sm" href="https://github.com/RaghavRD/library_tracker"
+                                    target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>LibTrack AI - Release Analyzer</h3>
+                            <p class="muted">Automated library version tracking system using Groq AI for release
+                                analysis and change detection.</p>
+                            <div class="tech"><span class="tag">Python</span><span class="tag">Django</span><span
+                                    class="tag">AI</span><span class="tag">Groq</span><span class="tag">Serper</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project card" data-tags="tki">
+                        <img src="payend.png" alt="PAYEND App screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn btn-primary btn-sm" href="https://github.com/RaghavRD/PAYEND"
+                                    target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>PAYEND App - Stock Index Border Predictor</h3>
+                            <p class="muted">Predicts maximum limits for major Indian stock indices (e.g., Nifty,
+                                Bank Nifty) with ~98% accuracy to aid traders.</p>
+                            <div class="tech"><span class="tag">Python</span><span class="tag">Tkinter</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project card" data-tags="web">
+                        <img src="eCommerce Website.jpg" alt="Mybooks ecommerce screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn btn-primary btn-sm"
+                                    href="https://github.com/RaghavRD/Books-eCommerce-website" target="_blank"
+                                    rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Mybooks - eCommerce Website</h3>
+                            <p class="muted">Online bookstore with browsing, search, and checkout built for speed
+                                and reliability.</p>
+                            <div class="tech"><span class="tag">Python</span><span class="tag">Django</span><span
+                                    class="tag">SQLite</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project card" data-tags="web">
+                        <img src="Angular_NEWS_App.png" alt="Real Time News app screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn btn-primary btn-sm"
+                                    href="https://github.com/RaghavRD/Real-Time-NEWS-App" target="_blank"
+                                    rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Real Time NEWS App</h3>
+                            <p class="muted">Angular app fetching live news via News API with category filters for
+                                Sports, Entertainment, Science, Health, and Tech.</p>
+                            <div class="tech"><span class="tag">Angular</span><span class="tag">MySQL</span><span
+                                    class="tag">TypeScript</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project card" data-tags="ml">
+                        <img src="MRS1.jpg" alt="Movie recommendation screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn btn-primary btn-sm"
+                                    href="https://github.com/RaghavRD/Movie-Recommendation-System" target="_blank"
+                                    rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Movie Recommendation System</h3>
+                            <p class="muted">Computes similarity scores to recommend top 5 relevant movies based on
+                                user input.</p>
+                            <div class="tech"><span class="tag">Python</span><span class="tag">ML</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project card" data-tags="ml">
+                        <img src="Popuation density of India.jpg" alt="Population density visualization"
+                            loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn btn-primary btn-sm"
+                                    href="https://github.com/RaghavRD/Geographic-Plotting-Using-Python"
+                                    target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Population Density Using Python</h3>
+                            <p class="muted">Interactive map visualizing India's population density by state to
+                                uncover patterns quickly.</p>
+                            <div class="tech"><span class="tag">Python</span><span class="tag">ML</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project card" data-tags="ext">
+                        <img src="CH E.png" alt="Chrome extension QR demo" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn btn-primary btn-sm"
+                                    href="https://github.com/RaghavRD/Movie-Recommendation-System" target="_blank"
+                                    rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Chrome Extension</h3>
+                            <p class="muted">Generate QR codes for current webpages to share or open on mobile
+                                instantly.</p>
+                            <div class="tech"><span class="tag">JavaScript</span></div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- OPEN SOURCE -->
+        <section id="opensource" aria-label="Open Source Contributions">
+            <div class="container reveal slide-up">
+                <div class="section-head">
+                    <p class="eyebrow"><span aria-hidden="true">🌱</span> GIVING BACK</p>
+                    <h2>Open Source Contributions.</h2>
+                </div>
+                <div class="opensource-grid">
+                    <article class="open-source-card open-source-feature card">
+                        <div class="open-source-head">
+                            <div>
+                                <p class="eyebrow eyebrow-inline">Project-wide refactor</p>
+                                <h3>whichllm - Architecture Refactor</h3>
+                            </div>
+                            <span class="status-pill merged">5 Merged + 1 Open</span>
+                        </div>
+                        <p class="muted">Contributed to a project-wide cleanup of whichllm, an open-source Python
+                            CLI that recommends local LLMs based on hardware, benchmarks, memory estimates, and
+                            runtime fit. Worked across Issue #41 to refactor the codebase's oversized core modules
+                            into focused, maintainable components while preserving CLI behavior, ranking logic,
+                            public imports, and test compatibility.</p>
+                        <div class="impact-list">
+                            <span>Refactored constants, output rendering, HuggingFace model fetching, benchmark
+                                processing, ranking, and CLI command flow across a multi-PR series.</span>
+                            <span>Preserved backward compatibility through shim modules so existing imports and
+                                tests continued to work.</span>
+                            <span>Verified the refactor with full and focused test suites, CLI tests, regression
+                                tests, Ruff linting, formatting checks, and compile checks.</span>
+                        </div>
+                        <div class="tech">
+                            <span class="tag">Python</span><span class="tag">Typer CLI</span><span
+                                class="tag">Architecture</span><span class="tag">Refactoring</span><span
+                                class="tag">Testing</span><span class="tag">LLM Tools</span>
+                        </div>
+                        <div class="pr-links">
+                            <a class="btn btn-ghost btn-sm" href="https://github.com/Andyyyy64/whichllm/issues/41"
+                                target="_blank" rel="noopener">Issue #41</a>
+                            <a class="btn btn-ghost btn-sm" href="https://github.com/Andyyyy64/whichllm/pull/81"
+                                target="_blank" rel="noopener">Constants PR</a>
+                            <a class="btn btn-ghost btn-sm" href="https://github.com/Andyyyy64/whichllm/pull/82"
+                                target="_blank" rel="noopener">Display PR</a>
+                            <a class="btn btn-ghost btn-sm" href="https://github.com/Andyyyy64/whichllm/pull/140"
+                                target="_blank" rel="noopener">Fetcher PR</a>
+                            <a class="btn btn-ghost btn-sm" href="https://github.com/Andyyyy64/whichllm/pull/143"
+                                target="_blank" rel="noopener">Benchmark PR</a>
+                            <a class="btn btn-ghost btn-sm" href="https://github.com/Andyyyy64/whichllm/pull/145"
+                                target="_blank" rel="noopener">Ranker PR</a>
+                            <a class="btn btn-ghost btn-sm" href="https://github.com/Andyyyy64/whichllm/pull/162"
+                                target="_blank" rel="noopener">CLI PR</a>
+                        </div>
+                    </article>
+
+                    <article class="open-source-card card">
+                        <div class="open-source-head">
+                            <div>
+                                <p class="eyebrow eyebrow-inline">Accessibility fix</p>
+                                <h3>HeadRoom - Dashboard Contrast Fix</h3>
+                            </div>
+                            <span class="status-pill review">In Review</span>
+                        </div>
+                        <p class="muted">Fixed a light-mode visibility issue in the HeadRoom dashboard where the
+                            active savings-profile badge became difficult to read. Added a scoped color override
+                            and regression coverage to keep the badge readable without changing dark-mode
+                            styling.</p>
+                        <div class="impact-list compact">
+                            <span>Improved the badge contrast to approximately 6.64:1, above the WCAG AA 4.5:1
+                                requirement.</span>
+                            <span>Added targeted pytest coverage and verified Ruff linting and formatting.</span>
+                        </div>
+                        <div class="tech">
+                            <span class="tag">Python</span><span class="tag">CSS</span><span
+                                class="tag">Accessibility</span><span class="tag">Pytest</span>
+                        </div>
+                        <div class="pr-links">
+                            <a class="btn btn-ghost btn-sm"
+                                href="https://github.com/headroomlabs-ai/headroom/pull/2544" target="_blank"
+                                rel="noopener">View PR</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK STYLE -->
+        <section id="workstyle" class="band-alt" aria-label="How I Work">
+            <div class="container reveal slide-up">
+                <div class="section-head">
+                    <p class="eyebrow"><span aria-hidden="true">⚙️</span> HOW I WORK</p>
+                    <h2>Four habits that shape my delivery.</h2>
+                </div>
+                <div class="work-grid">
+                    <article class="work-card card">
+                        <span class="work-index mono">01</span>
+                        <h3>Understand Before Building</h3>
+                        <p class="muted">I first clarify the problem, users, constraints, and success criteria so
+                            the implementation solves the right thing.</p>
+                    </article>
+                    <article class="work-card card">
+                        <span class="work-index mono">02</span>
+                        <h3>Design Clean Boundaries</h3>
+                        <p class="muted">I prefer small modules, clear APIs, focused responsibilities, and code
+                            that can be changed without breaking unrelated behavior.</p>
+                    </article>
+                    <article class="work-card card">
+                        <span class="work-index mono">03</span>
+                        <h3>Verify What Matters</h3>
+                        <p class="muted">I add targeted tests around important workflows and use linting,
+                            formatting, and reviews to keep quality consistent.</p>
+                    </article>
+                    <article class="work-card card">
+                        <span class="work-index mono">04</span>
+                        <h3>Improve With Feedback</h3>
+                        <p class="muted">I like collaborative work where feedback from users, teammates, and
+                            maintainers makes the final solution stronger.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" aria-label="Experience">
+            <div class="container reveal slide-up">
+                <div class="section-head">
+                    <p class="eyebrow"><span aria-hidden="true">🧭</span> THE JOURNEY</p>
+                    <h2>My career, in order.</h2>
+                    <p class="section-desc">From a one-month data analyst stint to backend engineering at Mastek —
+                        every phase, in sequence.</p>
+                </div>
+
+                <div class="journey-grid">
+                    <div class="journey-card card" data-exp="indika">
+                        <span class="journey-num mono">00</span>
+                        <h3>Data Analyst</h3>
+                        <p class="muted">Indika AI · <i>1 Month</i></p>
+                    </div>
+                    <div class="journey-card card" data-exp="geniateq">
+                        <span class="journey-num mono">01</span>
+                        <h3>Angular Developer Intern</h3>
+                        <p class="muted">GeniaTEQ · <i>4 Months</i></p>
+                    </div>
+                    <div class="journey-card card" data-exp="tekhnologia">
+                        <span class="journey-num mono">02</span>
+                        <h3>Junior Python Developer</h3>
+                        <p class="muted">Tekhnologia  Innovations · <i>6 Months</i></p>
+                    </div>
+                    <div class="journey-card card" data-exp="tekhnologia">
+                        <span class="journey-num mono">03</span>
+                        <h3>Associate Software Developer</h3>
+                        <p class="muted">Tekhnologia  Innovations · <i>4 Months</i></p>
+                    </div>
+                    <div class="journey-card card" data-exp="mastek">
+                        <span class="journey-num mono">04</span>
+                        <h3>Software Engineer Trainee</h3>
+                        <p class="muted">Mastek · <i>12 Months</i></p>
+                    </div>
+                    <div class="journey-card card" data-exp="mastek" data-default="true">
+                        <span class="journey-num mono">05</span>
+                        <h3>Associate Software Engineer</h3>
+                        <p class="muted">Mastek · <i>Current</i></p>
+                    </div>
+                </div>
+
+                <div class="timeline">
+
+                    <!-- Mastek -->
+                    <div class="tl-item tl-current" id="exp-mastek">
+                        <div class="tl-card card">
+                            <div class="tl-head">
+                                <div>
+                                    <div class="tl-role-row">
+                                        <h3>Associate Software Engineer</h3>
+                                        <span class="tl-badge tl-badge-current">Current</span>
+                                    </div>
+                                    <p class="tl-company"><i>Mastek</i></p>
+                                </div>
+                                <div class="tl-meta">
+                                    <span class="tl-meta-item">Jul 2026 – Present</span>
+                                    <span class="tl-meta-item">Pune, Maharashtra (Hybrid)</span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Develop and maintain enterprise Python services, REST APIs, and serverless
+                                    workflows using FastAPI, Flask, Azure Functions, Service Bus, Key Vault, App
+                                    Service, and Container Apps.</li>
+                                <li>Build secure API workflows with OAuth2/SSO credentials, Pydantic validation,
+                                    pagination, retry handling, structured logging, and consistent
+                                    error-response patterns.</li>
+                                <li>Troubleshoot SIT and production incidents using Application Insights and
+                                    application logs, tracing root causes across code, configuration, and
+                                    external dependencies, and support corrective deployments via Azure DevOps
+                                    CI/CD.</li>
+                                <li>Implement authentication and authorization using Keycloak user attributes and
+                                    role-based access control (RBAC), working closely with frontend, QA, and
+                                    architecture teams.</li>
+                                <li>Validate backend features with Pytest across business logic, validation,
+                                    authentication, and failure scenarios, and containerized a Python
+                                    proof-of-concept with Docker for portable, reproducible deployment.</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">Azure</span>
+                                <span class="tag">Azure DevOps</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Keycloak</span>
+                                <span class="tag">Pytest</span>
+                            </div>
+
+                            <div class="tl-growth">
+                                <div class="tl-growth-badge">Earlier role at Mastek</div>
+                                <div class="tl-growth-item">
+                                    <h4>Software Engineer Trainee</h4>
+                                    <p class="muted">Jun 2025 – Jun 2026</p>
+                                    <ul>
+                                        <li>Built a strong foundation in production-grade Python development, API
+                                            debugging, and cloud-based application delivery on Azure.</li>
+                                        <li>Paired with senior engineers to learn the codebase, internal tooling,
+                                            and Azure Function Apps used across the team's services.</li>
+                                        <li>Wrote unit tests and fixed defects in existing modules to build
+                                            confidence in code changes before deployment.</li>
+                                        <li>Practiced Git workflows, code reviews, and Agile ceremonies as part of
+                                            the development team.</li>
+                                        <li>Completed internal training and knowledge-sharing sessions to ramp up
+                                            on Python best practices and Azure fundamentals.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tekhnologia -->
+                    <div class="tl-item" id="exp-tekhnologia">
+                        <div class="tl-card card">
+                            <div class="tl-head">
+                                <div>
+                                    <div class="tl-role-row">
+                                        <h3>Associate Software Developer</h3>
+                                    </div>
+                                    <p class="tl-company"><i>Tekhnologia Innovations India</i></p>
+                                </div>
+                                <div class="tl-meta">
+                                    <span class="tl-meta-item">Feb 2025 – May 2025</span>
+                                    <span class="tl-meta-item">Pune, Maharashtra (On-site)</span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Built Django applications and REST APIs for election management and
+                                    inventory systems.</li>
+                                <li>Contributed to a hospital information management platform using Django and
+                                    REST APIs.</li>
+                                <li>Developed a real-time face-recognition module and integrated it into an
+                                    existing Django workflow.</li>
+                                <li>Implemented JWT authentication, role-based authorization, and SQL query
+                                    optimization for secure, maintainable backend access.</li>
+                                <li>Built responsive interfaces using Django templates, JavaScript, HTML, and
+                                    CSS; contributed via testing, code reviews, and Agile delivery.</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Django</span>
+                                <span class="tag">JWT</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+
+                            <div class="tl-growth">
+                                <div class="tl-growth-badge">Earlier role at Tekhnologia</div>
+                                <div class="tl-growth-item">
+                                    <h4>Junior Python Developer</h4>
+                                    <p class="muted">Aug 2024 – Jan 2025</p>
+                                    <ul>
+                                        <li>Implemented backend automation features using Python.</li>
+                                        <li>Built responsive UI components with HTML, CSS, jQuery, and
+                                            JavaScript.</li>
+                                        <li>Managed SQL databases; testing & debugging for stability.</li>
+                                        <li>Collaborated with senior developers to translate requirements into
+                                            working features and fix reported bugs.</li>
+                                        <li>Took part in Agile stand-ups and sprint planning to stay aligned with
+                                            team priorities.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GeniaTEQ -->
+                    <div class="tl-item" id="exp-geniateq">
+                        <div class="tl-card card">
+                            <div class="tl-head">
+                                <div>
+                                    <div class="tl-role-row">
+                                        <h3>Angular Developer Intern</h3>
+                                    </div>
+                                    <p class="tl-company"><i>GeniaTEQ</i></p>
+                                </div>
+                                <div class="tl-meta">
+                                    <span class="tl-meta-item">Apr 2024 – Jul 2024</span>
+                                    <span class="tl-meta-item">Pune, Maharashtra (On-site)</span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Developed and optimized Angular components for dynamic, responsive apps.</li>
+                                <li>Integrated REST APIs ensuring smooth data flow and reduced load times.</li>
+                                <li>Implemented reusable UI components and better state management.</li>
+                                <li>Debugged and tuned performance to enhance UX; delivered features in Agile
+                                    sprints.</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">Angular</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">REST APIs</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Indika AI -->
+                    <div class="tl-item" id="exp-indika">
+                        <div class="tl-card card">
+                            <div class="tl-head">
+                                <div>
+                                    <div class="tl-role-row">
+                                        <h3>Data Analyst</h3>
+                                    </div>
+                                    <p class="tl-company"><i>Indika AI</i></p>
+                                </div>
+                                <div class="tl-meta">
+                                    <span class="tl-meta-item">Sep 2021 - Oct 2021</span>
+                                    <span class="tl-meta-item">Pune, Maharashtra (Remote)</span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Performed data analysis and visualization using Excel and analytics tools to
+                                    derive insights.</li>
+                                <li>Cleaned and organized raw datasets to ensure accuracy before analysis.</li>
+                                <li>Built pivot tables and charts to summarize key trends for the team.</li>
+                                <li>Presented findings in a clear, actionable format to support
+                                    decision-making.</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">Excel</span>
+                                <span class="tag">Advanced Excel</span>
+                                <span class="tag">Data Analysis</span>
+                                <span class="tag">Data Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HELP -->
+        <section id="help" class="band-alt" aria-label="What I Can Help With">
+            <div class="container help-grid-wrap reveal slide-up">
+                <div>
+                    <p class="eyebrow"><span aria-hidden="true">🛠️</span> WHAT I CAN HELP WITH</p>
+                    <h2>From backend systems to AI-assisted product workflows.</h2>
+                    <p class="muted">I can help teams build reliable web applications, backend APIs, dashboards,
+                        AI/ML integrations, cloud-ready services, and maintainable codebases that are easier to
+                        extend over time.</p>
+                </div>
+                <div class="help-grid">
+                    <div class="help-item"><span class="dot-bullet" aria-hidden="true"></span>Full-stack web apps
+                    </div>
+                    <div class="help-item"><span class="dot-bullet" aria-hidden="true"></span>Django / FastAPI REST
+                        APIs</div>
+                    <div class="help-item"><span class="dot-bullet" aria-hidden="true"></span>Angular dashboards
+                    </div>
+                    <div class="help-item"><span class="dot-bullet" aria-hidden="true"></span>AI/ML integrations
+                    </div>
+                    <div class="help-item"><span class="dot-bullet" aria-hidden="true"></span>Cloud deployments
+                    </div>
+                    <div class="help-item"><span class="dot-bullet" aria-hidden="true"></span>Database optimization
+                    </div>
+                    <div class="help-item"><span class="dot-bullet" aria-hidden="true"></span>Automation tools
+                    </div>
+                    <div class="help-item"><span class="dot-bullet" aria-hidden="true"></span>Code refactoring
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERSONAL -->
+        <section id="personal" aria-label="Beyond Work">
+            <div class="container reveal slide-up">
+                <div class="personal-strip">
+                    <div class="personal-card card">
+                        <p class="eyebrow eyebrow-inline">Beyond Work</p>
+                        <h2>Curious by default.</h2>
+                        <p>In my free time, I like exploring new developer tools, learning about AI systems,
+                            improving side projects, watching tech content, and experimenting with ideas that can
+                            become useful products. That curiosity is what keeps me learning and improving as an
+                            engineer.</p>
+                    </div>
+                    <div class="personal-card card">
+                        <p class="eyebrow eyebrow-inline">AI & ML Mindset</p>
+                        <h2>Practical</h2>
+                        <p>I approach AI/ML from an engineering perspective: using Python for data workflows,
+                            integrating LLM APIs, building AI-assisted tools, and designing systems where AI
+                            improves speed, clarity, or decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials" class="band-alt" aria-label="Testimonials">
+            <div class="container reveal slide-up">
+                <div class="section-head">
+                    <p class="eyebrow"><span aria-hidden="true">💬</span> KIND WORDS</p>
+                    <h2>Testimonials.</h2>
+                </div>
+                <div class="testi-grid">
+                    <div class="testi card">
+                        <div class="who">
+                            <img class="avatar" src="./RK.jpeg" alt="Avatar" />
+                            <div class="muted"><strong>Product Manager</strong></div>
+                        </div>
+                        <p><i>"Fantastic collaborator — communicates clearly and ships quality on time."</i></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" aria-label="Contact">
+            <div class="container contact-band reveal slide-up">
+                <div class="contact-copy">
+                    <p class="eyebrow"><span aria-hidden="true">📬</span> GET IN TOUCH</p>
+                    <h2>Got a project in mind?<br>Let's build it.</h2>
+                    <p class="muted">Open to full-time roles, freelance work, and interesting collaborations.</p>
+                </div>
+                <div class="contact-actions">
+                    <div class="cta-row">
+                        <a class="btn btn-primary" href="mailto:raghavdesai774@gmail.com">Email Me <span
+                                aria-hidden="true">→</span></a>
+                        <a class="btn btn-ghost"
+                            href="https://wa.me/919657889081?text=Hello%20Raghav!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
+                            target="_blank" rel="noopener">WhatsApp</a>
+                    </div>
+                    <div class="socials">
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/raghav-desai-772r547/" target="_blank" rel="noopener"
+                            aria-label="LinkedIn">
+                            <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+                                <path d="M100.28 448H7.4V148.9h92.88zm-46.44-338a53.67 53.67 0
+                                    1 1 53.67-53.67 53.67 53.67 0 0
+                                    1-53.67 53.67zM447.9 448h-92.7V302.4c0-34.7-.7-79.3-48.4-79.3
+                                    -48.5 0-55.9 37.9-55.9 76.9V448H158V148.9h89v40.8h1.3c12.4-23.5
+                                    42.7-48.4 87.9-48.4 94 0 111.3 61.9 111.3 142.3z" />
+                            </svg>
+                        </a>
+                        <!-- GitHub -->
+                        <a href="https://github.com/RaghavRD" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58 0-.28-.01-1.02-.02-2-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.9 0-1.3.47-2.36 1.24-3.19-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.22a11.4 11.4 0 0 1 6.01 0c2.29-1.54 3.3-1.22 3.3-1.22.66 1.65.24 2.87.12 3.17.77.83 1.24 1.89 1.24 3.19 0 4.58-2.81 5.6-5.49 5.9.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+                            </svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@rulescom" target="_blank" rel="noopener"
+                            aria-label="YouTube">
+                            <svg viewBox="0 0 576 512" fill="currentColor">
+                                <path d="M549.7 124.1c-6.3-23.7-24.8-42.2-48.4-48.5
+                                    C458.8 64 288 64 288 64s-170.8 0-213.3
+                                    11.6c-23.6 6.2-42.1 24.8-48.4
+                                    48.4C16 166.6 16 256 16 256s0
+                                    89.4 10.3 131.9c6.3 23.7 24.8
+                                    42.2 48.4 48.5C117.2 448 288
+                                    448 288 448s170.8 0 213.3-11.6c23.6-6.2
+                                    42.1-24.8 48.4-48.4C560 345.4 560
+                                    256 560 256s0-89.4-10.3-131.9zM232
+                                    336V176l142.7 80L232 336z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-wrap">
+            <!-- <div class="footer-brand">
+                <a href="#home" class="brand"><span class="brand-mark">&gt;_</span> Raghav Desai</a>
+                <p class="muted">Full-stack software engineer, backend at heart.</p>
+            </div> -->
+            <nav class="footer-links" aria-label="Footer">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#opensource">Open Source</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="footer-meta muted">
+                <div>© <span id="year"></span> Raghav Desai. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab">
+        <button id="toTop" aria-label="Back to top" title="Back to top" style="display:none">
+            <svg id="upIcon" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+            </svg>
+        </button>
+    </div>
+
+</body>
+
+</html>

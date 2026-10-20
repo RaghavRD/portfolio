@@ -5,8 +5,50 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="favicon.ico">
-    <title>Raghav's Portfolio</title>
-    <meta name="description" content="Raghav Desai — Portfolio, Projects, Skills, Experience and Contact." />
+    <title>Raghav Desai | Full-Stack Software Engineer · Python, Azure & AI/LLM</title>
+    <meta name="description"
+        content="Raghav Desai — Full-Stack Software Engineer building Python/FastAPI/Django backends, Angular & React frontends, Azure cloud services, and AI/LLM-powered tools." />
+    <meta name="author" content="Raghav Desai" />
+    <link rel="canonical" href="https://raghavrd.github.io/portfolio/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raghav Desai" />
+    <meta property="og:title" content="Raghav Desai | Full-Stack Software Engineer · AI/LLM Integrations" />
+    <meta property="og:description"
+        content="Python, FastAPI, Django, Angular, React, Azure and OpenAI-powered projects. See case studies, open-source work and experience." />
+    <meta property="og:url" content="https://raghavrd.github.io/portfolio/" />
+    <meta property="og:image" content="https://raghavrd.github.io/portfolio/Devloper-image.jpg" />
+    <meta property="og:image:alt" content="Raghav Desai" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Raghav Desai | Full-Stack Software Engineer · AI/LLM Integrations" />
+    <meta name="twitter:description"
+        content="Python, FastAPI, Django, Angular, React, Azure and OpenAI-powered projects." />
+    <meta name="twitter:image" content="https://raghavrd.github.io/portfolio/Devloper-image.jpg" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Raghav Desai",
+        "jobTitle": "Associate Software Engineer",
+        "worksFor": { "@type": "Organization", "name": "Mastek" },
+        "url": "https://raghavrd.github.io/portfolio/",
+        "image": "https://raghavrd.github.io/portfolio/Devloper-image.jpg",
+        "email": "mailto:raghavdesai774@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressCountry": "IN" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Savitribai Phule Pune University" },
+        "knowsAbout": ["Python", "FastAPI", "Django", "Angular", "React", "Microsoft Azure", "REST APIs", "OpenAI API", "RAG", "LLM Integration"],
+        "sameAs": [
+            "https://github.com/RaghavRD",
+            "https://www.linkedin.com/in/raghav-desai-772r547/",
+            "https://www.youtube.com/@rulescom"
+        ]
+    }
+    </script>
     <meta name="color-scheme" content="dark" />
 
     <!-- Fonts -->
@@ -42,12 +84,14 @@
             <nav id="menu" class="menu" role="menubar">
                 <ul>
                     <li><a href="#about" data-spy>About</a></li>
-                    <li><a href="#story" data-spy>Story</a></li>
+                    <!-- <li><a href="#story" data-spy>Story</a></li> -->
                     <li><a href="#skills" data-spy>Skills</a></li>
                     <li><a href="#projects" data-spy>Projects</a></li>
                     <li><a href="#opensource" data-spy>Open Source</a></li>
-                    <li><a href="#workstyle" data-spy>Work Style</a></li>
+                    <!-- <li><a href="#workstyle" data-spy>Work Style</a></li> -->
                     <li><a href="#experience" data-spy>Experience</a></li>
+                    <li><a href="#education" data-spy>Education</a></li>
+                    <li><a href="#achievements" data-spy>Achievements</a></li>
                     <!-- <li><a href="#testimonials" data-spy>Testimonials</a></li> -->
                     <li><a href="#contact" data-spy>Contact</a></li>
                 </ul>
@@ -62,13 +106,24 @@
                 <div class="glass content-card reveal visible" style="text-align:center">
                     <h1 class="breathing">Hi, I'm <span class="name-gradient">Raghav Desai</span></h1>
                     <p class="lead" id="typewriter" aria-live="polite">&nbsp;</p>
-                    <div class="cta-row">
-                        <a class="btn" href="#projects">Explore My Work</a>
-                        <a class="btn ghost" href="#contact">Contact Me</a>
-                    </div>
                 </div>
             </div>
             <div class="scroll-indicator" aria-hidden="true">Scroll Down <span class="arrow"></span></div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats-section" aria-label="Highlights">
+            <div class="container reveal slide-up">
+                <div class="stats-band">
+                    <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years of professional
+                            experience</span></div>
+                    <div class="stat"><span class="stat-num">2</span><span class="stat-label">Promotions earned</span></div>
+                    <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Merged open-source
+                            PRs</span></div>
+                    <div class="stat"><span class="stat-num">8K+</span><span class="stat-label"> Subscribers
+                            on my YouTube channel</span></div>
+                </div>
+            </div>
         </section>
 
         <!-- ABOUT -->
@@ -81,11 +136,11 @@
                         <p>I'm a <em>Full-Stack Software Engineer</em> specializing in
                             Python, Django, Angular, SQL, and Azure Cloud. I build scalable, real-time web applications
                             with clean architecture, reliable backend systems, and modern UI experiences.</p>
-                        <p>I enjoy solving complex problems through thoughtful engineering: integrating secure REST
+                        <p>I enjoy solving complex problems through thoughtful engineering, integrating secure REST
                             APIs, optimizing databases, and applying cloud-native design to drive performance at scale.
                             My experience spans enterprise solutions like stock-market monitoring applications,
                             eCommerce platforms, and real-time news systems.</p>
-                        <p>Currently working as an Associate Software Developer at MASTEK, after being promoted from
+                        <p>Currently working as an Associate Software Engineer at Mastek, after being promoted from
                             Software Engineer Trainee. I’m continuously enhancing my expertise in AI & ML, cloud
                             deployments, system reliability, and production-grade application development.</p>
                         <div class="cta-row" style="margin-top:14px">
@@ -134,45 +189,90 @@
             <div class="container reveal slide-up">
                 <h2 class="glass content-card" style="padding:12px 18px">Skills & Technologies</h2>
                 <div class="skills-grid" id="skillsGrid" style="margin-top:14px">
-                    <div class="skill-card" data-skill="90">
-                        <h3>Frontend</h3>
-                        <p>HTML • CSS • JS/TS • Angular • React</p>
-                        <div class="skill-bar"><span></span></div>
+                    <div class="skill-card" role="button" tabindex="0" aria-haspopup="dialog">
+                        <h3>AI / ML</h3>
+                        <p>OpenAI API • LLM Integration • RAG • Streamlit • Pandas / NumPy • scikit-learn</p>
+                        <span class="skill-more mono">View usage →</span>
+                        <div class="skill-detail" hidden>
+                            <div><strong>OpenAI API &amp; LLM integration</strong><span>LibTrack AI uses the OpenAI API with Serper web search to extract release versions when registries fail and to predict upcoming releases with a confidence score.</span></div>
+                            <div><strong>LLM tooling</strong><span>Refactored the ranking, fetcher and CLI modules of whichllm, an open-source CLI that recommends local LLMs for your hardware.</span></div>
+                            <div><strong>RAG</strong><span>Contributed to BharatRAG, a RAG evaluation library for Indian languages, and prototyped a Streamlit UI for its evaluation workflow.</span></div>
+                            <div><strong>Computer vision</strong><span>Built a real-time face-recognition module and integrated it into a Django workflow at Tekhnologia.</span></div>
+                            <div><strong>Pandas / NumPy / scikit-learn</strong><span>Movie Recommendation System and Population Density projects, plus my Data Science diploma and B.E. Honors in AI for Big Data Analysis.</span></div>
+                        </div>
                     </div>
-                    <div class="skill-card" data-skill="89">
+                    <div class="skill-card" role="button" tabindex="0" aria-haspopup="dialog">
                         <h3>Backend</h3>
-                        <p>Python • Django • REST • Auth • Caching</p>
-                        <div class="skill-bar"><span></span></div>
+                        <p>Python • FastAPI • Django / DRF • Flask • REST • OAuth2 / JWT • RBAC</p>
+                        <span class="skill-more mono">View usage →</span>
+                        <div class="skill-detail" hidden>
+                            <div><strong>FastAPI &amp; Flask</strong><span>Enterprise Python services and REST APIs at Mastek.</span></div>
+                            <div><strong>Django / DRF</strong><span>Election, inventory and hospital-management APIs at Tekhnologia, plus LibTrack AI and the Mybooks full stack applications.</span></div>
+                            <div><strong>OAuth2, JWT &amp; RBAC</strong><span>OAuth2 client-credential flows and Keycloak role-based access at Mastek, and JWT auth with role-based authorization at Tekhnologia.</span></div>
+                        </div>
                     </div>
-                    <div class="skill-card" data-skill="80">
-                        <h3>Data</h3>
-                        <p>SQL • NumPy • Pandas • Visualization</p>
-                        <div class="skill-bar"><span></span></div>
+                    <div class="skill-card" role="button" tabindex="0" aria-haspopup="dialog">
+                        <h3>Frontend</h3>
+                        <p>HTML • CSS • JS / TS • Angular • React • Next.js</p>
+                        <span class="skill-more mono">View usage →</span>
+                        <div class="skill-detail" hidden>
+                            <div><strong>Angular &amp; TypeScript</strong><span>Built reusable Angular components and REST integrations during my GeniaTEQ internship, and the Real Time NEWS App.</span></div>
+                            <div><strong>React &amp; Next.js</strong><span>BuildLedger, an installable Next.js 16 / React 19 PWA with Tailwind and shadcn/ui.</span></div>
+                            <div><strong>HTML, CSS &amp; JavaScript</strong><span>Django-template interfaces at Tekhnologia, the QR Code Chrome extension, and this portfolio.</span></div>
+                        </div>
                     </div>
-                    <div class="skill-card" data-skill="75">
-                        <h3>Tools</h3>
-                        <p>Git • CI/CD • SonarQube</p>
-                        <div class="skill-bar"><span></span></div>
-                    </div>
-                    <div class="skill-card" data-skill="88">
-                        <h3>UX</h3>
-                        <p>Accessibility • Motion • Prototyping</p>
-                        <div class="skill-bar"><span></span></div>
-                    </div>
-                    <div class="skill-card" data-skill="70">
-                        <h3>Testing</h3>
-                        <p>Jest • Pytest • E2E</p>
-                        <div class="skill-bar"><span></span></div>
-                    </div>
-                    <div class="skill-card" data-skill="72">
+                    <div class="skill-card" role="button" tabindex="0" aria-haspopup="dialog">
                         <h3>Cloud</h3>
-                        <p>Azure • AWS basics • Function App • Service Bus • Key Vault</p>
-                        <div class="skill-bar"><span></span></div>
+                        <p>Azure Functions • Service Bus • Key Vault • App Service • Container Apps • AWS basics</p>
+                        <span class="skill-more mono">View usage →</span>
+                        <div class="skill-detail" hidden>
+                            <div><strong>Azure</strong><span>Azure Functions, Service Bus, Key Vault, App Service and Container Apps for serverless and event-driven workflows at Mastek.</span></div>
+                            <div><strong>Vercel</strong><span>LibTrack AI (with Vercel Cron for the daily check) and BuildLedger are deployed on Vercel.</span></div>
+                            <div><strong>AWS</strong><span>Working knowledge of core AWS services.</span></div>
+                        </div>
                     </div>
-                    <div class="skill-card" data-skill="65">
-                        <h3>Design</h3>
-                        <p>Figma • Systems • Tokens</p>
-                        <div class="skill-bar"><span></span></div>
+                    <div class="skill-card" role="button" tabindex="0" aria-haspopup="dialog">
+                        <h3>Data</h3>
+                        <p>PostgreSQL • MySQL • SQLite • Prisma • Data Visualization</p>
+                        <span class="skill-more mono">View usage →</span>
+                        <div class="skill-detail" hidden>
+                            <div><strong>PostgreSQL</strong><span>Supabase PostgreSQL powers LibTrack AI and BuildLedger in production.</span></div>
+                            <div><strong>SQL optimization</strong><span>Optimized SQL queries for secure, maintainable backend access at Tekhnologia.</span></div>
+                            <div><strong>MySQL, SQLite &amp; Prisma</strong><span>MySQL for the NEWS app, SQLite for Mybooks and local development, and Prisma ORM in BuildLedger.</span></div>
+                            <div><strong>Data visualization</strong><span>Analysis, pivot tables and charts at Indika AI, plus the India population-density map.</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" role="button" tabindex="0" aria-haspopup="dialog">
+                        <h3>DevOps &amp; Tools</h3>
+                        <p>Docker • Azure DevOps CI/CD • Git • SonarQube • App Insights</p>
+                        <span class="skill-more mono">View usage →</span>
+                        <div class="skill-detail" hidden>
+                            <div><strong>Azure DevOps CI/CD</strong><span>Supported corrective and feature deployments at Mastek.</span></div>
+                            <div><strong>Docker</strong><span>Containerized a Python proof-of-concept for portable, reproducible deployment.</span></div>
+                            <div><strong>Application Insights</strong><span>Traced SIT and production incidents back to root causes across code, config and dependencies.</span></div>
+                            <div><strong>Git, GitHub &amp; SonarQube</strong><span>Daily Git workflows and code reviews, multi-PR open-source contributions, GitHub Actions CI on BharatRAG, and SonarQube code-quality checks.</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" role="button" tabindex="0" aria-haspopup="dialog">
+                        <h3>Testing</h3>
+                        <p>Pytest • API Testing • Jest • E2E</p>
+                        <span class="skill-more mono">View usage →</span>
+                        <div class="skill-detail" hidden>
+                            <div><strong>Pytest</strong><span>Unit and API tests at Mastek covering business logic, validation, auth and failure paths; regression tests in whichllm, HeadRoom and BharatRAG.</span></div>
+                            <div><strong>Test infrastructure</strong><span>Split BharatRAG's model-dependent tests into an integration marker so the default suite runs fast without downloading models.</span></div>
+                            <div><strong>Jest &amp; E2E</strong><span>Unit and end-to-end checks for JavaScript / TypeScript frontends.</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" role="button" tabindex="0" aria-haspopup="dialog">
+                        <h3>UX &amp; Design</h3>
+                        <p>Accessibility • Motion • Figma • Prototyping</p>
+                        <span class="skill-more mono">View usage →</span>
+                        <div class="skill-detail" hidden>
+                            <div><strong>Accessibility</strong><span>Fixed a WCAG contrast issue in the HeadRoom dashboard, raising contrast to about 6.64:1.</span></div>
+                            <div><strong>Motion</strong><span>GSAP ScrollTrigger and Lenis smooth scrolling in this portfolio.</span></div>
+                            <div><strong>Responsive &amp; mobile UX</strong><span>Mobile-first layouts and an installable PWA experience for BuildLedger.</span></div>
+                            <div><strong>Figma &amp; prototyping</strong><span>Wireframes and prototypes before building UI.</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,76 +284,33 @@
                 <h2 class="glass content-card" style="padding:12px 18px">Projects</h2>
                 <div class="filters" role="tablist">
                     <button class="filter-btn active" data-filter="all" role="tab">All</button>
-                    <button class="filter-btn" data-filter="tki">Tkinter Apps</button>
-                    <button class="filter-btn" data-filter="web">Web Apps</button>
-                    <button class="filter-btn" data-filter="ml">AI & ML</button>
-                    <button class="filter-btn" data-filter="ext">Extensions</button>
+                    <button class="filter-btn" data-filter="ml" role="tab">AI &amp; ML</button>
+                    <button class="filter-btn" data-filter="web" role="tab">Web Apps</button>
+                    <button class="filter-btn" data-filter="tki" role="tab">Tkinter Apps</button>
+                    <button class="filter-btn" data-filter="ext" role="tab">Extensions</button>
                 </div>
                 <div class="projects-grid" id="projectsGrid">
-                    <article class="project" data-tags="web ml">
-                        <img src="libtrack_ai.png" alt="LibTrack AI Dashboard" loading="lazy" />
+                    <article class="project" data-tags="ml web">
+                        <div class="project-media slider" aria-roledescription="carousel" aria-label="LibTrack AI screenshots">
+                            <div class="slides">
+                                <img src="libtrack_ai_1.png" alt="LibTrack AI dashboard overview" loading="lazy" />
+                                <img src="libtrack_ai_2.png" alt="LibTrack AI screen 2" loading="lazy" />
+                                <img src="libtrack_ai_3.png" alt="LibTrack AI screen 3" loading="lazy" />
+                            </div>
+                            <div class="slider-dots"><button type="button" aria-label="Show LibTrack AI image 1" class="active"></button><button type="button" aria-label="Show LibTrack AI image 2"></button><button type="button" aria-label="Show LibTrack AI image 3"></button></div>
+                        </div>
                         <div class="overlay">
                             <div class="actions">
-                                <a class="btn" href="https://github.com/RaghavRD/library_tracker" target="_blank"
-                                    rel="noopener">GitHub</a>
+                                <a class="btn" href="https://libtrack-ai.vercel.app/libtracker/dashboard/" target="_blank" rel="noopener">Live Demo</a>
+                                <button class="btn ghost" type="button" data-case="case-libtrack">Case Study</button>
+                                <a class="btn ghost" href="https://github.com/RaghavRD/library_tracker" target="_blank" rel="noopener">GitHub</a>
                             </div>
                         </div>
                         <div class="meta">
                             <h3>LibTrack AI - Release Analyzer</h3>
-                            <p class="muted">Automated library version tracking system using Groq AI for release
-                                analysis and change detection.</p>
-                            <div class="tech"><span class="tag">Python</span><span class="tag">Django</span><span
-                                    class="tag">AI</span><span class="tag">Groq</span><span class="tag">Serper</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project" data-tags="tki">
-                        <img src="payend.png" alt="PAYEND App screenshot" loading="lazy" />
-                        <div class="overlay">
-                            <div class="actions">
-                                <a class="btn" href="https://github.com/RaghavRD/PAYEND" target="_blank"
-                                    rel="noopener">GitHub</a>
-                            </div>
-                        </div>
-                        <div class="meta">
-                            <h3>PAYEND App - Stock Index Border Predictor</h3>
-                            <p class="muted">Predicts maximum limits for major Indian stock indices (e.g., Nifty, Bank
-                                Nifty) with ~98% accuracy to aid traders.</p>
-                            <div class="tech"><span class="tag">Python</span><span class="tag">Tkinter</span></div>
-                        </div>
-                    </article>
-
-                    <article class="project" data-tags="web">
-                        <img src="eCommerce Website.jpg" alt="Mybooks ecommerce screenshot" loading="lazy" />
-                        <div class="overlay">
-                            <div class="actions">
-                                <a class="btn" href="https://github.com/RaghavRD/Books-eCommerce-website"
-                                    target="_blank" rel="noopener">GitHub</a>
-                            </div>
-                        </div>
-                        <div class="meta">
-                            <h3>Mybooks - eCommerce Website</h3>
-                            <p class="muted">Online bookstore with browsing, search, and checkout built for speed and
-                                reliability.</p>
-                            <div class="tech"><span class="tag">Python</span><span class="tag">Django</span><span
-                                    class="tag">SQLite</span></div>
-                        </div>
-                    </article>
-
-                    <article class="project" data-tags="web">
-                        <img src="Angular_NEWS_App.png" alt="Real Time News app screenshot" loading="lazy" />
-                        <div class="overlay">
-                            <div class="actions">
-                                <a class="btn" href="https://github.com/RaghavRD/Real-Time-NEWS-App" target="_blank"
-                                    rel="noopener">GitHub</a>
-                            </div>
-                        </div>
-                        <div class="meta">
-                            <h3>Real Time NEWS App</h3>
-                            <p class="muted">Angular app fetching live news via News API with category filters for
-                                Sports, Entertainment, Science, Health, and Tech.</p>
-                            <div class="tech"><span class="tag">Angular</span><span class="tag">MySQL</span><span
-                                    class="tag">TypeScript</span></div>
+                            <p class="muted">Automated dependency tracker that uses the OpenAI API and web search to analyze releases, predict upcoming versions, and email teams.</p>
+                            <dl class="stack-rows"><div><dt>Frontend</dt><dd>Django Templates · Chart.js</dd></div><div><dt>Backend</dt><dd>Django</dd></div><div><dt>Database</dt><dd>PostgreSQL (Supabase)</dd></div><div><dt>AI</dt><dd>OpenAI API · Serper</dd></div><div><dt>Deploy</dt><dd>Vercel + Cron</dd></div></dl>
+                            <button class="case-btn" type="button" data-case="case-libtrack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5M10 13h6M10 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>View Case Study</span></button>
                         </div>
                     </article>
 
@@ -261,32 +318,92 @@
                         <img src="MRS1.jpg" alt="Movie recommendation screenshot" loading="lazy" />
                         <div class="overlay">
                             <div class="actions">
-                                <a class="btn" href="https://github.com/RaghavRD/Movie-Recommendation-System"
-                                    target="_blank" rel="noopener">GitHub</a>
+                                <a class="btn" href="https://github.com/RaghavRD/Movie-Recommendation-System" target="_blank" rel="noopener">GitHub</a>
                             </div>
                         </div>
                         <div class="meta">
                             <h3>Movie Recommendation System</h3>
-                            <p class="muted">Computes similarity scores to recommend top 5 relevant movies based on user
-                                input.</p>
-                            <div class="tech"><span class="tag">Python</span><span class="tag">ML</span></div>
+                            <p class="muted">Computes similarity scores to recommend the top 5 relevant movies based on user input.</p>
+                            <dl class="stack-rows"><div><dt>ML</dt><dd>Similarity-based recommendations</dd></div><div><dt>Language</dt><dd>Python</dd></div></dl>
                         </div>
                     </article>
 
                     <article class="project" data-tags="ml">
-                        <img src="Popuation density of India.jpg" alt="Population density visualization"
-                            loading="lazy" />
+                        <img src="Popuation density of India.jpg" alt="Population density visualization" loading="lazy" />
                         <div class="overlay">
                             <div class="actions">
-                                <a class="btn" href="https://github.com/RaghavRD/Geographic-Plotting-Using-Python"
-                                    target="_blank" rel="noopener">GitHub</a>
+                                <a class="btn" href="https://github.com/RaghavRD/Geographic-Plotting-Using-Python" target="_blank" rel="noopener">GitHub</a>
                             </div>
                         </div>
                         <div class="meta">
                             <h3>Population Density Using Python</h3>
-                            <p class="muted">Interactive map visualizing India’s population density by state to uncover
-                                patterns quickly.</p>
-                            <div class="tech"><span class="tag">Python</span><span class="tag">ML</span></div>
+                            <p class="muted">Interactive map visualizing India’s population density by state to uncover patterns quickly.</p>
+                            <dl class="stack-rows"><div><dt>ML / Data</dt><dd>Geographic data analysis</dd></div><div><dt>Output</dt><dd>Interactive map</dd></div><div><dt>Language</dt><dd>Python</dd></div></dl>
+                        </div>
+                    </article>
+
+                    <article class="project" data-tags="web">
+                        <div class="project-media slider" aria-roledescription="carousel" aria-label="BuildLedger screenshots">
+                            <div class="slides">
+                                <img src="BuildLedger_1.png" alt="BuildLedger dashboard with project budgets" loading="lazy" />
+                                <img src="BuildLedger_2.png" alt="BuildLedger project ledger with transactions and team members" loading="lazy" />
+                            </div>
+                            <div class="slider-dots"><button type="button" aria-label="Show BuildLedger image 1" class="active"></button><button type="button" aria-label="Show BuildLedger image 2"></button></div>
+                        </div>
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn" href="https://buildledger.vercel.app/dashboard" target="_blank" rel="noopener">Live Demo</a>
+                                <button class="btn ghost" type="button" data-case="case-buildledger">Case Study</button>
+                                <a class="btn ghost" href="https://github.com/RaghavRD/BuildLedger" target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>BuildLedger - Construction Money Manager</h3>
+                            <p class="muted">Installable PWA for tracking construction project budgets, expenses, and team access from site or office.</p>
+                            <dl class="stack-rows"><div><dt>Frontend</dt><dd>Next.js · React · Tailwind</dd></div><div><dt>Backend</dt><dd>Server Actions · NextAuth</dd></div><div><dt>Database</dt><dd>PostgreSQL · Prisma</dd></div><div><dt>Deploy</dt><dd>Vercel · PWA</dd></div></dl>
+                            <button class="case-btn" type="button" data-case="case-buildledger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5M10 13h6M10 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>View Case Study</span></button>
+                        </div>
+                    </article>
+
+                    <article class="project" data-tags="tki">
+                        <img src="payend.png" alt="PAYEND App screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn" href="https://github.com/RaghavRD/PAYEND" target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>PAYEND App - Stock Index Border Predictor</h3>
+                            <p class="muted">Predicts maximum limits for major Indian stock indices (e.g., Nifty, Bank Nifty) with ~98% accuracy to aid traders.</p>
+                            <dl class="stack-rows"><div><dt>Desktop UI</dt><dd>Tkinter</dd></div><div><dt>Logic</dt><dd>Python</dd></div></dl>
+                        </div>
+                    </article>
+
+                    <article class="project" data-tags="web">
+                        <img src="eCommerce Website.jpg" alt="Mybooks ecommerce screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn" href="https://github.com/RaghavRD/Books-eCommerce-website" target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Mybooks - eCommerce Website</h3>
+                            <p class="muted">Online bookstore with browsing, search, and checkout built for speed and reliability.</p>
+                            <dl class="stack-rows"><div><dt>Frontend</dt><dd>Django Templates · HTML / CSS</dd></div><div><dt>Backend</dt><dd>Django</dd></div><div><dt>Database</dt><dd>SQLite</dd></div></dl>
+                        </div>
+                    </article>
+
+                    <article class="project" data-tags="web">
+                        <img src="Angular_NEWS_App.png" alt="Real Time News app screenshot" loading="lazy" />
+                        <div class="overlay">
+                            <div class="actions">
+                                <a class="btn" href="https://github.com/RaghavRD/Real-Time-NEWS-App" target="_blank" rel="noopener">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <h3>Real Time NEWS App</h3>
+                            <p class="muted">Angular app fetching live news via News API with category filters for Sports, Entertainment, Science, Health, and Tech.</p>
+                            <dl class="stack-rows"><div><dt>Frontend</dt><dd>Angular · TypeScript</dd></div><div><dt>Data</dt><dd>News API · MySQL</dd></div></dl>
                         </div>
                     </article>
 
@@ -294,15 +411,13 @@
                         <img src="CH E.png" alt="Chrome extension QR demo" loading="lazy" />
                         <div class="overlay">
                             <div class="actions">
-                                <a class="btn" href="https://github.com/RaghavRD/Movie-Recommendation-System"
-                                    target="_blank" rel="noopener">GitHub</a>
+                                <a class="btn" href="https://github.com/RaghavRD/QR-Code-Generator" target="_blank" rel="noopener">GitHub</a>
                             </div>
                         </div>
                         <div class="meta">
                             <h3>Chrome Extension</h3>
-                            <p class="muted">Generate QR codes for current webpages to share or open on mobile
-                                instantly.</p>
-                            <div class="tech"><span class="tag">JavaScript</span></div>
+                            <p class="muted">Generate QR codes for current webpages to share or open on mobile instantly.</p>
+                            <dl class="stack-rows"><div><dt>Platform</dt><dd>Chrome Extension</dd></div><div><dt>Language</dt><dd>JavaScript</dd></div></dl>
                         </div>
                     </article>
 
@@ -314,6 +429,12 @@
         <section id="opensource" aria-label="Open Source Contributions">
             <div class="container reveal slide-up">
                 <h2 class="glass content-card" style="padding:12px 18px">Open Source Contributions</h2>
+                <div class="oss-summary">
+                    <span><strong>6</strong> merged PRs</span>
+                    <span><strong>3</strong> open-source projects</span>
+                    <span><strong>2</strong> issues authored</span>
+                    <span>Python CLI · LLM tooling · RAG evaluation</span>
+                </div>
                 <div class="opensource-grid">
                     <article class="open-source-card open-source-feature">
                         <div class="open-source-head">
@@ -365,7 +486,7 @@
                                 <p class="eyebrow mono">Accessibility fix</p>
                                 <h3>HeadRoom - Dashboard Contrast Fix</h3>
                             </div>
-                            <span class="status-pill review">In Review</span>
+                            <span class="status-pill merged">Merged</span>
                         </div>
                         <p class="muted">Fixed a light-mode visibility issue in the HeadRoom dashboard where the active
                             savings-profile badge became difficult to read. Added a scoped color override and regression
@@ -384,6 +505,61 @@
                                 target="_blank" rel="noopener">View PR</a>
                         </div>
                     </article>
+
+                    <article class="open-source-card">
+                        <div class="open-source-head">
+                            <div>
+                                <p class="eyebrow mono">RAG evaluation · Test infrastructure</p>
+                                <h3>BharatRAG - Fast Test Suite</h3>
+                            </div>
+                            <span class="status-pill review">PR Open</span>
+                        </div>
+                        <p class="muted">BharatRAG is an open-source RAG evaluation library for Indian languages
+                            (Hindi, Marathi, Tamil, Bengali and more). Its tests loaded real SentenceTransformer
+                            models from HuggingFace on every run, so they were slow and failed without network
+                            access.</p>
+                        <div class="impact-list compact">
+                            <span>Reported the issue (#14) and split model-dependent tests into an
+                                <code>integration</code> pytest marker, so the default suite runs fast without
+                                downloading models.</span>
+                            <span>Updated the GitHub Actions CI to run fast tests on every push and integration
+                                tests on <code>main</code>, and documented the workflow in CONTRIBUTING.md.</span>
+                            <span>Reported Issue #9 to make the benchmark runner language-agnostic; it has since
+                                been resolved upstream.</span>
+                        </div>
+                        <div class="tech">
+                            <span class="tag">Python</span><span class="tag">RAG</span><span
+                                class="tag">Pytest</span><span class="tag">GitHub Actions</span><span
+                                class="tag">Embeddings</span>
+                        </div>
+                        <div class="pr-links">
+                            <a class="btn ghost" href="https://github.com/pradnyagundu/bharatrag/pull/36"
+                                target="_blank" rel="noopener">PR #36</a>
+                            <a class="btn ghost" href="https://github.com/pradnyagundu/bharatrag/issues/14"
+                                target="_blank" rel="noopener">Issue #14</a>
+                            <a class="btn ghost" href="https://github.com/pradnyagundu/bharatrag/issues/9"
+                                target="_blank" rel="noopener">Issue #9</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="gh-activity open-source-card">
+                    <div class="open-source-head">
+                        <div>
+                            <p class="eyebrow mono">GitHub activity</p>
+                            <h3>Contribution graph</h3>
+                        </div>
+                        <a class="btn ghost" href="https://github.com/RaghavRD" target="_blank" rel="noopener">@RaghavRD</a>
+                    </div>
+                    <p class="muted gh-total" id="ghTotal"></p>
+                    <div class="gh-graph" role="img" aria-label="Raghav Desai's GitHub contributions over the last year">
+                        <div class="gh-months" id="ghMonths" aria-hidden="true"></div>
+                        <div class="gh-cells" id="ghCells"></div>
+                    </div>
+                    <div class="gh-legend" aria-hidden="true">
+                        <span>Less</span><i class="gh-cell l0"></i><i class="gh-cell l1"></i><i
+                            class="gh-cell l2"></i><i class="gh-cell l3"></i><i class="gh-cell l4"></i><span>More</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -445,22 +621,24 @@
                                     </div>
                                 </div>
                                 <ul>
-                                    <li>Develop and maintain enterprise Python services, REST APIs, and serverless
-                                        workflows using FastAPI, Flask, Azure Functions, Service Bus, Key Vault, App
-                                        Service, and Container Apps.</li>
-                                    <li>Build secure API workflows with OAuth2/SSO credentials, Pydantic validation,
-                                        pagination, retry handling, structured logging, and consistent
-                                        error-response patterns.</li>
-                                    <li>Troubleshoot SIT and production incidents using Application Insights and
-                                        application logs, tracing root causes across code, configuration, and
-                                        external dependencies, and support corrective deployments via Azure DevOps
-                                        CI/CD.</li>
-                                    <li>Implement authentication and authorization using Keycloak user attributes and
-                                        role-based access control (RBAC), working closely with frontend, QA, and
-                                        architecture teams.</li>
-                                    <li>Validate backend features with Pytest across business logic, validation,
-                                        authentication, and failure scenarios, and containerized a Python
-                                        proof-of-concept with Docker for portable, reproducible deployment.</li>
+                                    <li>Build and maintain Python backend services, REST APIs (FastAPI, Flask) and
+                                        serverless Azure Functions workflows for a UK client's internal staff portal
+                                        used by <strong>10–15K employees</strong>, integrating Service Bus, Key Vault,
+                                        App Service and Container Apps.</li>
+                                    <li>Cut response latency of a core portal API by <strong>84%</strong>, making a
+                                        frequently used staff workflow noticeably faster.</li>
+                                    <li>Built a language-localisation proof of concept that added
+                                        <strong>3 languages</strong> to the portal; the approach was adopted into the
+                                        production application.</li>
+                                    <li>Increased backend test coverage by <strong>18%</strong> with Pytest unit and
+                                        API tests across business logic, validation, authentication and failure
+                                        paths.</li>
+                                    <li>Secured service-to-service and user access with OAuth2 client credentials and
+                                        Keycloak attribute-based RBAC, backed by Pydantic validation, retry handling,
+                                        structured logging and consistent error responses.</li>
+                                    <li>Diagnose SIT and production issues end-to-end with Application Insights, ship
+                                        fixes through Azure DevOps CI/CD, and work closely with frontend, QA and
+                                        architecture teams; containerized a Python PoC with Docker.</li>
                                 </ul>
                                 <div class="tags">
                                     <span class="tag">Python</span>
@@ -619,6 +797,74 @@
             </div>
         </section>
 
+        <!-- EDUCATION -->
+        <section id="education" aria-label="Education and Certifications">
+            <div class="container reveal slide-up">
+                <h2 class="glass content-card" style="padding:12px 18px">Education &amp; Certifications</h2>
+                <div class="edu-grid">
+                    <article class="edu-card">
+                        <p class="eyebrow mono">Certifications · 2022 – 2023</p>
+                        <h3>FirstBit Solutions</h3>
+                        <div class="impact-list compact">
+                            <span>Full Stack Diploma in Python</span>
+                            <span>Diploma in Data Science</span>
+                        </div>
+                    </article>
+                    <article class="edu-card">
+                        <p class="eyebrow mono">2018 – 2022</p>
+                        <h3>B.E. in Electronics &amp; Telecommunication</h3>
+                        <p class="edu-highlight">Honors in AI for Big Data Analysis</p>
+                        <p class="muted">Savitribai Phule Pune University (SPPU), Pune · CGPA: 7.94</p>
+                    </article>
+                    <article class="edu-card">
+                        <p class="eyebrow mono">2015 – 2018</p>
+                        <h3>Diploma in Electronics &amp; Telecommunication</h3>
+                        <p class="muted">Rajiv Gandhi College of Polytechnic (MSBTE), Udgir · Percentage: 67.41%</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section id="achievements" aria-label="Achievements">
+            <div class="container reveal slide-up">
+                <h2 class="glass content-card" style="padding:12px 18px">Achievements</h2>
+                <div class="achieve-grid">
+                    <article class="achieve-card">
+                        <div class="achieve-icon" aria-hidden="true">
+                            <svg viewBox="0 0 576 512" fill="currentColor"><path d="M549.7 124.1c-6.3-23.7-24.8-42.2-48.4-48.5C458.8 64 288 64 288 64s-170.8 0-213.3 11.6c-23.6 6.2-42.1 24.8-48.4 48.4C16 166.6 16 256 16 256s0 89.4 10.3 131.9c6.3 23.7 24.8 42.2 48.4 48.5C117.2 448 288 448 288 448s170.8 0 213.3-11.6c23.6-6.2 42.1-24.8 48.4-48.4C560 345.4 560 256 560 256s0-89.4-10.3-131.9zM232 336V176l142.7 80L232 336z"/></svg>
+                        </div>
+                        <p class="eyebrow mono">Content creator · Teaching</p>
+                        <h3>8K+ subscribers on YouTube</h3>
+                        <p class="muted">I run an engineering-education YouTube channel where I break down
+                            engineering concepts into simple, practical explanations for students. Growing it to 8K+
+                            subscribers taught me how to explain complex ideas clearly, the same skill I use in code
+                            reviews, documentation, and team discussions.</p>
+                        <a class="btn ghost" href="https://www.youtube.com/@rulescom" target="_blank"
+                            rel="noopener">Visit Channel</a>
+                    </article>
+                    <article class="achieve-card">
+                        <div class="achieve-icon lions" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.65-9.5 9-9.5 9z" />
+                            </svg>
+                        </div>
+                        <p class="eyebrow mono">Community service · Leadership</p>
+                        <h3>Active Member, Lions Club India</h3>
+                        <p class="muted">As an active member of Lions Club India, part of Lions Clubs International,
+                            I take part in community-service initiatives that support local social causes. Working
+                            with members from different backgrounds has strengthened my teamwork, planning,
+                            leadership, and communication skills beyond engineering.</p>
+                        <div class="tech">
+                            <span class="tag">Community Service</span><span class="tag">Leadership</span><span
+                                class="tag">Teamwork</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- HELP -->
         <section id="help" aria-label="What I Can Help With">
             <div class="container reveal slide-up">
@@ -686,12 +932,15 @@
             </div>
         </section>
         <!-- CONTACT -->
-        <!-- <section id="contact" aria-label="Contact">
+        <section id="contact" aria-label="Contact">
             <div class="container reveal slide-up">
-                <div class="glass content-card">
+                <div class="glass content-card contact-card">
                     <h2>Contact</h2>
                     <p class="muted">Have a project in mind? Let's build it.</p>
                     <form id="contactForm" novalidate>
+                        <!-- Honeypot field to block spam bots -->
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"
+                            style="display:none" />
                         <div class="field"><label for="name">Name</label><input class="input" id="name" name="name"
                                 type="text" placeholder="Your Name" required aria-required="true" />
                             <div class="error" id="err-name"></div>
@@ -711,8 +960,8 @@
                             <div class="error" id="err-message"></div>
                         </div>
                         <div class="cta-row">
-                            <button class="btn" id="sendBtn" type="submit">Send Message</button>
-                            <a class="btn ghost" href="mailto:[YOUR EMAIL]">Email</a>
+                            <button class="btn btn-glass" id="sendBtn" type="submit">Send Message</button>
+                            <a class="btn ghost" href="mailto:raghavdesai774@gmail.com">Email</a>
                             <a class="btn ghost"
                                 href="https://wa.me/919657889081?text=Hello%20Raghav!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
                                 target="_blank" rel="noopener">WhatsApp</a>
@@ -722,12 +971,12 @@
                     </form>
                 </div>
             </div>
-        </section> -->
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="socials" id="contact" aria-label="Social links">
+            <div class="socials" aria-label="Social links">
 
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/raghav-desai-772r547/" target="_blank" rel="noopener"
@@ -790,6 +1039,171 @@
             <div>© <span id="year"></span> Raghav Desai. All rights reserved.</div>
         </div>
     </footer>
+
+
+    <!-- CASE STUDY POPUPS -->
+    <dialog class="modal case-modal" id="case-libtrack" aria-labelledby="case-libtrack-title">
+        <button class="modal-x" type="button" data-close aria-label="Close">&times;</button>
+        <div class="modal-body" data-lenis-prevent>
+                <article class="case-study">
+                    <div class="case-head">
+                        <div>
+                            <p class="eyebrow mono">AI-powered · Full stack · Live</p>
+                            <h3 id="case-libtrack-title">LibTrack AI — Dependency Release Tracker</h3>
+                            <p class="muted">Tracks every library a team depends on, flags security issues, and
+                                predicts upcoming releases before they ship.</p>
+                        </div>
+                        <div class="case-links">
+                            <a class="btn" href="https://libtrack-ai.vercel.app/libtracker/dashboard/" target="_blank"
+                                rel="noopener">Live Demo</a>
+                            <a class="btn ghost" href="https://github.com/RaghavRD/library_tracker" target="_blank"
+                                rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="case-gallery">
+                        <img class="case-main" src="libtrack_ai_1.png" alt="LibTrack AI dashboard overview"
+                            loading="lazy" />
+                        <div class="case-thumbs">
+                            <img src="libtrack_ai_1.png" alt="Dashboard" loading="lazy" class="active" />
+                            <img src="libtrack_ai_2.png" alt="LibTrack AI screen 2" loading="lazy" />
+                            <img src="libtrack_ai_3.png" alt="LibTrack AI screen 3" loading="lazy" />
+                        </div>
+                    </div>
+
+                    <div class="case-grid">
+                        <div class="case-block">
+                            <span class="case-step mono">01 · Problem</span>
+                            <p>Teams usually discover dependency updates and vulnerabilities too late, during a
+                                failing build or a security audit. Checking PyPI, npm and GitHub by hand for every
+                                project doesn't scale.</p>
+                        </div>
+                        <div class="case-block">
+                            <span class="case-step mono">02 · Architecture</span>
+                            <div class="flow" aria-label="Daily check pipeline">
+                                <span>Vercel Cron</span><span>Django endpoint</span><span>Registry fetch</span><span>OSV
+                                    security scan</span><span>OpenAI analysis</span><span>Brevo email</span>
+                            </div>
+                            <p class="muted">Service-layer design (LibrarySync → VersionFetch → FutureUpdate →
+                                Notification) on Django with PostgreSQL (Supabase).</p>
+                        </div>
+                        <div class="case-block">
+                            <span class="case-step mono">03 · AI part</span>
+                            <p>When an official registry API fails, Serper web search + the OpenAI API extract the
+                                correct version from the web. The LLM also analyzes release cadence and public
+                                signals to <strong>predict future releases with a confidence score</strong>, and teams
+                                only get alerts above their chosen threshold.</p>
+                        </div>
+                        <div class="case-block">
+                            <span class="case-step mono">04 · Result</span>
+                            <div class="case-metrics">
+                                <div><strong>51+</strong><span>automated daily runs</span></div>
+                                <div><strong>82</strong><span>libraries tracked</span></div>
+                                <div><strong>174</strong><span>security alerts surfaced</span></div>
+                                <div><strong>5</strong><span>registries: PyPI, npm, RubyGems, Cargo, GitHub</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <dl class="stack-rows wide">
+                        <div><dt>Frontend</dt><dd>Django Templates · Bootstrap 5 · Chart.js</dd></div>
+                        <div><dt>Backend</dt><dd>Django 5 · Python</dd></div>
+                        <div><dt>Database</dt><dd>PostgreSQL (Supabase)</dd></div>
+                        <div><dt>AI</dt><dd>OpenAI API · Serper</dd></div>
+                        <div><dt>Deploy</dt><dd>Vercel · Vercel Cron · Brevo</dd></div>
+                    </dl>
+                </article>
+        </div>
+        <div class="modal-foot">
+            <button class="btn ghost" type="button" data-close>Cancel</button>
+        </div>
+    </dialog>
+
+    <dialog class="modal case-modal" id="case-buildledger" aria-labelledby="case-buildledger-title">
+        <button class="modal-x" type="button" data-close aria-label="Close">&times;</button>
+        <div class="modal-body" data-lenis-prevent>
+                <article class="case-study">
+                    <div class="case-head">
+                        <div>
+                            <p class="eyebrow mono">Full stack · React / Next.js · PWA · Live</p>
+                            <h3 id="case-buildledger-title">BuildLedger — Construction Money Manager</h3>
+                            <p class="muted">One place for contractors and site teams to track budgets, expenses,
+                                payments and receipts across construction projects.</p>
+                        </div>
+                        <div class="case-links">
+                            <a class="btn" href="https://buildledger.vercel.app/dashboard" target="_blank"
+                                rel="noopener">Live Demo</a>
+                            <a class="btn ghost" href="https://github.com/RaghavRD/BuildLedger" target="_blank"
+                                rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="case-gallery">
+                        <img class="case-main" src="BuildLedger_1.png" alt="BuildLedger dashboard with project budgets"
+                            loading="lazy" />
+                        <div class="case-thumbs">
+                            <img src="BuildLedger_1.png" alt="BuildLedger dashboard with project budgets" loading="lazy"
+                                class="active" />
+                            <img src="BuildLedger_2.png" alt="BuildLedger project ledger with transactions and team members"
+                                loading="lazy" />
+                        </div>
+                    </div>
+
+                    <div class="case-grid">
+                        <div class="case-block">
+                            <span class="case-step mono">01 · Problem</span>
+                            <p>Construction spending is often tracked in notebooks and chat threads, so owners can't
+                                see budget vs. actual spend per site, and partners have no shared, trusted record.</p>
+                        </div>
+                        <div class="case-block">
+                            <span class="case-step mono">02 · Architecture</span>
+                            <div class="flow" aria-label="BuildLedger architecture">
+                                <span>Next.js App Router</span><span>Server Actions + Zod</span><span>Prisma
+                                    ORM</span><span>PostgreSQL (Supabase)</span>
+                            </div>
+                            <p class="muted">NextAuth credential login with bcrypt, route middleware, and a Serwist
+                                service worker that makes the app installable on mobile.</p>
+                        </div>
+                        <div class="case-block">
+                            <span class="case-step mono">03 · Key features</span>
+                            <div class="impact-list compact">
+                                <span>Credit / debit ledger across 9 categories (labor, materials, equipment,
+                                    transport, permits…) with receipts.</span>
+                                <span>Team access via invite codes and admin-approved access requests, with
+                                    admin-only project actions.</span>
+                                <span>Per-project budget, total credit and profit summaries, plus CSV export.</span>
+                            </div>
+                        </div>
+                        <div class="case-block">
+                            <span class="case-step mono">04 · Result</span>
+                            <p>Live on Vercel and installable as a PWA, so site teams can log expenses from their
+                                phones. Next up: camera receipt capture and offline sync.</p>
+                        </div>
+                    </div>
+                    <dl class="stack-rows wide">
+                        <div><dt>Frontend</dt><dd>Next.js 16 · React 19 · TypeScript · Tailwind · shadcn/ui</dd></div>
+                        <div><dt>Backend</dt><dd>Server Actions · NextAuth · Zod</dd></div>
+                        <div><dt>Database</dt><dd>PostgreSQL (Supabase) · Prisma</dd></div>
+                        <div><dt>Deploy</dt><dd>Vercel · Serwist PWA</dd></div>
+                    </dl>
+                </article>
+        </div>
+        <div class="modal-foot">
+            <button class="btn ghost" type="button" data-close>Cancel</button>
+        </div>
+    </dialog>
+
+    <!-- SKILL POPUP -->
+    <dialog class="modal skill-modal" id="skillModal" aria-labelledby="skillModalTitle">
+        <button class="modal-x" type="button" data-close aria-label="Close">&times;</button>
+        <div class="modal-body" data-lenis-prevent>
+            <p class="eyebrow mono">Where I've used it</p>
+            <h3 id="skillModalTitle"></h3>
+            <div id="skillModalContent" class="skill-uses"></div>
+        </div>
+        <div class="modal-foot">
+            <button class="btn ghost" type="button" data-close>Cancel</button>
+        </div>
+    </dialog>
 
     <!-- Floating Action Buttons -->
     <div class="fab">
